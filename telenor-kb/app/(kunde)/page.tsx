@@ -1,6 +1,8 @@
 import SearchBar from "../components/kunde/SearchBar";
 import CategoryCard from "../components/kunde/CategoryCard";
 import { WifiOff, WifiLow, Router } from "lucide-react";
+import ArticleListItem from "../components/kunde/ArticleListItem";
+import { articles } from "../lib/mockData";
 
 export default function KundePage() {
   return (
@@ -71,11 +73,18 @@ export default function KundePage() {
         </div>
       </section>
 
-      {/* Mest leste */}
-      <section className="font-bold mt-12">
-        <h2>Mest leste akkurat nå</h2>
-        {/* TODO: ArticleListItem liste */}
-      </section>
+        {/* Mest leste */}
+        <section className="font-bold mt-12">
+          <h2 className="font-semibold text-gray-900 mb-4">
+            Mest leste akkurat nå
+          </h2>
+          <div className="border border-gray-300 rounded-xl overflow-hidden">
+            {articles.map((article) => (
+              <ArticleListItem key={article.slug} article={article} />
+            ))}
+          </div>
+        </section>
+
     </>
   );
 }

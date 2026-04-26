@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Footer from '../components/shared/Footer'
 
 export default function KundeLayout({
   children,
@@ -22,6 +23,7 @@ export default function KundeLayout({
       <main className="max-w-5xl mx-auto px-4 py-12 md:py-20">
         {children}
       </main>
+      <Footer/>
     </div>
   )
 }
