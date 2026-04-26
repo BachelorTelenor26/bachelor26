@@ -16,7 +16,9 @@ export default function KundePage() {
           treg Wi-Fi til nett som ikke fungerer. Selvbetjening som gir deg
           kontroll.
         </p>
-        <SearchBar />
+        <SearchBar 
+          popularSearches={['Router lyser rødt', 'Treg wifi', 'Mobil mister dekning', 'Bytte passord']}
+        />
       </section>
 
       {/* Kategoriseksjon */}
