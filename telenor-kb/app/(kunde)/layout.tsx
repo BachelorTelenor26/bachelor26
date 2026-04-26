@@ -17,7 +17,11 @@ export default function KundeLayout({
           </Link>
         </nav>
       </header>
-      <main>{children}</main>
+      
+    
+      <main className="max-w-5xl mx-auto px-4 py-12 md:py-20">
+        {children}
+      </main>
     </div>
   )
 }
