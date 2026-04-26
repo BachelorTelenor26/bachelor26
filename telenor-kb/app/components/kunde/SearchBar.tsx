@@ -44,7 +44,7 @@ export default function SearchBar({
   return (
       <div className="w-full">
     <form onSubmit={handleSubmit} className="w-full" role="search">
-      <div className="flex items-center gap-3 border border-gray-200 rounded-xl px-4 py-3 focus-within:border-blue-400 focus-within:ring-2 focus-within:ring-blue-100 transition-all bg-white">
+      <div className="flex items-center gap-3 border border-gray-400 rounded-xl px-4 py-3 focus-within:border-blue-400 focus-within:ring-2 focus-within:ring-blue-100 transition-all bg-white">
         <Search className="w-5 h-5 text-gray-400 shrink-0" aria-hidden="true" />
         
         <input

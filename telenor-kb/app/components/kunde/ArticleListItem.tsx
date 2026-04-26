@@ -14,7 +14,7 @@ export default function ArticleListItem({ article }: ArticleListItemProps) {
     >
       <div>
         <p className="text-sm font-medium text-gray-900">{article.title}</p>
-        <p className="text-xs text-gray-400 mt-0.5">
+        <p className="text-xs text-gray-500 mt-0.5">
           {article.category} · oppdatert {article.updatedAt}
         </p>
       </div>
