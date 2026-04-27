@@ -1,7 +1,31 @@
 {
   "title": "Sjekk kabling",
   "query": "Løste dette problemet?",
-  "body": "<div style='text-align: center;'>En eller flere av kablene kan være koblet feil. </div><div style='text-align: center;'>Følg veiledning for <a href='/privat/kundeservice/bredbandshjelp/utstyr/wifi-ruter/oppkobling/velg-kontakt/fiber/'>oppkobling av Fiber</a> for hjelp med riktig kabling.</div>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "En eller flere av kablene kan være koblet feil."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Følg veiledning for "
+        },
+        {
+          "text": "oppkobling av Fiber",
+          "href": "/privat/kundeservice/bredbandshjelp/utstyr/wifi-ruter/oppkobling/velg-kontakt/fiber/"
+        },
+        {
+          "text": " for hjelp med riktig kabling."
+        }
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

@@ -1,7 +1,28 @@
 {
   "title": "",
   "query": "Løste dette problemet?",
-  "body": "<p>Rød lampe indikerer at WiFi Forsterkeren mottar svake signaler. Forsøk å plassere forsterkeren nærmere ruteren.</p><p>Best plassering for forsterkeren er et sted mellom ruteren og der du ønsker god dekning. <a href=\"/privat/artikler/internett/tradlost-nettverk/derfor-trenger-du-forsterker/\" rel=\"noopener noreferrer nofollow\">Les mer om plassering.</a></p>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Rød lampe indikerer at WiFi Forsterkeren mottar svake signaler. Forsøk å plassere forsterkeren nærmere ruteren."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Best plassering for forsterkeren er et sted mellom ruteren og der du ønsker god dekning. "
+        },
+        {
+          "text": "Les mer om plassering.",
+          "href": "/privat/artikler/internett/tradlost-nettverk/derfor-trenger-du-forsterker/"
+        }
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

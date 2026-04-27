@@ -1,7 +1,22 @@
 {
   "title": "Prøv med en nettverkskabel",
   "query": "Fungerer internett med kabel?",
-  "body": "<div style='text-align: center;'>Problemer med Internett kan gjelde kun for WiFi. For å finne ut om dette er problemet, anbefaler vi å koble en nettverkskabel mellom ruteren og PC’n. <br />Hopp over dette trinnet hvis du ikke har uttak for nettverkskabel på din PC.</div>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Problemer med Internett kan gjelde kun for WiFi. For å finne ut om dette er problemet, anbefaler vi å koble en nettverkskabel mellom ruteren og PC’n. "
+        },
+        {
+          "break": true
+        },
+        {
+          "text": "Hopp over dette trinnet hvis du ikke har uttak for nettverkskabel på din PC."
+        }
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

@@ -1,7 +1,32 @@
 {
   "title": "Prøv med en nettverkskabel",
   "query": "Er nettet stabilt med kabel?",
-  "body": "<p>Problemer med stabilitet kan gjelde kun for WiFi. For å finne ut om dette er problemet, anbefaler vi å koble en nettverkskabel mellom ruteren og PC’n.</p><p>Sjekk at kabelen ikke har synlige skader før du kobler den til.</p><p>Hopp over dette trinnet hvis du ikke har uttak for nettverkskabel på din PC.</p>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Problemer med stabilitet kan gjelde kun for WiFi. For å finne ut om dette er problemet, anbefaler vi å koble en nettverkskabel mellom ruteren og PC’n."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Sjekk at kabelen ikke har synlige skader før du kobler den til."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Hopp over dette trinnet hvis du ikke har uttak for nettverkskabel på din PC."
+        }
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

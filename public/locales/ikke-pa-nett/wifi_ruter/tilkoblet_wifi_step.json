@@ -1,7 +1,24 @@
 {
   "title": "Bruker du WiFi?",
   "query": "",
-  "body": "<p>Lampene på ruteren lyser som de skal.&nbsp;</p><p>Siden du fortsatt opplever problemer, kan feilen skyldes WiFi-tilkobling eller problemer med noe av utstyret.</p>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Lampene på ruteren lyser som de skal."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Siden du fortsatt opplever problemer, kan feilen skyldes WiFi-tilkobling eller problemer med noe av utstyret."
+        }
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

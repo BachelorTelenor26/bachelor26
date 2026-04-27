@@ -1,7 +1,28 @@
 {
   "title": "Sjekk at ruteren er tilkoblet strøm",
   "query": "Hvordan lyser strømlampen nå?",
-  "body": "<ul><li><p>Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten</p></li><li><p>Sjekk at bryteren for av/på står På</p></li><li><p>Test eventuelt et annet strømuttak du vet fungerer</p></li></ul>",
+  "body": [
+    {
+      "type": "unordered-list",
+      "items": [
+        [
+          {
+            "text": "Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten"
+          }
+        ],
+        [
+          {
+            "text": "Sjekk at bryteren for av/på står På"
+          }
+        ],
+        [
+          {
+            "text": "Test eventuelt et annet strømuttak du vet fungerer"
+          }
+        ]
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Mørk",

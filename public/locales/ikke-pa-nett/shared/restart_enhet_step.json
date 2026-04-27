@@ -1,7 +1,22 @@
 {
   "title": "Restart enheten",
   "query": "Løste dette problemet?",
-  "body": "<p>Det virker som problemet ligger på enheten du bruker. Problemer kan ofte løses ved hjelp av en omstart.<br>Forsøk å slå enheten din av og på.</p>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Det virker som problemet ligger på enheten du bruker. Problemer kan ofte løses ved hjelp av en omstart."
+        },
+        {
+          "break": true
+        },
+        {
+          "text": "Forsøk å slå enheten din av og på."
+        }
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

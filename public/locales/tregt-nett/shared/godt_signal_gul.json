@@ -1,7 +1,28 @@
 {
   "title": "Gode signaler",
   "query": "Løste dette problemet?",
-  "body": "<p>Gul lampe indikerer at WiFi Forsterkeren mottar gode signaler. Forsterkeren kan fungere svært godt med denne statusen, men prøv gjerne å plassere den nærmere ruteren. </p><p>Best plassering for forsterkeren er et sted mellom ruteren og der du ønsker god dekning. <a href='/privat/artikler/internett/tradlost-nettverk/derfor-trenger-du-forsterker/'>Les mer om plassering.</a></p>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Gul lampe indikerer at WiFi Forsterkeren mottar gode signaler. Forsterkeren kan fungere svært godt med denne statusen, men prøv gjerne å plassere den nærmere ruteren."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Best plassering for forsterkeren er et sted mellom ruteren og der du ønsker god dekning. "
+        },
+        {
+          "text": "Les mer om plassering.",
+          "href": "/privat/artikler/internett/tradlost-nettverk/derfor-trenger-du-forsterker/"
+        }
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

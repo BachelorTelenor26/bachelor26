@@ -1,7 +1,28 @@
 {
   "title": "Sjekk at ruteren er tilkoblet strøm",
   "query": "Lyser POWER-lampen nå?",
-  "body": "<ul><li><p>Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten</p></li><li><p>Sjekk at ruteren er skrudd på </p></li><li><p>Test eventuelt et annet strømuttak du vet fungerer</p></li></ul>",
+  "body": [
+    {
+      "type": "unordered-list",
+      "items": [
+        [
+          {
+            "text": "Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten"
+          }
+        ],
+        [
+          {
+            "text": "Sjekk at ruteren er skrudd på"
+          }
+        ],
+        [
+          {
+            "text": "Test eventuelt et annet strømuttak du vet fungerer"
+          }
+        ]
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

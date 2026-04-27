@@ -1,7 +1,32 @@
 {
   "title": "Problemer med WiFi",
   "query": "Vil du fortsette feilsøkingen?",
-  "body": "<p>Du får riktig hastighet med nettverkskabel tilkoblet. Dette betyr at problemet ikke ligger på våre linjer, men på WiFi-dekningen.&nbsp;</p><p>Problemer med WiFi kan skyldes utstyret du har tilkoblet, din PC eller mobiltelefon, eller andre forhold.&nbsp;</p><p>Du kan fortsette å bruke internett via nettverkskabel, eller feilsøke videre på utstyret.&nbsp;</p>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Du får riktig hastighet med nettverkskabel tilkoblet. Dette betyr at problemet ikke ligger på våre linjer, men på WiFi-dekningen."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Problemer med WiFi kan skyldes utstyret du har tilkoblet, din PC eller mobiltelefon, eller andre forhold."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Du kan fortsette å bruke internett via nettverkskabel, eller feilsøke videre på utstyret."
+        }
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

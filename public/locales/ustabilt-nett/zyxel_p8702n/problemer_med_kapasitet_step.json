@@ -1,7 +1,24 @@
 {
   "title": "Er du koblet til WiFi?",
   "query": "",
-  "body": "<p>Det kan virke som at problemet oppstår når dere er flere på nett samtidig.&nbsp;</p><p>Dette kan skyldes at du har en lavere hastighet enn det du har behov for, feil på vår linje, eller at problemet skyldes svak WiFi-dekning.</p>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Det kan virke som at problemet oppstår når dere er flere på nett samtidig."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Dette kan skyldes at du har en lavere hastighet enn det du har behov for, feil på vår linje, eller at problemet skyldes svak WiFi-dekning."
+        }
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

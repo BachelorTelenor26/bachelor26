@@ -1,7 +1,16 @@
 {
   "title": "Lampestatus",
   "query": "Lyser lampene som på bildet?",
-  "body": "<p>Den øverste lampen (internett) skal lyse stabilt grønn, mens den nederste (strøm) skal lyse stabilt hvit.</p>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Den øverste lampen (internett) skal lyse stabilt grønn, mens den nederste (strøm) skal lyse stabilt hvit."
+        }
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

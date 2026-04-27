@@ -1,7 +1,41 @@
 {
   "title": "Ruteren har ikke kontakt med mobilnettet",
   "query": "Lyser MODE fortsatt rødt?",
-  "body": "<p>Problemet kan skyldes at ruteren ikke har kontakt med SIM-kortet. </p><ol><li><p>Trekk ut strømkabelen eller skru ruteren av med av/på-bryteren</p></li><li><p>Ta SIM-kortet ut av ruteren</p></li><li><p>Sett SIM-kortet tilbake på plass</p></li><li><p>Koble til strøm og vent inntil 5 minutter på at ruteren starter opp. </p></li></ol>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Problemet kan skyldes at ruteren ikke har kontakt med SIM-kortet."
+        }
+      ]
+    },
+    {
+      "type": "ordered-list",
+      "items": [
+        [
+          {
+            "text": "Trekk ut strømkabelen eller skru ruteren av med av/på-bryteren"
+          }
+        ],
+        [
+          {
+            "text": "Ta SIM-kortet ut av ruteren"
+          }
+        ],
+        [
+          {
+            "text": "Sett SIM-kortet tilbake på plass"
+          }
+        ],
+        [
+          {
+            "text": "Koble til strøm og vent inntil 5 minutter på at ruteren starter opp."
+          }
+        ]
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

@@ -1,6 +1,36 @@
 {
   "title": "Problemer med enhet",
   "query": "",
-  "body": "<p><strong>Problemet skyldes ikke internettforbindelsen, men enheten du bruker.</strong></p><p>I noen tilfeller kan eldre enheter få problemer med å koble seg til WiFi Ruter II som har den nyeste sikkerhetsstandarden for nettverkspassord. Les mer her om hvordan du kan løse problemet: <a href=\"/kundeservice/delt/wpa3/\">WPA3 - Problemer med tilkobling på WiFi Ruter II</a></p><p>Hvis dette ikke løser problemet, bør du kontakte leverandøren av enheten din for mer hjelp.</p>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Problemet skyldes ikke internettforbindelsen, men enheten du bruker.",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "I noen tilfeller kan eldre enheter få problemer med å koble seg til WiFi Ruter II som har den nyeste sikkerhetsstandarden for nettverkspassord. Les mer her om hvordan du kan løse problemet: "
+        },
+        {
+          "text": "WPA3 - Problemer med tilkobling på WiFi Ruter II",
+          "href": "/kundeservice/delt/wpa3/"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Hvis dette ikke løser problemet, bør du kontakte leverandøren av enheten din for mer hjelp."
+        }
+      ]
+    }
+  ],
   "choices": []
 }

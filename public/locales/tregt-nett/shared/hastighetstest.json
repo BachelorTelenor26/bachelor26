@@ -1,7 +1,35 @@
 {
   "title": "Sjekk hastigheten",
   "query": "Måler du riktig hastighet?",
-  "body": "<p>Sjekk hvilken hastighet du måler på internett ved hjelp av <a href=\"https://www.telenor.no/speedometer/\" target=\"\">vårt speedometer</a>.</p><p>Er du usikker på hvilken hastighet du abonnerer på, kan du se dette på <a href=\"https://www.telenor.no/minesider/\">Mine sider.</a></p>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Sjekk hvilken hastighet du måler på internett ved hjelp av "
+        },
+        {
+          "text": "vårt speedometer",
+          "href": "https://www.telenor.no/speedometer/"
+        },
+        {
+          "text": "."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Er du usikker på hvilken hastighet du abonnerer på, kan du se dette på "
+        },
+        {
+          "text": "Mine sider.",
+          "href": "https://www.telenor.no/minesider/"
+        }
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Speedometer",

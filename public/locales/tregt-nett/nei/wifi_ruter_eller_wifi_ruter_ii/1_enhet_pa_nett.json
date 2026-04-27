@@ -1,7 +1,51 @@
 {
   "title": "Koble vekk andre enheter",
   "query": "Er nettet fremdeles tregt?",
-  "body": "<p>Koble fra internett på alle datamaskiner og mobiltelefoner unntatt den du bruker. Dette kan du gjøre ved å:&nbsp;</p><ul><li><p>Slå av enhetene</p></li><li><p>Dra ut nettverkskabelen</p></li><li><p>Koble fra WiFi<br></p></li></ul><p><a href=\"https://www.telenor.no/speedometer/\" target=\"_blank\">Test hastigheten på Internett </a>når du kun har tilkoblet en enhet.</p>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Koble fra internett på alle datamaskiner og mobiltelefoner unntatt den du bruker. Dette kan du gjøre ved å:"
+        }
+      ]
+    },
+    {
+      "type": "unordered-list",
+      "items": [
+        [
+          {
+            "text": "Slå av enhetene"
+          }
+        ],
+        [
+          {
+            "text": "Dra ut nettverkskabelen"
+          }
+        ],
+        [
+          {
+            "text": "Koble fra WiFi"
+          },
+          {
+            "break": true
+          }
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Test hastigheten på Internett ",
+          "href": "https://www.telenor.no/speedometer/"
+        },
+        {
+          "text": "når du kun har tilkoblet en enhet."
+        }
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Speedometer",

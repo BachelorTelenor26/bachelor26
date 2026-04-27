@@ -1,6 +1,59 @@
 {
   "title": "Vi vil gjerne snakke med deg",
   "query": "",
-  "body": "<p>Med Internett fra oss og leieavtale på WiFi Ruter har du <a href=\"/privat/internett/alltid-wifi/\">Alltid WiFi og Fornøydhetsgaranti!&nbsp;</a></p><p>Kontakt oss på <a href=\"tel:%2091509000\">915 09000</a>, så hjelper vi deg videre.&nbsp;<br></p><p>Les mer om hvordan du kan <a href=\"/privat/artikler/internett/tradlost-nettverk/slik-plasserer-du-ruteren-din/\">forbedre WiFi-dekningen</a>, eller bestill en eller flere WiFi Forsterkere på <a href=\"https://www.telenor.no/minesider/\">Mine sider</a>.</p>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Med Internett fra oss og leieavtale på WiFi Ruter har du "
+        },
+        {
+          "text": "Alltid WiFi og Fornøydhetsgaranti! ",
+          "href": "/privat/internett/alltid-wifi/"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Kontakt oss på "
+        },
+        {
+          "text": "915 09000",
+          "href": "tel:%2091509000"
+        },
+        {
+          "text": ", så hjelper vi deg videre. "
+        },
+        {
+          "break": true
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Les mer om hvordan du kan "
+        },
+        {
+          "text": "forbedre WiFi-dekningen",
+          "href": "/privat/artikler/internett/tradlost-nettverk/slik-plasserer-du-ruteren-din/"
+        },
+        {
+          "text": ", eller bestill en eller flere WiFi Forsterkere på "
+        },
+        {
+          "text": "Mine sider",
+          "href": "https://www.telenor.no/minesider/"
+        },
+        {
+          "text": "."
+        }
+      ]
+    }
+  ],
   "choices": []
 }

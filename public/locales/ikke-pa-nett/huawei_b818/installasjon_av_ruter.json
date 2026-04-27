@@ -1,7 +1,51 @@
 {
   "title": "Installasjon av ruter",
   "query": "Løste dette problemet?",
-  "body": "<ol><li><p>Koble til ruteren med WiFi eller ved hjelp av en nettverkskabel </p></li><li><p>En nettside vil automatisk dukke opp på maskinen. Denne må du klikke deg gjennom for å fullføre oppsettet.</p></li></ol><p><strong>Merk</strong>: Om nettsiden ikke dukker opp automatisk, kan du søke den opp manuelt ved å skrive inn <strong>192.168.1.1</strong> i adressefeltet til nettleseren. Vi anbefaler at du bruker en av disse nettleserne: Google Chrome, Safari, Microsoft Edge eller Firefox. </p><p><a href=\"/privat/kundeservice/mobiltbredband/mbb818.jsp\" rel=\"noopener noreferrer nofollow\">Se informasjon om Huawei B818 for mer hjelp med installasjon og oppsett.</a></p>",
+  "body": [
+    {
+      "type": "ordered-list",
+      "items": [
+        [
+          {
+            "text": "Koble til ruteren med WiFi eller ved hjelp av en nettverkskabel"
+          }
+        ],
+        [
+          {
+            "text": "En nettside vil automatisk dukke opp på maskinen. Denne må du klikke deg gjennom for å fullføre oppsettet."
+          }
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Merk",
+          "bold": true
+        },
+        {
+          "text": ": Om nettsiden ikke dukker opp automatisk, kan du søke den opp manuelt ved å skrive inn "
+        },
+        {
+          "text": "192.168.1.1",
+          "bold": true
+        },
+        {
+          "text": " i adressefeltet til nettleseren. Vi anbefaler at du bruker en av disse nettleserne: Google Chrome, Safari, Microsoft Edge eller Firefox."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Se informasjon om Huawei B818 for mer hjelp med installasjon og oppsett.",
+          "href": "/privat/kundeservice/mobiltbredband/mbb818.jsp"
+        }
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

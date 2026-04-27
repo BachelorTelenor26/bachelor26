@@ -44,3 +44,5 @@ next-env.d.ts
 /visualizations/
 __pycache__/
 **/generated/prisma
+
+telenor-guides/

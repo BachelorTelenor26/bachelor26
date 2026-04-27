@@ -1,7 +1,40 @@
 {
   "title": "Restart ruteren",
   "query": "Løste dette problemet?",
-  "body": "<p><strong>Problemet kan ofte løses ved å restarte ruteren.</strong> Dette gjør du slik:</p><ol><li><p>Trekk ut strømkontakten eller bruk av/på-bryteren</p></li><li><p>La ruteren stå uten strøm i 10 sekunder</p></li><li><p>Koble til strømmen igjen. NB! Det kan ta noen minutter før ruteren kobler seg til Internett igjen.</p></li></ol>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Problemet kan ofte løses ved å restarte ruteren.",
+          "bold": true
+        },
+        {
+          "text": " Dette gjør du slik:"
+        }
+      ]
+    },
+    {
+      "type": "ordered-list",
+      "items": [
+        [
+          {
+            "text": "Trekk ut strømkontakten eller bruk av/på-bryteren"
+          }
+        ],
+        [
+          {
+            "text": "La ruteren stå uten strøm i 10 sekunder"
+          }
+        ],
+        [
+          {
+            "text": "Koble til strømmen igjen. NB! Det kan ta noen minutter før ruteren kobler seg til Internett igjen."
+          }
+        ]
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

@@ -1,7 +1,28 @@
 {
   "title": "Restart utendørs antenne",
   "query": "Løste dette problemet?",
-  "body": "<ol><li><p>Trekk ut antenne-adapteret som står i stikkontakten</p></li><li><p>Vent minst 10 sekunder</p></li><li><p>Sett antenne-adapteret tilbake i stikkontakten. NB! Det kan ta noen minutter før utendørsantennen kobler seg opp til nettverket igjen</p></li></ol>",
+  "body": [
+    {
+      "type": "ordered-list",
+      "items": [
+        [
+          {
+            "text": "Trekk ut antenne-adapteret som står i stikkontakten"
+          }
+        ],
+        [
+          {
+            "text": "Vent minst 10 sekunder"
+          }
+        ],
+        [
+          {
+            "text": "Sett antenne-adapteret tilbake i stikkontakten. NB! Det kan ta noen minutter før utendørsantennen kobler seg opp til nettverket igjen"
+          }
+        ]
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

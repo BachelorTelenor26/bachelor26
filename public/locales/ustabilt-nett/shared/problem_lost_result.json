@@ -1,6 +1,27 @@
 {
   "title": "Problemet er løst",
   "query": "",
-  "body": "<p>Så godt å høre at du fikk løst problemet!</p><p>Hvis dette er et problem du opplever ofte, bør du ta kontakt med oss på <a href=\"/kundeservice/kontakt-oss/\">kundeservice på 915 09000.</a></p>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Så godt å høre at du fikk løst problemet!"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Hvis dette er et problem du opplever ofte, bør du ta kontakt med oss på "
+        },
+        {
+          "text": "kundeservice på 915 09000.",
+          "href": "/kundeservice/kontakt-oss/"
+        }
+      ]
+    }
+  ],
   "choices": []
 }

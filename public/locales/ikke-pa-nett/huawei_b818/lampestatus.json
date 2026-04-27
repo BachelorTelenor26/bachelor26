@@ -1,7 +1,16 @@
 {
   "title": "Lampestatus",
   "query": "Lyser lampene som på bildet?",
-  "body": "<p>Den øverste lampen (POWER) skal lyse stabilt grønn, mens den nederste (MODE) skal lyse turkis når ruteren er tilkoblet mobilnettet på 4G/4G+.</p>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Den øverste lampen (POWER) skal lyse stabilt grønn, mens den nederste (MODE) skal lyse turkis når ruteren er tilkoblet mobilnettet på 4G/4G+."
+        }
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

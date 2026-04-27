@@ -1,7 +1,36 @@
 {
   "title": "Sjekk nettverkskabelen",
   "query": "Løste noe av dette problemet?",
-  "body": "<p>Tregt nett kan skyldes problemer med nettverkskabelen eller uttakene kabelen er koblet til.</p><ul><li><p>Sjekk at kabelen ikke er skadet</p></li><li><p>Bytt LAN-uttak på baksiden av ruteren</p></li><li><p>Bytt nettverkskabelen med en annen</p></li></ul>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Tregt nett kan skyldes problemer med nettverkskabelen eller uttakene kabelen er koblet til."
+        }
+      ]
+    },
+    {
+      "type": "unordered-list",
+      "items": [
+        [
+          {
+            "text": "Sjekk at kabelen ikke er skadet"
+          }
+        ],
+        [
+          {
+            "text": "Bytt LAN-uttak på baksiden av ruteren"
+          }
+        ],
+        [
+          {
+            "text": "Bytt nettverkskabelen med en annen"
+          }
+        ]
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

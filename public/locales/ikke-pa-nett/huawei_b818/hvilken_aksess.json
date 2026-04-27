@@ -1,7 +1,31 @@
 {
   "title": "Hvilken type Internett har du?",
   "query": "Hvilken type Internett har du?",
-  "body": "<p>Vi leverer Internett gjennom flere typer teknologier. Over mobilnettet leverer vi Mobilt Bredbånd og Trådløst Bredbånd.</p><ul><li><p>Mobilt Bredbånd kan du bruke alle steder der det er mobildekning, og har en gitt mengde mobildata tilgjengelig hver måned.</p></li><li><p>Trådløst Bredbånd fungerer kun på adressen der du bor.</p></li></ul>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Vi leverer Internett gjennom flere typer teknologier. Over mobilnettet leverer vi Mobilt Bredbånd og Trådløst Bredbånd."
+        }
+      ]
+    },
+    {
+      "type": "unordered-list",
+      "items": [
+        [
+          {
+            "text": "Mobilt Bredbånd kan du bruke alle steder der det er mobildekning, og har en gitt mengde mobildata tilgjengelig hver måned."
+          }
+        ],
+        [
+          {
+            "text": "Trådløst Bredbånd fungerer kun på adressen der du bor."
+          }
+        ]
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Trådløst Bredbånd",

@@ -1,7 +1,41 @@
 {
   "title": "Nullstill ruteren",
   "query": "Løste dette problemet?",
-  "body": "<ol><li><p>Finn frem en penn eller en annen tynn gjenstand</p></li><li><p>Stikk pennen inn i hullet merket med RESET</p></li><li><p>Hold pennen inne i 10 sekunder og slipp</p></li><li><p>Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter</p></li></ol>\n\n<p>NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren.&nbsp;</p><p></p>",
+  "body": [
+    {
+      "type": "ordered-list",
+      "items": [
+        [
+          {
+            "text": "Finn frem en penn eller en annen tynn gjenstand"
+          }
+        ],
+        [
+          {
+            "text": "Stikk pennen inn i hullet merket med RESET"
+          }
+        ],
+        [
+          {
+            "text": "Hold pennen inne i 10 sekunder og slipp"
+          }
+        ],
+        [
+          {
+            "text": "Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren."
+        }
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

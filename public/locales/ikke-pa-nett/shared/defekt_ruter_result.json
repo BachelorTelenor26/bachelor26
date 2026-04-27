@@ -1,6 +1,42 @@
 {
   "title": "Ruteren kan være defekt",
   "query": "",
-  "body": "<p>Det kan være at ruteren din er defekt. Årsakene til dette kan være mange, men ofte kan det oppstå&nbsp;<a href=\"https://www.online.no/min-sky/forbered-deg-paa-tordenvaer\">problemer ved lyn og torden</a>.&nbsp;</p><p>Ta kontakt med kundeservice, så kan vi sjekke mer og eventuelt bestille en ny ruter til deg.<br></p><p><a href=\"http://www.telenor.no/privat/kundeservice/kontakt/\">Se kontaktinformasjon og åpningstider</a></p>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Det kan være at ruteren din er defekt. Årsakene til dette kan være mange, men ofte kan det oppstå "
+        },
+        {
+          "text": "problemer ved lyn og torden",
+          "href": "https://www.online.no/min-sky/forbered-deg-paa-tordenvaer"
+        },
+        {
+          "text": "."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Ta kontakt med kundeservice, så kan vi sjekke mer og eventuelt bestille en ny ruter til deg."
+        },
+        {
+          "break": true
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Se kontaktinformasjon og åpningstider",
+          "href": "http://www.telenor.no/privat/kundeservice/kontakt/"
+        }
+      ]
+    }
+  ],
   "choices": []
 }

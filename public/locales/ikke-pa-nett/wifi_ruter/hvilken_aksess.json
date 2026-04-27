@@ -1,7 +1,24 @@
 {
   "title": "Hvilken type Internett har du?",
   "query": "",
-  "body": "<p>Vi leverer internett gjennom flere typer teknologier.&nbsp;</p><p>Er du usikker på hvilken type du har, kan du undersøke hvordan utstyret ditt er koblet opp. </p>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Vi leverer internett gjennom flere typer teknologier."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Er du usikker på hvilken type du har, kan du undersøke hvordan utstyret ditt er koblet opp."
+        }
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Fiber",

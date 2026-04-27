@@ -1,7 +1,28 @@
 {
   "title": "Du er tilkoblet 2G",
   "query": "Er 4G/4G+ tilgjengelig på din adresse?",
-  "body": "<p>Ruteren din mottar signaler på 2G og er tilkoblet mobilnettet. På grunn av svært lave hastigheter vil ikke 2G fungere optimalt til surfing på nett, og kan være årsaken til at du opplever at Internett ikke fungerer.</p><p><a href=\"/privat/dekningskart/\" rel=\"noopener noreferrer nofollow\">Sjekk dekningen</a> i ditt område for å finne ut om du har tilgang til 4G/4G+.</p>",
+  "body": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Ruteren din mottar signaler på 2G og er tilkoblet mobilnettet. På grunn av svært lave hastigheter vil ikke 2G fungere optimalt til surfing på nett, og kan være årsaken til at du opplever at Internett ikke fungerer."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Sjekk dekningen",
+          "href": "/privat/dekningskart/"
+        },
+        {
+          "text": " i ditt område for å finne ut om du har tilgang til 4G/4G+."
+        }
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

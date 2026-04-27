@@ -1,7 +1,34 @@
 {
   "title": "Sjekk tilkobling",
   "query": "Løste dette problemet?",
-  "body": "<ul><li><p>Sjekk at enheten du bruker er tilkoblet ruteren via WiFi eller nettverkskabel. <a href=\"/privat/kundeservice/mobiltbredband/mbb818.jsp\" rel=\"noopener noreferrer nofollow\">Les hvordan du kobler til WiFi på våre utstyr-sider.</a></p></li><li><p>Dersom du har tilgang til en ekstra mobil eller datamaskin, undersøk om problemet er det samme på denne enheten. Er problemet det samme, kan du velge <strong>Flere </strong>på forrige steg.</p></li></ul>",
+  "body": [
+    {
+      "type": "unordered-list",
+      "items": [
+        [
+          {
+            "text": "Sjekk at enheten du bruker er tilkoblet ruteren via WiFi eller nettverkskabel. "
+          },
+          {
+            "text": "Les hvordan du kobler til WiFi på våre utstyr-sider.",
+            "href": "/privat/kundeservice/mobiltbredband/mbb818.jsp"
+          }
+        ],
+        [
+          {
+            "text": "Dersom du har tilgang til en ekstra mobil eller datamaskin, undersøk om problemet er det samme på denne enheten. Er problemet det samme, kan du velge "
+          },
+          {
+            "text": "Flere ",
+            "bold": true
+          },
+          {
+            "text": "på forrige steg."
+          }
+        ]
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

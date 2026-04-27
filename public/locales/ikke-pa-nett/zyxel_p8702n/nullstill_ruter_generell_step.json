@@ -1,7 +1,50 @@
 {
   "title": "Nullstill ruteren",
   "query": "Løste dette problemet?",
-  "body": "<ol><li>Finn frem en penn eller en annen tynn gjenstand</li><li>Stikk pennen inn i hullet merket med RESET</li><li>Hold pennen inne i 10 sekunder og slipp</li><li>Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter</li></ol>\n\n<p>NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren.&nbsp;</p><p><a href=\"/kundeservice/internett/modem-og-ruter/zyxel-8702/\" target=\"\">Hjelp til oppkobling</a></p>",
+  "body": [
+    {
+      "type": "ordered-list",
+      "items": [
+        [
+          {
+            "text": "Finn frem en penn eller en annen tynn gjenstand"
+          }
+        ],
+        [
+          {
+            "text": "Stikk pennen inn i hullet merket med RESET"
+          }
+        ],
+        [
+          {
+            "text": "Hold pennen inne i 10 sekunder og slipp"
+          }
+        ],
+        [
+          {
+            "text": "Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Hjelp til oppkobling",
+          "href": "/kundeservice/internett/modem-og-ruter/zyxel-8702/"
+        }
+      ]
+    }
+  ],
   "choices": [
     {
       "label": "Ja",

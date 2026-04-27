@@ -15,8 +15,250 @@ import argparse
 import json
 import re
 from collections import defaultdict, deque
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Dict, List, Tuple
+
+# ---------------------------------------------------------------------------
+# HTML body → structured blocks (no dangerouslySetInnerHTML needed)
+#
+# Tags found across all translation files:
+#   Block:  <p> (483)  <ol> (40)  <ul> (31)  <div> (22)  <h3> (4)
+#   List:   <li> (232)
+#   Inline: <a> (79)  <br> (21)  <strong> (17)  <em> (4)
+#
+# Output schema per block:
+#   { "type": "paragraph",      "content": [InlineNode, ...] }
+#   { "type": "ordered-list",   "items":   [[InlineNode, ...], ...] }
+#   { "type": "unordered-list", "items":   [[InlineNode, ...], ...] }
+#   { "type": "heading",        "level": 3, "content": [InlineNode, ...] }
+#
+# InlineNode variants:
+#   { "text": "plain text" }
+#   { "text": "bold text",   "bold": true }
+#   { "text": "italic text", "italic": true }
+#   { "text": "link label",  "href": "/some/path" }
+#   { "break": true }
+# ---------------------------------------------------------------------------
+
+_BLOCK_TAGS = frozenset({"p", "ol", "ul", "h3", "h4", "div"})
+_LIST_TAGS = frozenset({"ol", "ul"})
+_VOID_TAGS = frozenset({"br", "img", "hr", "input", "meta", "link"})
+_HEADING_LEVEL: Dict[str, int] = {"h3": 3, "h4": 4}
+
+
+def _parse_inline(inline_html: str) -> List[dict]:
+    """Convert an inline HTML string to a list of InlineNode dicts."""
+
+    class _InlineParser(HTMLParser):
+        def __init__(self) -> None:
+            super().__init__(convert_charrefs=True)
+            self.nodes: List[dict] = []
+            # Active formatting flags
+            self._bold = 0
+            self._italic = 0
+            self._href: str | None = None
+
+        def _push_text(self, text: str) -> None:
+            if not text:
+                return
+            node: dict = {"text": text}
+            if self._bold:
+                node["bold"] = True
+            if self._italic:
+                node["italic"] = True
+            if self._href is not None:
+                node["href"] = self._href
+            self.nodes.append(node)
+
+        def handle_starttag(self, tag: str, attrs: list) -> None:
+            attr_map = dict(attrs)
+            if tag in {"strong", "b"}:
+                self._bold += 1
+            elif tag in {"em", "i"}:
+                self._italic += 1
+            elif tag == "a":
+                self._href = attr_map.get("href") or ""
+            elif tag == "br":
+                self.nodes.append({"break": True})
+
+        def handle_endtag(self, tag: str) -> None:
+            if tag in {"strong", "b"}:
+                self._bold = max(0, self._bold - 1)
+            elif tag in {"em", "i"}:
+                self._italic = max(0, self._italic - 1)
+            elif tag == "a":
+                self._href = None
+
+        def handle_data(self, data: str) -> None:
+            self._push_text(data)
+
+    parser = _InlineParser()
+    parser.feed(inline_html)
+    # Merge adjacent plain-text nodes to keep the array compact
+    merged: List[dict] = []
+    for node in parser.nodes:
+        if (
+            merged
+            and "text" in node
+            and "text" in merged[-1]
+            and set(node.keys()) == set(merged[-1].keys())
+            and node.get("bold") == merged[-1].get("bold")
+            and node.get("italic") == merged[-1].get("italic")
+            and node.get("href") == merged[-1].get("href")
+        ):
+            merged[-1]["text"] += node["text"]
+        else:
+            merged.append(node)
+    return merged
+
+
+def _extract_li_items(inner_html: str) -> List[List[dict]]:
+    """Return a list of inline-node arrays, one per <li>."""
+
+    class _LiParser(HTMLParser):
+        def __init__(self) -> None:
+            super().__init__(convert_charrefs=False)
+            self.items: List[str] = []
+            self._in_li = False
+            self._depth = 0
+            self._buf = ""
+
+        def _raw(self, tag: str, attrs: list) -> str:
+            parts = []
+            for name, value in attrs:
+                parts.append(f' {name}="{value}"' if value is not None else f" {name}")
+            return f"<{tag}{''.join(parts)}>"
+
+        def handle_starttag(self, tag: str, attrs: list) -> None:
+            if tag == "li" and not self._in_li:
+                self._in_li = True
+                self._depth = 0
+                self._buf = ""
+            elif self._in_li:
+                self._buf += self._raw(tag, attrs)
+                if tag not in _VOID_TAGS:
+                    self._depth += 1
+
+        def handle_endtag(self, tag: str) -> None:
+            if not self._in_li:
+                return
+            if tag == "li" and self._depth == 0:
+                item = self._buf.strip()
+                # Strip redundant outer <p>…</p> wrapper (very common pattern)
+                item = re.sub(r"^<p>(.*)</p>$", r"\1", item, flags=re.DOTALL).strip()
+                if item:
+                    self.items.append(item)
+                self._in_li = False
+                self._buf = ""
+            else:
+                self._buf += f"</{tag}>"
+                if tag not in _VOID_TAGS:
+                    self._depth = max(0, self._depth - 1)
+
+        def handle_data(self, data: str) -> None:
+            if self._in_li:
+                self._buf += data
+
+        def handle_entityref(self, name: str) -> None:
+            if self._in_li:
+                self._buf += "\u00a0" if name == "nbsp" else f"&{name};"
+
+        def handle_charref(self, name: str) -> None:
+            if self._in_li:
+                self._buf += f"&#{name};"
+
+    p = _LiParser()
+    p.feed(inner_html)
+    return [_parse_inline(raw) for raw in p.items]
+
+
+class _BodyParser(HTMLParser):
+    """Walk top-level block elements and emit structured block dicts."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=False)
+        self.blocks: List[dict] = []
+        self._stack: List[dict] = []  # {'tag', 'inner', 'inner_depth'}
+
+    def _top(self) -> dict | None:
+        return self._stack[-1] if self._stack else None
+
+    def _raw(self, tag: str, attrs: list) -> str:
+        parts = []
+        for name, value in attrs:
+            parts.append(f' {name}="{value}"' if value is not None else f" {name}")
+        return f"<{tag}{''.join(parts)}>"
+
+    def handle_starttag(self, tag: str, attrs: list) -> None:
+        top = self._top()
+        if top is None and tag in _BLOCK_TAGS:
+            self._stack.append({"tag": tag, "inner": "", "inner_depth": 0})
+        elif top is not None:
+            top["inner"] += self._raw(tag, attrs)
+            if tag not in _VOID_TAGS:
+                top["inner_depth"] += 1
+
+    def handle_endtag(self, tag: str) -> None:
+        top = self._top()
+        if top is None:
+            return
+        if tag == top["tag"] and top["inner_depth"] == 0:
+            self._emit(top)
+            self._stack.pop()
+        else:
+            top["inner"] += f"</{tag}>"
+            if tag not in _VOID_TAGS:
+                top["inner_depth"] = max(0, top["inner_depth"] - 1)
+
+    def handle_data(self, data: str) -> None:
+        top = self._top()
+        if top is not None:
+            top["inner"] += data
+
+    def handle_entityref(self, name: str) -> None:
+        top = self._top()
+        if top is not None:
+            top["inner"] += "\u00a0" if name == "nbsp" else f"&{name};"
+
+    def handle_charref(self, name: str) -> None:
+        top = self._top()
+        if top is not None:
+            top["inner"] += f"&#{name};"
+
+    def _emit(self, block: dict) -> None:
+        tag = block["tag"]
+        inner = block["inner"].strip()
+        if not inner:
+            return
+        if tag in {"p", "div"}:
+            content = _parse_inline(inner)
+            if content:
+                self.blocks.append({"type": "paragraph", "content": content})
+        elif tag in _LIST_TAGS:
+            list_type = "ordered-list" if tag == "ol" else "unordered-list"
+            items = _extract_li_items(inner)
+            if items:
+                self.blocks.append({"type": list_type, "items": items})
+        elif tag in _HEADING_LEVEL:
+            content = _parse_inline(inner)
+            if content:
+                self.blocks.append({"type": "heading", "level": _HEADING_LEVEL[tag], "content": content})
+
+
+def html_body_to_blocks(body_html: str) -> List[dict]:
+    """Convert an HTML body string to a list of structured block dicts."""
+    if not body_html:
+        return []
+    stripped = body_html.strip()
+    if not stripped:
+        return []
+    # Plain text with no block tags — wrap in a single paragraph
+    if not re.search(r"<(p|ol|ul|h[1-6]|div)\b", stripped, re.IGNORECASE):
+        return [{"type": "paragraph", "content": _parse_inline(stripped)}]
+    parser = _BodyParser()
+    parser.feed(stripped)
+    return parser.blocks
 
 
 def slugify(value: str) -> str:
@@ -222,12 +464,13 @@ def get_step_fields(component_json: dict) -> dict:
         if fallback_body:
             bodies.append(fallback_body)
 
-    joined_body = "\n\n".join(bodies).strip()
+    combined_html = "\n\n".join(bodies).strip()
+    structured_body = html_body_to_blocks(combined_html)
 
     return {
         "title": step_header,
         "query": step_query,
-        "body": joined_body,
+        "body": structured_body,
     }
 
 
@@ -282,7 +525,10 @@ def write_json(path: Path, payload: dict) -> None:
 
 
 def process_category(guides_dir: Path, category_slug: str, output_root: Path) -> None:
+    # Support both naming conventions: <category>_flow_graph.json and <category>.json
     flow_graph_path = guides_dir / f"{category_slug}_flow_graph.json"
+    if not flow_graph_path.exists():
+        flow_graph_path = guides_dir / f"{category_slug}.json"
     components_dir = guides_dir / category_slug
 
     if not flow_graph_path.exists() or not components_dir.exists():
