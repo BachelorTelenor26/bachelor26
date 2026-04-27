@@ -76,7 +76,7 @@ function slugify(value: string): string {
     .replaceAll("ø", "oe")
     .replaceAll("æ", "ae")
     .replace(/<[^>]+>/g, " ")
-    .replace(/[^a-z0-9/_-]+/g, "_")
+    .replace(/[^a-z0-9]+/g, "_")
     .replace(/_+/g, "_")
     .replace(/^_+|_+$/g, "") || "unknown";
 }
@@ -457,7 +457,10 @@ async function upsertArticle(categorySlug: string, routerPath: string, categoryI
 }
 
 async function importCategory(guidesRoot: string, categorySlug: string) {
-  const flowPath = path.join(guidesRoot, `${categorySlug}_flow_graph.json`);
+  let flowPath = path.join(guidesRoot, `${categorySlug}_flow_graph.json`);
+  try { await readFile(flowPath); } catch {
+    flowPath = path.join(guidesRoot, `${categorySlug}.json`);
+  }
   const componentsDir = path.join(guidesRoot, categorySlug);
 
   const graph = await readJson<FlowGraph>(flowPath);
@@ -504,18 +507,23 @@ async function importCategory(guidesRoot: string, categorySlug: string) {
       if (!component) continue;
 
       const stepSlug = makeUniqueSlug(deriveStepSlug(component, componentId), usedStepSlugs);
-      const keyBase = `${categorySlug}.${routerPath.replaceAll("/", ".")}.${stepSlug}`;
+      const componentOwner = ownership.get(componentId) || "shared";
+      const localeFolder = componentOwner === "shared"
+        ? `${categorySlug}/shared`
+        : `${categorySlug}/${routerPath}`;
+      const keySegment = componentOwner === "shared"
+        ? `${categorySlug}.shared`
+        : `${categorySlug}.${routerPath.replaceAll("/", ".")}`;
+      const keyBase = `${keySegment}.${stepSlug}`;
       baseKeyByComponent.set(componentId, keyBase);
 
       const titleKey = `${keyBase}.title`;
-      const bodyKey = `${keyBase}.body`;
-      const queryKey = `${keyBase}.query`;
+      const localeFilePath = `${localeFolder}/${stepSlug}`;
 
       const created = await prisma.step.create({
         data: {
           title: titleKey,
-          content: bodyKey,
-          agentNote: queryKey,
+          localeKey: localeFilePath,
           imageUrl: getImageUrl(component),
           articleId: article.id,
         },
@@ -575,7 +583,7 @@ async function importCategory(guidesRoot: string, categorySlug: string) {
 }
 
 async function main() {
-  const prismaClientPath = "../generated/prisma/client";
+  const prismaClientPath = "../prisma/generated/prisma/client";
   const prismaModule = await import(prismaClientPath);
   const adapterModulePath = "@prisma/adapter-pg";
   const adapterModule = await import(adapterModulePath);
@@ -591,7 +599,7 @@ async function main() {
     adapter: new PrismaPg({ connectionString }),
   });
 
-  const guidesRoot = path.resolve(process.cwd(), "../telenor-guides");
+  const guidesRoot = path.resolve(process.cwd(), "telenor-guides");
   const selectedCategories = process.argv.slice(2);
   const categories = selectedCategories.length > 0 ? selectedCategories : ["ikke-pa-nett", "tregt-nett", "ustabilt-nett"];
 

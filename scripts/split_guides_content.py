@@ -267,7 +267,8 @@ def slugify(value: str) -> str:
     value = value.replace("å", "aa").replace("ø", "oe").replace("æ", "ae")
     value = re.sub(r"<[^>]+>", " ", value)
     value = re.sub(r"[^a-z0-9]+", "_", value)
-    value = re.sub(r"_+", "_", value).strip("_")
+    value = re.sub(r"_+", "_", value)
+    value = re.sub(r"-+", "-", value).strip("_-")
     return value or "unknown"
 
 

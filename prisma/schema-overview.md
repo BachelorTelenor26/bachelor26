@@ -68,9 +68,10 @@ TroubleshootingSession
 
 ## Localization
 
-`Step.title`, `Step.content`, `Step.agentNote`, `StepChoice.label`, and `StepChoice.buttonText` all store **localization keys**, not raw display text. These are resolved at render time from locale JSON files under `telenor-kb/public/locales/`.
+`Step.title` and `Step.agentNote` store localization keys for individual fields. `Step.localeKey` stores the **path to the locale file** (e.g. `ikke-pa-nett/huawei_b818/nullstill_ruter`) which is fetched at render time to access all fields (`title`, `query`, `body`, `choices`) freely. `StepChoice.label` and `StepChoice.buttonText` also store localization keys.
 
-Example key: `ikke-pa-nett.huawei_b818.step_check_lights.title`
+Example localeKey: `ikke-pa-nett/huawei_b818/nullstill_ruter`  
+Resolved file: `public/locales/ikke-pa-nett/huawei_b818/nullstill_ruter.json`
 
 ---
 

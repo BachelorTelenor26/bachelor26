@@ -134,7 +134,7 @@ async function validateArticle(article: DbArticle) {
 }
 
 async function main() {
-  const prismaClientPath = "../generated/prisma/client";
+  const prismaClientPath = "../prisma/generated/prisma/client";
   const prismaModule = await import(prismaClientPath);
   const adapterModule = await import("@prisma/adapter-pg");
   const PrismaPg = adapterModule.PrismaPg as new (options: { connectionString: string }) => unknown;

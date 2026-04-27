@@ -54,7 +54,7 @@ model Article {
 model Step {
   id             String            @id @default(cuid())
   title          String
-  content        String
+  localeKey      String
   agentNote      String?
   imageUrl       String?
   articleId      String
