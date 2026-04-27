@@ -1,12 +1,12 @@
 {
-  "title": "Signalstyrke",
+  "title": "Sjekk signalstyrken",
   "query": "Hvilken farge lyser lampen?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Lampen for signalstyrke på forsterkeren lyser forskjellig avhengig av hvor god dekning du har."
+          "text": "Lampen på forsterkeren viser hvor godt signal den mottar."
         }
       ]
     }

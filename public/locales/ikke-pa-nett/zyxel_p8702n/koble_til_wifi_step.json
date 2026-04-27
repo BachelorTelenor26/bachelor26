@@ -6,7 +6,7 @@
       "type": "paragraph",
       "content": [
         {
-          "text": "Du må koble til WiFi på enheten du bruker."
+          "text": "Du må koble til WiFi på enheten din."
         }
       ]
     },
@@ -15,12 +15,12 @@
       "items": [
         [
           {
-            "text": "Sjekk at Trådløst-lampen lyser på ruteren. Lyser den ikke, kan du skru den på ved å trykke på den blå knappen."
+            "text": "Sjekk at Trådløst-lampen lyser. Lyser den ikke, trykk på den blå knappen."
           }
         ],
         [
           {
-            "text": "Passordet finner du på undersiden av ruteren (etter WPA2) dersom du ikke selv har endret det."
+            "text": "Passordet finner du på undersiden av ruteren, etter WPA2."
           }
         ]
       ]

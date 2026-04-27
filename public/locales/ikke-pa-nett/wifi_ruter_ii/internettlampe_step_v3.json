@@ -1,20 +1,12 @@
 {
-  "title": "Internettlampe",
+  "title": "Sjekk internettlampen",
   "query": "Hvilken farge lyser lampen?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Nå som ruteren er tilkoblet strøm, bør du undersøke hvordan internettlampen lyser."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Dersom du fortsatt ikke kommer på nett, vil dette gi en indikasjon på hvor feilen ligger."
+          "text": "Ruteren er koblet til strøm. Sjekk hvordan internettlampen lyser — fargen forteller oss hvor feilen kan ligge."
         }
       ]
     }

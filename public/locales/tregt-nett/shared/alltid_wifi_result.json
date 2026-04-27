@@ -1,56 +1,12 @@
 {
-  "title": "Vi vil gjerne snakke med deg",
+  "title": "Kontakt oss",
   "query": "",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Med Internett fra oss og leieavtale på WiFi Ruter har du "
-        },
-        {
-          "text": "Alltid WiFi og Fornøydhetsgaranti! ",
-          "href": "/privat/internett/alltid-wifi/"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Kontakt oss på "
-        },
-        {
-          "text": "915 09000",
-          "href": "tel:%2091509000"
-        },
-        {
-          "text": ", så hjelper vi deg videre. "
-        },
-        {
-          "break": true
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Les mer om hvordan du kan "
-        },
-        {
-          "text": "forbedre WiFi-dekningen",
-          "href": "/privat/artikler/internett/tradlost-nettverk/slik-plasserer-du-ruteren-din/"
-        },
-        {
-          "text": ", eller bestill en eller flere WiFi Forsterkere på "
-        },
-        {
-          "text": "Mine sider",
-          "href": "https://www.telenor.no/minesider/"
-        },
-        {
-          "text": "."
+          "text": "Ring oss på 915 09000, så hjelper vi deg videre."
         }
       ]
     }

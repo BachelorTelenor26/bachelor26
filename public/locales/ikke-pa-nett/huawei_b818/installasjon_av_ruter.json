@@ -1,5 +1,5 @@
 {
-  "title": "Installasjon av ruter",
+  "title": "Sett opp ruteren",
   "query": "Løste dette problemet?",
   "body": [
     {
@@ -7,12 +7,12 @@
       "items": [
         [
           {
-            "text": "Koble til ruteren med WiFi eller ved hjelp av en nettverkskabel"
+            "text": "Koble til ruteren med WiFi eller nettverkskabel."
           }
         ],
         [
           {
-            "text": "En nettside vil automatisk dukke opp på maskinen. Denne må du klikke deg gjennom for å fullføre oppsettet."
+            "text": "En nettside åpner seg automatisk. Klikk deg gjennom for å fullføre oppsettet."
           }
         ]
       ]
@@ -21,27 +21,7 @@
       "type": "paragraph",
       "content": [
         {
-          "text": "Merk",
-          "bold": true
-        },
-        {
-          "text": ": Om nettsiden ikke dukker opp automatisk, kan du søke den opp manuelt ved å skrive inn "
-        },
-        {
-          "text": "192.168.1.1",
-          "bold": true
-        },
-        {
-          "text": " i adressefeltet til nettleseren. Vi anbefaler at du bruker en av disse nettleserne: Google Chrome, Safari, Microsoft Edge eller Firefox."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Se informasjon om Huawei B818 for mer hjelp med installasjon og oppsett.",
-          "href": "/privat/kundeservice/mobiltbredband/mbb818.jsp"
+          "text": "Åpner ikke siden seg? Skriv 192.168.1.1 i adressefeltet. Vi anbefaler Chrome, Safari, Edge eller Firefox."
         }
       ]
     }

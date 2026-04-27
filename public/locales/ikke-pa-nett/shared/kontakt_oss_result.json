@@ -1,21 +1,12 @@
 {
-  "title": "Vi vil gjerne snakke med deg",
+  "title": "Kontakt oss",
   "query": "",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Vi må undersøke problemet ditt nærmere. Ta kontakt med kundeservice, så hjelper vi deg videre."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Se kontaktinformasjon og åpningstider",
-          "href": "/kundeservice/kontakt-oss/"
+          "text": "Vi trenger å undersøke dette nærmere. Ring kundeservice, så hjelper vi deg videre."
         }
       ]
     }

@@ -1,20 +1,12 @@
 {
-  "title": "Er du koblet til WiFi?",
+  "title": "Bruker du WiFi?",
   "query": "",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Det kan virke som at problemet oppstår når de er flere på nett samtidig."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Dette kan skyldes at du har en lavere hastighet enn det du har behov for, feil på vår linje, eller at problemet skyldes svak WiFi-dekning."
+          "text": "Problemet oppstår kanskje fordi det er mange på nett samtidig."
         }
       ]
     }

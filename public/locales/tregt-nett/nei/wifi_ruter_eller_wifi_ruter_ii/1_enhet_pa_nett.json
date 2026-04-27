@@ -1,12 +1,12 @@
 {
-  "title": "Koble vekk andre enheter",
+  "title": "Koble fra andre enheter",
   "query": "Er nettet fremdeles tregt?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Koble fra internett på alle datamaskiner og mobiltelefoner unntatt den du bruker. Dette kan du gjøre ved å:"
+          "text": "Koble fra internett på alle enheter unntatt den du bruker nå."
         }
       ]
     },
@@ -26,9 +26,6 @@
         [
           {
             "text": "Koble fra WiFi"
-          },
-          {
-            "break": true
           }
         ]
       ]
@@ -37,11 +34,7 @@
       "type": "paragraph",
       "content": [
         {
-          "text": "Test hastigheten på Internett ",
-          "href": "https://www.telenor.no/speedometer/"
-        },
-        {
-          "text": "når du kun har tilkoblet en enhet."
+          "text": "Test hastigheten etterpå."
         }
       ]
     }

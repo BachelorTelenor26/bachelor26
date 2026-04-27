@@ -1,24 +1,12 @@
 {
-  "title": "Er du tilkoblet WiFi?",
+  "title": "Bruker du WiFi?",
   "query": "",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Det kan være forskjell på hvordan hastigheten oppleves på trådløst nett og med nettverkskabel. WiFi er ofte utsatt for flere forstyrrelser i hjemmet som kan påvirke hastigheten."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Les mer om hva som kan påvirke WiFi",
-          "href": "/privat/artikler/internett/tradlost-nettverk/slik-plasserer-du-ruteren-din/"
-        },
-        {
-          "text": "."
+          "text": "WiFi kan bli tregere av forstyrrelser i hjemmet. En nettverkskabel gir vanligvis mer stabil tilkobling."
         }
       ]
     }

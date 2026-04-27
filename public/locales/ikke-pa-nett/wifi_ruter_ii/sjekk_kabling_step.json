@@ -1,27 +1,12 @@
 {
-  "title": "Sjekk kabling",
+  "title": "Sjekk kablene",
   "query": "Løste dette problemet?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "En eller flere av kablene kan være koblet feil."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Følg veiledning for "
-        },
-        {
-          "text": "oppkobling av WiFi Ruter II",
-          "href": "/kundeservice/internett/modem-og-ruter/wifi-ruter-2/koble-til/"
-        },
-        {
-          "text": " for hjelp med riktig kabling."
+          "text": "En eller flere kabler kan sitte feil. Sjekk at alle kabler er koblet til riktig."
         }
       ]
     }

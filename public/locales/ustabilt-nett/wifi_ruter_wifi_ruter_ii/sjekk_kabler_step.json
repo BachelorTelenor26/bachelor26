@@ -3,29 +3,21 @@
   "query": "Løste noe av dette problemet?",
   "body": [
     {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Ustabilitet kan skyldes problemer med nettverkskabelen eller uttakene kabelen er koblet til."
-        }
-      ]
-    },
-    {
       "type": "unordered-list",
       "items": [
         [
           {
-            "text": "Sjekk at kabelen ikke er skadet"
+            "text": "Sjekk at kabelen ikke er skadet."
           }
         ],
         [
           {
-            "text": "Bytt LAN-uttak på baksiden av ruteren"
+            "text": "Bytt LAN-uttak på baksiden av ruteren."
           }
         ],
         [
           {
-            "text": "Bytt nettverkskabelen med en annen"
+            "text": "Bytt ut kabelen med en annen."
           }
         ]
       ]

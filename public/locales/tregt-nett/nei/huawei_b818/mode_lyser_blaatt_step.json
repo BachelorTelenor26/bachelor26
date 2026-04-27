@@ -1,24 +1,12 @@
 {
-  "title": "Du er tilkoblet 3G",
+  "title": "Du er koblet til 3G",
   "query": "Er 4G eller 4G+ tilgjengelig på din adresse?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Ruteren din mottar signaler på 3G og er tilkoblet mobilnettet. 3G kan fungere fint til surfing på Internett, men du får bedre hastighet og kapasitet med 4G/4G+. Kanskje er 3G-dekningen årsaken til at du opplever nettet som ustabilt."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Sjekk dekningen",
-          "href": "/privat/dekningskart/"
-        },
-        {
-          "text": " i ditt område for å finne ut om du har tilgang til 4G/4G+."
+          "text": "Ruteren er koblet til 3G. Du får bedre hastighet med 4G. Sjekk dekningen i ditt område."
         }
       ]
     }

@@ -6,24 +6,7 @@
       "type": "paragraph",
       "content": [
         {
-          "text": "Mørk lampe indikerer at WiFi Forsterkeren hverken sender eller mottar signaler."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Sjekk at forsterkeren er koblet opp mot ruteren."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Slik kobler opp din WiFi Forsterker.",
-          "href": "http://cms.telenor.no/privat/kundeservice/bredbandshjelp/utstyr/wifi-forsterker/oppkobling/"
+          "text": "Mørk lampe betyr at forsterkeren ikke mottar signal. Sjekk at den er koblet til ruteren."
         }
       ]
     }

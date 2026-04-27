@@ -1,5 +1,5 @@
 {
-  "title": "Sjekk at ruteren er tilkoblet strøm",
+  "title": "Sjekk strømtilkoblingen",
   "query": "Hvordan lyser strømlampen nå?",
   "body": [
     {
@@ -7,21 +7,17 @@
       "items": [
         [
           {
-            "text": "Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten"
+            "text": "Sjekk at strømkabelen sitter godt i ruteren og i stikkontakten."
           }
         ],
         [
           {
-            "text": "Sjekk at bryteren for av/på står "
-          },
-          {
-            "text": "På",
-            "bold": true
+            "text": "Sjekk at av/på-bryteren står på."
           }
         ],
         [
           {
-            "text": "Test eventuelt et annet strømuttak du vet fungerer"
+            "text": "Prøv et annet strømuttak du vet fungerer."
           }
         ]
       ]
@@ -30,7 +26,7 @@
       "type": "paragraph",
       "content": [
         {
-          "text": "Noen strømforsyninger har også en liten lampe/diode som lyser når den får strøm - sjekk evt. om den lyser når det står koblet til."
+          "text": "Noen strømforsyninger har en liten lampe — sjekk om den lyser."
         }
       ]
     }

@@ -1,18 +1,12 @@
 {
-  "title": "Er du tilkoblet WiFi?",
+  "title": "Er du koblet til WiFi?",
   "query": "",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Sjekk om WiFi-ikonet på PC eller mobil viser tilkoblet. "
-        },
-        {
-          "break": true
-        },
-        {
-          "text": "På PC gjør du dette ved å holde musepekeren over ikonet. På mobil kan du gå inn på Innstillinger og deretter WiFi."
+          "text": "Sjekk om WiFi-ikonet på PC eller mobil viser at du er koblet til. På PC holder du musepekeren over ikonet. På mobil går du til Innstillinger og deretter WiFi."
         }
       ]
     }

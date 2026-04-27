@@ -1,5 +1,5 @@
 {
-  "title": "Sjekk tilkobling",
+  "title": "Sjekk tilkoblingen",
   "query": "Løste dette problemet?",
   "body": [
     {
@@ -7,23 +7,12 @@
       "items": [
         [
           {
-            "text": "Sjekk at enheten du bruker er tilkoblet ruteren via WiFi eller nettverkskabel. "
-          },
-          {
-            "text": "Les hvordan du kobler til WiFi på våre utstyr-sider.",
-            "href": "/privat/kundeservice/mobiltbredband/mbb818.jsp"
+            "text": "Sjekk at enheten din er koblet til ruteren via WiFi eller kabel."
           }
         ],
         [
           {
-            "text": "Dersom du har tilgang til en ekstra mobil eller datamaskin, undersøk om problemet er det samme på denne enheten. Er problemet det samme, kan du velge "
-          },
-          {
-            "text": "Flere ",
-            "bold": true
-          },
-          {
-            "text": "på forrige steg."
+            "text": "Har du en annen enhet? Sjekk om problemet er det samme der også."
           }
         ]
       ]

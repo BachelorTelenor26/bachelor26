@@ -1,20 +1,12 @@
 {
-  "title": "WiFi Forsterker",
+  "title": "Har du en WiFi-forsterker?",
   "query": "Har du leieavtale på en WiFi Forsterker eller WiFi Forsterker II fra oss?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "WiFi Forsterker sikrer god dekning i boliger med krevende dekningsforhold."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Forsterkeren viderefører de trådløse signalene som blir sendt fra din ruter, for å sikre dekning på et størst mulig areal."
+          "text": "En WiFi-forsterker sender signalet videre fra ruteren. Har du en?"
         }
       ]
     }

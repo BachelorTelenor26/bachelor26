@@ -1,28 +1,12 @@
 {
-  "title": "Prøv med en nettverkskabel",
+  "title": "Prøv nettverkskabel",
   "query": "Får du riktig hastighet med kabel?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Problemer med hastighet kan gjelde kun for WiFi. For å finne ut om dette er problemet, anbefaler vi å koble en nettverkskabel mellom ruteren og PC’n."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Sjekk at kabelen ikke har synlige skader før du kobler den til."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Hopp over dette trinnet hvis du ikke har uttak for nettverkskabel på din PC."
+          "text": "Koble en nettverkskabel mellom ruteren og PC-en. Sjekk at kabelen ikke er skadet. Hopp over hvis PC-en ikke har kabeluttak."
         }
       ]
     }

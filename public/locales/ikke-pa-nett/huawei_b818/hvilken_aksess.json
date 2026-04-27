@@ -1,12 +1,12 @@
 {
-  "title": "Hvilken type Internett har du?",
+  "title": "Hvilken type internett har du?",
   "query": "Hvilken type Internett har du?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Vi leverer Internett gjennom flere typer teknologier. Over mobilnettet leverer vi Mobilt Bredbånd og Trådløst Bredbånd."
+          "text": "Vi leverer internett på flere måter. Velg det som passer deg:"
         }
       ]
     },
@@ -15,12 +15,12 @@
       "items": [
         [
           {
-            "text": "Mobilt Bredbånd kan du bruke alle steder der det er mobildekning, og har en gitt mengde mobildata tilgjengelig hver måned."
+            "text": "Mobilt Bredbånd — fungerer overalt med mobildekning, med en fast datamengde per måned."
           }
         ],
         [
           {
-            "text": "Trådløst Bredbånd fungerer kun på adressen der du bor."
+            "text": "Trådløst Bredbånd — fungerer kun på adressen der du bor."
           }
         ]
       ]

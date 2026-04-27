@@ -1,5 +1,5 @@
 {
-  "title": "Sjekk at ruteren er tilkoblet strøm",
+  "title": "Sjekk strømtilkoblingen",
   "query": "Hvordan lyser strømlampen nå?",
   "body": [
     {
@@ -7,17 +7,17 @@
       "items": [
         [
           {
-            "text": "Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten"
+            "text": "Sjekk at strømkabelen sitter godt i ruteren og i stikkontakten."
           }
         ],
         [
           {
-            "text": "Sjekk at bryteren for av/på står På"
+            "text": "Sjekk at av/på-bryteren står på."
           }
         ],
         [
           {
-            "text": "Test eventuelt et annet strømuttak du vet fungerer"
+            "text": "Prøv et annet strømuttak du vet fungerer."
           }
         ]
       ]

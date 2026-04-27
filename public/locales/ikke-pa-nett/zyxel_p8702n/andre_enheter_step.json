@@ -1,20 +1,12 @@
 {
-  "title": "Fungerer WiFi på andre enheter?",
+  "title": "Virker WiFi på andre enheter?",
   "query": "",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Forsøk å koble til WiFi på en annen enhet."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Dette kan for eksempel være en annen mobiltelefon, PC eller nettbrett."
+          "text": "Prøv å koble til WiFi på en annen enhet — mobil, PC eller nettbrett."
         }
       ]
     }

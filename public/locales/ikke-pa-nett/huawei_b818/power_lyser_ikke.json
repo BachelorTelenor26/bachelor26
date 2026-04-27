@@ -1,5 +1,5 @@
 {
-  "title": "Sjekk at ruteren er tilkoblet strøm",
+  "title": "Sjekk strømtilkoblingen",
   "query": "Lyser POWER-lampen nå?",
   "body": [
     {
@@ -7,17 +7,17 @@
       "items": [
         [
           {
-            "text": "Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten"
+            "text": "Sjekk at strømkabelen sitter godt i ruteren og i stikkontakten."
           }
         ],
         [
           {
-            "text": "Sjekk at ruteren er skrudd på"
+            "text": "Sjekk at ruteren er skrudd på."
           }
         ],
         [
           {
-            "text": "Test eventuelt et annet strømuttak du vet fungerer"
+            "text": "Prøv et annet strømuttak du vet fungerer."
           }
         ]
       ]

@@ -1,12 +1,12 @@
 {
-  "title": "Lampestatus",
+  "title": "Sjekk MODE-lampen",
   "query": "Hvilken farge lyser MODE-lampen?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "MODE-lampen indikerer hvilken type mobildekning du har på ruteren."
+          "text": "MODE-lampen viser hvilken type mobildekning ruteren har."
         }
       ]
     }

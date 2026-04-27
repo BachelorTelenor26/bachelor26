@@ -1,12 +1,12 @@
 {
-  "title": "Koble vekk andre enheter",
+  "title": "Koble fra andre enheter",
   "query": "Er det fremdeles ustabilt?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Koble fra internett på alle datamaskiner og mobiltelefoner unntatt den du bruker. Dette kan du gjøre ved å:"
+          "text": "Koble fra internett på alle enheter unntatt den du bruker nå."
         }
       ]
     },
@@ -34,7 +34,7 @@
       "type": "paragraph",
       "content": [
         {
-          "text": "Test stabiliteten på internettet når du kun har tilkoblet en enhet."
+          "text": "Test stabiliteten etterpå."
         }
       ]
     }

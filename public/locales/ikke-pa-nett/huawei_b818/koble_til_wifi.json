@@ -6,7 +6,7 @@
       "type": "paragraph",
       "content": [
         {
-          "text": "Du må koble til WiFi på enheten du bruker."
+          "text": "Du må koble til WiFi på enheten din."
         }
       ]
     },
@@ -14,22 +14,7 @@
       "type": "paragraph",
       "content": [
         {
-          "text": "Passordet finner du på undersiden av ruteren (etter WiFi Key) dersom du ikke selv har endret det."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Her finner du "
-        },
-        {
-          "text": "mer informasjon om innstillinger og trådløst nett",
-          "href": "https://www.telenor.no/privat/kundeservice/mobiltbredband/mbb818.jsp"
-        },
-        {
-          "text": "."
+          "text": "Passordet står på undersiden av ruteren, etter WiFi Key."
         }
       ]
     }

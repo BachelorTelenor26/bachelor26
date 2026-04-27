@@ -1,12 +1,12 @@
 {
-  "title": "Lampestatus",
+  "title": "Sjekk lampene",
   "query": "Lyser lampene som på bildet?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Den øverste lampen (Internett) skal lyse stabilt grønn, mens den nederste (strøm) skal lyse stabilt hvit."
+          "text": "Den øverste lampen (internett) skal lyse stabilt grønt. Den nederste (strøm) skal lyse stabilt hvitt."
         }
       ]
     }

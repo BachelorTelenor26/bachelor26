@@ -1,27 +1,12 @@
 {
-  "title": "Riktig hastighet",
+  "title": "Hastigheten er riktig",
   "query": "Vil du feilsøke problemer med ustabilt nett?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Testen måler riktig hastighet for ditt abonnement. Ønsker du høyere hastighet, kan du oppgradere på "
-        },
-        {
-          "text": "Mine sider",
-          "href": "https://www.telenor.no/minesider/"
-        },
-        {
-          "text": "."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Opplever du at hastigheten varierer med hyppige mellomrom, kan det skyldes at nettet er ustabilt."
+          "text": "Du får riktig hastighet for abonnementet ditt. Opplever du at det varierer? Det kan være ustabilt nett."
         }
       ]
     }

@@ -1,25 +1,12 @@
 {
-  "title": "Sjekk kabling",
+  "title": "Sjekk kablene",
   "query": "Løste dette problemet?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "En eller flere av kablene kan være koblet feil.   "
-        },
-        {
-          "break": true
-        },
-        {
-          "text": "Følg veiledning for "
-        },
-        {
-          "text": "oppkobling av Internett over kabel ",
-          "href": "/privat/kundeservice/bredbandshjelp/utstyr/zyxel-8702/oppkobling/velg-kontakt/dsl/"
-        },
-        {
-          "text": "for hjelp med riktig kabling."
+          "text": "En eller flere kabler kan sitte feil. Sjekk at alle kabler er koblet til riktig."
         }
       ]
     }

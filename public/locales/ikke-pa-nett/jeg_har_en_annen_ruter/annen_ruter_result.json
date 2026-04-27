@@ -1,12 +1,12 @@
 {
-  "title": "Eldre rutere",
+  "title": "Har du en eldre ruter?",
   "query": "Gå til oversikt over utstyr, eller bestill WiFi Ruter på Mine sider",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Du finner hjelp til blant annet lampestatus, nettverksnavn og passord, og innstillinger på ruteren på vår utstyrsoversikt."
+          "text": "Du finner hjelp til lampestatus, nettverksnavn og passord på vår utstyrsoversikt."
         }
       ]
     },
@@ -14,29 +14,7 @@
       "type": "paragraph",
       "content": [
         {
-          "text": "Eldre utstyr kan også være en årsak til problemer med Internett. Ved å oppgradere utstyret kan du oppleve at Internett både blir mer stabilt, og gir bedre WiFi-dekning."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Vi anbefaler vår WiFi Ruter og WiFi Forsterker med "
-        },
-        {
-          "text": "Fornøydhetsgaranti",
-          "href": "/privat/internett/alltid-wifi/"
-        },
-        {
-          "text": ", disse kan du bestille på Mine Sider. Har du Mobilt Bredbånd, finner du til enhver tid "
-        },
-        {
-          "text": "det nyeste utstyret i vår nettbutikk",
-          "href": "https://nettbutikk.telenor.no/mobilt-bredbaand/"
-        },
-        {
-          "text": "."
+          "text": "Eldre utstyr kan gi problemer med internett. Ved å oppgradere kan du få et mer stabilt nett og bedre WiFi-dekning."
         }
       ]
     }

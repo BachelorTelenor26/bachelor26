@@ -1,28 +1,12 @@
 {
-  "title": "Forsøk å endre plassering av ruter",
+  "title": "Flytt ruteren til et annet sted",
   "query": "Løste dette problemet?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Forsøk å få inn bedre signaler ved å plassere ruteren et annet sted i huset."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "MODE-lampen vil endre farge dersom du får 4G/4G+ dekning."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Vi anbefaler at du plasserer ruteren:"
+          "text": "Plasser ruteren et annet sted for å få bedre signal. MODE-lampen skifter farge når du får 4G/4G+."
         }
       ]
     },
@@ -31,17 +15,17 @@
       "items": [
         [
           {
-            "text": "Høyt"
+            "text": "Høyt oppe"
           }
         ],
         [
           {
-            "text": "Sentralt"
+            "text": "Sentralt i huset"
           }
         ],
         [
           {
-            "text": "Gjerne i nærheten av et vindu"
+            "text": "Nær et vindu"
           }
         ]
       ]
@@ -50,15 +34,7 @@
       "type": "paragraph",
       "content": [
         {
-          "text": "Det kan være nyttig å se hvor du får best signaler på mobilen og flytte ruteren deretter."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Legg også merke til lampene som indikerer signalstyrke for best mulig dekning."
+          "text": "Sjekk mobilsignalet ditt for å finne det beste stedet."
         }
       ]
     }

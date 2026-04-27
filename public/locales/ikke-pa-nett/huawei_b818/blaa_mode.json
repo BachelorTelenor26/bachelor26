@@ -1,12 +1,12 @@
 {
-  "title": "Du er tilkoblet 3G",
+  "title": "Du er koblet til 3G",
   "query": "Gjelder problemet på en eller flere enheter?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Ruteren din mottar signaler på 3G og er tilkoblet mobilnettet."
+          "text": "Ruteren er koblet til mobilnettet på 3G."
         }
       ]
     }

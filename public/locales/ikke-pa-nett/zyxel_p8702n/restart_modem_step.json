@@ -1,5 +1,5 @@
 {
-  "title": "Restart modem",
+  "title": "Start modemet på nytt",
   "query": "Løste dette problemet?",
   "body": [
     {
@@ -7,27 +7,19 @@
       "items": [
         [
           {
-            "text": "Ta ut strømkontakten"
+            "text": "Ta ut strømkabelen."
           }
         ],
         [
           {
-            "text": "Vent i 10 sekunder"
+            "text": "Vent 10 sekunder."
           }
         ],
         [
           {
-            "text": "Sett inn strømkontakten"
+            "text": "Koble til igjen. Vent noen minutter."
           }
         ]
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "NB: Det kan ta noen minutter før modemet er tilkoblet."
-        }
       ]
     }
   ],

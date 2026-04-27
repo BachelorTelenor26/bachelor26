@@ -1,20 +1,12 @@
 {
-  "title": "Flere på nett",
+  "title": "Er det mange på nett?",
   "query": "Er det flere som bruker nettet samtidig?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Antall enheter (PC, nettbrett, mobiler etc.) tilkoblet nettet kan påvirke hastigheten."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Hastigheten blir fordelt på alle brukere, noe som kan skape utfordringer hvis f.eks hele familien ser på Netflix samtidig."
+          "text": "Mange enheter på samme nett kan gjøre det tregere for alle."
         }
       ]
     }

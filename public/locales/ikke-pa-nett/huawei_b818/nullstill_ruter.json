@@ -6,7 +6,7 @@
       "type": "paragraph",
       "content": [
         {
-          "text": "NB! Før du nullstiller ruteren bør du sjekke at du har PIN-koden til SIM-kortet tilgjengelig. Alle endringer på ruteren vil tilbakestilles, og du må sette den opp på nytt."
+          "text": "OBS: Ha PIN-koden til SIM-kortet klar. Nullstilling sletter alle innstillinger."
         }
       ]
     },
@@ -15,22 +15,22 @@
       "items": [
         [
           {
-            "text": "Finn frem en penn eller en annen tynn gjenstand"
+            "text": "Finn en penn eller tynn gjenstand."
           }
         ],
         [
           {
-            "text": "Stikk pennen inn i hullet merket RESET"
+            "text": "Stikk den inn i hullet merket RESET."
           }
         ],
         [
           {
-            "text": "Hold pennen inne i 20 sekunder og slipp"
+            "text": "Hold inne i 20 sekunder og slipp."
           }
         ],
         [
           {
-            "text": "Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter."
+            "text": "Vent opptil 5 minutter mens ruteren starter opp."
           }
         ]
       ]

@@ -1,24 +1,12 @@
 {
-  "title": "",
+  "title": "Svakt signal",
   "query": "Løste dette problemet?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Rød lampe indikerer at WiFi Forsterkeren mottar svake signaler. Forsøk å plassere forsterkeren nærmere ruteren."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Best plassering for forsterkeren er et sted mellom ruteren og der du ønsker god dekning. "
-        },
-        {
-          "text": "Les mer om plassering.",
-          "href": "/privat/artikler/internett/tradlost-nettverk/derfor-trenger-du-forsterker/"
+          "text": "Rød lampe betyr svakt signal. Plasser forsterkeren nærmere ruteren."
         }
       ]
     }

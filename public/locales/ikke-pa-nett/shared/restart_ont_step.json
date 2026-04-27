@@ -1,5 +1,5 @@
 {
-  "title": "Restart fiberboksen",
+  "title": "Start fiberboksen på nytt",
   "query": "Løste dette problemet?",
   "body": [
     {
@@ -7,27 +7,19 @@
       "items": [
         [
           {
-            "text": "Ta ut strømkontakten"
+            "text": "Ta ut strømkabelen."
           }
         ],
         [
           {
-            "text": "Vent i 1 minutt"
+            "text": "Vent 1 minutt."
           }
         ],
         [
           {
-            "text": "Sett inn strømkontakten"
+            "text": "Koble til igjen. Vent noen minutter."
           }
         ]
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "NB: Det kan ta noen minutter før fiberboksen er tilkoblet."
-        }
       ]
     }
   ],

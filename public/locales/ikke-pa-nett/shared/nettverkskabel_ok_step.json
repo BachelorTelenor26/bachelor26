@@ -1,12 +1,12 @@
 {
-  "title": "Problemer med WiFi",
+  "title": "Problemet er på WiFi",
   "query": "Vil du fortsette feilsøkingen?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Du kommer på nett med nettverkskabel tilkoblet. Dette betyr at problemet ikke ligger på våre linjer, men på WiFi-tilkoblingen."
+          "text": "Du kommer på nett med kabel. Problemet ligger på WiFi, ikke på linjen vår."
         }
       ]
     },
@@ -14,15 +14,7 @@
       "type": "paragraph",
       "content": [
         {
-          "text": "Siden du har testet WiFi på flere enheter, er det sannsynlig at problemet ligger på ruteren eller annet nettverksutstyr du har tilkoblet."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Du kan fortsette å bruke internett med nettverkskabel, eller feilsøke videre på utstyret."
+          "text": "Du kan fortsette å bruke internett med kabel, eller feilsøke videre."
         }
       ]
     }

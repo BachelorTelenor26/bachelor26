@@ -1,19 +1,12 @@
 {
-  "title": "Ustabilt nett",
+  "title": "Ustabilt internett hjemme?",
   "query": "",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Velg "
-        },
-        {
-          "text": "Start",
-          "bold": true
-        },
-        {
-          "text": " dersom du opplever ustabilt internett hjemme, så veileder vi deg gjennom feilsøkingen."
+          "text": "Trykk Start så hjelper vi deg steg for steg."
         }
       ]
     }

@@ -1,31 +1,12 @@
 {
-  "title": "Sjekk hastigheten",
+  "title": "Sjekk hastigheten din",
   "query": "Måler du riktig hastighet?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Sjekk hvilken hastighet du måler på internett ved hjelp av "
-        },
-        {
-          "text": "vårt speedometer",
-          "href": "https://www.telenor.no/speedometer/"
-        },
-        {
-          "text": "."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Er du usikker på hvilken hastighet du abonnerer på, kan du se dette på "
-        },
-        {
-          "text": "Mine sider.",
-          "href": "https://www.telenor.no/minesider/"
+          "text": "Sjekk hastigheten med speedometeret vårt. Er du usikker på hvilken hastighet du har? Sjekk Mine sider."
         }
       ]
     }

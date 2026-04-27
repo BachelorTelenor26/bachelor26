@@ -1,12 +1,12 @@
 {
-  "title": "Ruteren starter ikke opp",
+  "title": "Ruteren starter ikke",
   "query": "Løste dette problemet?",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Dersom Power-lampen blinker blått over en lengre periode (mer enn 5 minutter) eller lyser stabilt rødt, skyldes dette ofte feil på ruteren."
+          "text": "Blinker Power-lampen blått i mer enn 5 minutter, eller lyser den stabilt rødt? Det tyder på feil på ruteren."
         }
       ]
     },
@@ -14,7 +14,7 @@
       "type": "paragraph",
       "content": [
         {
-          "text": "Problemet kan i enkelte tilfeller løses ved å ta en spesiell form for nullstilling."
+          "text": "OBS: Nullstilling sletter nettverksnavn, passord og alle innstillinger."
         }
       ]
     },
@@ -23,42 +23,34 @@
       "items": [
         [
           {
-            "text": "Skru av ruteren med Av/På-bryteren"
+            "text": "Skru av ruteren med av/på-bryteren."
           }
         ],
         [
           {
-            "text": "Finn frem en penn eller en annen tynn gjenstand"
+            "text": "Finn en penn eller tynn gjenstand."
           }
         ],
         [
           {
-            "text": "Stikk pennen inn i hullet merket med RESET"
+            "text": "Stikk den inn i hullet merket RESET."
           }
         ],
         [
           {
-            "text": "Skru på ruteren med Av/På-bryteren samtidig som du holder pennen i RESET-hullet"
+            "text": "Skru på ruteren mens du holder pennen inne."
           }
         ],
         [
           {
-            "text": "Hold pennen inne i 30 sekunder, og slipp"
+            "text": "Hold inne i 30 sekunder og slipp."
           }
         ],
         [
           {
-            "text": "Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter"
+            "text": "Vent opptil 5 minutter."
           }
         ]
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren."
-        }
       ]
     }
   ],

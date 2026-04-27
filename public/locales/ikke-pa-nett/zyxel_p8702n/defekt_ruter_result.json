@@ -1,39 +1,12 @@
 {
-  "title": "Ruteren er defekt",
+  "title": "Ruteren er ødelagt",
   "query": "",
   "body": [
     {
       "type": "paragraph",
       "content": [
         {
-          "text": "Ruteren din er dessverre defekt. Årsakene til dette kan være mange, men ofte kan det oppstå "
-        },
-        {
-          "text": "problemer ved lyn og torden",
-          "href": "https://www.online.no/min-sky/forbered-deg-paa-tordenvaer"
-        },
-        {
-          "text": "."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Ta kontakt med kundeservice, så skal vi bestille en ny ruter til deg."
-        },
-        {
-          "break": true
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Se kontaktinformasjon og åpningstider",
-          "href": "http://www.telenor.no/privat/kundeservice/kontakt/"
+          "text": "Ruteren din er ødelagt. Ring kundeservice, så bestiller vi en ny til deg."
         }
       ]
     }

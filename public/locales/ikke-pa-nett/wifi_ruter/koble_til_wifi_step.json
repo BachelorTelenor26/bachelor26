@@ -6,22 +6,7 @@
       "type": "paragraph",
       "content": [
         {
-          "text": "Du må koble til WiFi på enheten du bruker."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "text": "Er du usikker på hva passordet ditt er, kan du sende SMS til 2000 med kodeord "
-        },
-        {
-          "text": "wifi 000 000 00",
-          "bold": true
-        },
-        {
-          "text": " (siste 8 siffer i S/N)"
+          "text": "Du må koble til WiFi på enheten din. Passordet finner du på undersiden av ruteren."
         }
       ]
     }
