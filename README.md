@@ -1,146 +1,36 @@
-﻿# Telenor Kunnskapsplattform
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Bachelorprosjekt ved NTNU 2026 — en delt kunnskapsplattform for
-teknisk feilsøking hos Telenor.
+## Getting Started
 
-## Kom i gang
-
-### Krav
-- Node.js 18+
-- npm
-
-### Installasjon
-
-```bash
-git clone <repo-url>
-cd telenor-kb
-npm install
-```
-
-Kopier `.env.example` til `.env` og fyll inn verdier:
-
-```bash
-cp .env.example .env
-```
-
-Generer Prisma-klient og sync database:
-
-```bash
-npx prisma generate
-npx prisma db push
-npx prisma db seed
-```
-
-Start utviklingsserver:
+First, run the development server:
 
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
----
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Mappestruktur
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-*** Vi må diskutere i plenum ***
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-```
-app/
-  (kunde)/          ← kundeportal-ruter (åpen, ingen innlogging)
-  (agent)/          ← agentportal-ruter (krever innlogging)
-  api/              ← API routes
-components/
-  shared/           ← felles komponenter begge portaler bruker
-  kunde/            ← komponenter kun for kundeportal
-  agent/            ← komponenter kun for agentportal
-lib/
-  prisma.ts         ← Prisma-klient (singleton)
-  auth.ts           ← Better-auth konfig
-prisma/
-  schema.prisma     ← datamodell
-  seed.ts           ← testdata
-```
+## Learn More
 
----
+To learn more about Next.js, take a look at the following resources:
 
-## Kodekonvensjoner
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### Generelt
-- Språk i kode: **engelsk** (variabelnavn, kommentarer, commit-meldinger)
-- Språk i UI: **norsk**
-- Alltid TypeScript, ingen `any`
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-### Filnavn
-- Komponenter: `PascalCase.tsx` (f.eks. `ArticleCard.tsx`)
-- Andre filer: `camelCase.ts` (f.eks. `prisma.ts`)
-- Sider: `page.tsx` (Next.js-konvensjon)
+## Deploy on Vercel
 
-### Komponenter
-- Bruk alltid function components (ikke class components)
-- Definer alltid prop-typer eksplisitt med TypeScript interfaces
-- Server components som standard
-- `'use client'` kun når komponenten trenger `useState`,
-  `useEffect`, event handlers eller browser-APIer
-- Hold komponenter dumme — send data som props,
-  håndter logikk i server components eller API routes
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### Git
-- Branch-naming: `feature/navn`, `fix/navn`
-- Commit-meldinger følger konvensjonen:
-  - `feat:` ny funksjonalitet
-  - `fix:` bugfix
-  - `chore:` konfigurasjon, avhengigheter
-  - `docs:` dokumentasjon
-
-### ESLint
-Prosjektet bruker ESLint med Next.js sine anbefalte regler.
-Kjør linting før du pusher:
-```bash
-npm run lint
-```
-
-## Ikoner 
-
-Valgte Lucide-react ikon bibliteket 
-
-https://lucide.dev/icons/
-
----
-
-## Miljøvariabler
-
-Se `.env.example` for alle nødvendige variabler.
-
-| Variabel | Beskrivelse |
-|---|---|
-| `DATABASE_URL` | Neon PostgreSQL connection string |
-| `BETTER_AUTH_SECRET` | Tilfeldig lang streng for session-signering |
-| `BETTER_AUTH_URL` | Base URL (http://localhost:3000 lokalt) |
-
----
-
-## Database
-
-Datamodellen er definert i `prisma/schema.prisma`.
-
-Etter endringer i skjemaet:
-```bash
-npx prisma generate   # oppdater klient
-npx prisma db push    # sync til database
-```
-
-For å se databasen i nettleser:
-```bash
-npx prisma studio
-```
-
----
-
-## Viktige avklaringer før vi starter
-
-- [ ] Diskutere og avtael datamodellen i `prisma/schema.prisma`
-- [ ] Avtale hvem som jobber på hvilke sider/komponenter
-- [ ] Alle trenger egen `.env` med sine verdier
-- [ ] Seed-data legges til i `prisma/seed.ts`, hent reelle
-  feilsøkingssteg fra telenor.no/hjelp og skriv om i henhold
-  til klarspråkprinsippene (korte setninger, hverdagsspråk,
-  aktiv stemme)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
