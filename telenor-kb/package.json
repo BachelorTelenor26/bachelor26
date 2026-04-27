@@ -10,7 +10,7 @@
     "seed": "npx tsx scripts/seed.ts",
     "validate:import": "npx tsx scripts/validate-import.ts",
     "db:studio": "npx prisma studio",
-    "visualize:db": "npx tsx visualizations/export-db-diagrams.ts",
+    "visualize:db": "npx tsx scripts/export-db-diagrams.ts",
     "simulate:session-code": "npx tsx visualizations/simulate-session-code.ts"
   },
   "dependencies": {
