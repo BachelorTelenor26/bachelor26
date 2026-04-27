@@ -1,0 +1,27 @@
+{
+  "title": "Lampestatus",
+  "query": "Lyser Power, WAN og Internett som på bildet?",
+  "body": "<div style='text-align: center;'>Du kan aktivere lampene ved å trykke kort på den store blå knappen. Alle lamper på Zyxel P8702N skrur seg automatisk av etter 30 sekunder med unntak av Power og Trådløst.</div><div style='text-align: center;'>Lampene lyser som de skal når Power lyser stabilt blå, WAN lyser gul eller grønn, og Internett lyser grønn. </div>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei, Power er mørk",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei, Power er rød eller blinker blå (i mer enn 5 minutter)",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei, WAN-lampen er mørk",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei, Internett er rød",
+      "secondaryLabel": ""
+    }
+  ]
+}

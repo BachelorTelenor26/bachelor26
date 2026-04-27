@@ -1,0 +1,23 @@
+{
+  "title": "Signalstyrke",
+  "query": "Hvilken farge lyser lampen?",
+  "body": "<p>Lampen for signalstyrke på forsterkeren lyser forskjellig avhengig av hvor god dekning du har.</p>",
+  "choices": [
+    {
+      "label": "Grønn",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Rød",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Gul",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Mørk",
+      "secondaryLabel": ""
+    }
+  ]
+}

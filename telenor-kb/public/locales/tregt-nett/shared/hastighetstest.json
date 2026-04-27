@@ -1,0 +1,19 @@
+{
+  "title": "Sjekk hastigheten",
+  "query": "Måler du riktig hastighet?",
+  "body": "<p>Sjekk hvilken hastighet du måler på internett ved hjelp av <a href=\"https://www.telenor.no/speedometer/\" target=\"\">vårt speedometer</a>.</p><p>Er du usikker på hvilken hastighet du abonnerer på, kan du se dette på <a href=\"https://www.telenor.no/minesider/\">Mine sider.</a></p>",
+  "choices": [
+    {
+      "label": "Speedometer",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

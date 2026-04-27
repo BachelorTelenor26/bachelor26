@@ -1,0 +1,15 @@
+{
+  "title": "Sterke signaler",
+  "query": "Opplever du fortsatt problemer?",
+  "body": "<p>Grønn lampe indikerer at WiFi forsterkeren mottar sterke signaler og fungerer optimalt.</p><p>Er du ikke fornøyd med dekningen, kan du lese mer om <a href='/privat/artikler/internett/tradlost-nettverk/derfor-trenger-du-forsterker/'>plassering av forsterkeren her.</a></p>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

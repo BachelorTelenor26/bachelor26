@@ -1,0 +1,15 @@
+{
+  "title": "Sjekk kabling",
+  "query": "Løste dette problemet?",
+  "body": "<div style='text-align: center;'>En eller flere av kablene kan være koblet feil. </div><div style='text-align: center;'>Følg veiledning for <a href='http://cms.telenor.no/privat/kundeservice/bredbandshjelp/utstyr/zyxel-8702/oppkobling/velg-kontakt/dsl/'>oppkobling av Fiber</a> for hjelp med riktig kabling.</div>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

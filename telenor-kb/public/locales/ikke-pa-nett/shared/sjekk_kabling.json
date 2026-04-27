@@ -1,0 +1,15 @@
+{
+  "title": "Sjekk kabling",
+  "query": "Løste dette problemet?",
+  "body": "<p>En eller flere av kablene kan være koblet feil.&nbsp;</p><p>Følg veiledning for <a href=\"https://www.telenor.no/privat/kundeservice/bredbandshjelp/utstyr/tbb/\" target=\"_blank\">oppkobling av Trådløst Bredbånd</a>&nbsp;for hjelp med riktig kabling.</p>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Nullstill ruteren",
+  "query": "Løste dette problemet?",
+  "body": "<ol><li>Finn frem en penn eller en annen tynn gjenstand</li><li>Stikk pennen inn i hullet merket med RESET</li><li>Hold pennen inne i 10 sekunder og slipp</li><li>Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter</li></ol>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

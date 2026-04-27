@@ -1,0 +1,11 @@
+{
+  "title": "Eldre rutere",
+  "query": "Gå til oversikt over utstyr, eller bestill WiFi Ruter på Mine sider",
+  "body": "<p>Du finner hjelp til blant annet lampestatus, nettverksnavn og passord, og innstillinger på ruteren på vår utstyrsoversikt.</p><p>Eldre utstyr kan også være en årsak til problemer med Internett. Ved å oppgradere utstyret kan du oppleve at Internett både blir mer stabilt, og gir bedre WiFi-dekning.</p><p>Vi anbefaler vår WiFi Ruter og WiFi Forsterker med <a href=\"/privat/internett/alltid-wifi/\">Fornøydhetsgaranti</a>, disse kan du bestille på Mine Sider. Har du Mobilt Bredbånd, finner du til enhver tid <a href=\"https://nettbutikk.telenor.no/mobilt-bredbaand/\">det nyeste utstyret i vår nettbutikk</a>.</p>",
+  "choices": [
+    {
+      "label": "Mine sider",
+      "secondaryLabel": ""
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Du er tilkoblet 2G",
+  "query": "Er 4G eller 4G+ tilgjengelig på din adresse?",
+  "body": "<p>Ruteren din mottar signaler på 2G og er tilkoblet mobilnettet. På grunn av svært lave hastigheter vil ikke 2G fungere optimalt til surfing på nett.</p><p><a href=\"/privat/dekningskart/\">Sjekk dekningen</a> i ditt område for å finne ut om du har tilgang til 4G/4G+.</p>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

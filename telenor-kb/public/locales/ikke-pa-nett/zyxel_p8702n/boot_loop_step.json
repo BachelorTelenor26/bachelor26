@@ -1,0 +1,15 @@
+{
+  "title": "Ruteren starter ikke opp",
+  "query": "Løste dette problemet?",
+  "body": "<p style='text-align: center;'>Dersom Power-lampen blinker blått over en lengre periode (mer enn 5 minutter) eller lyser stabilt rødt, skyldes dette ofte feil på ruteren. </p><p style='text-align: center;'>Problemet kan i enkelte tilfeller løses ved å ta en spesiell form for nullstilling.</p>\n\n<ol><li style='text-align: left;'>Skru av ruteren med Av/På-bryteren</li><li style='text-align: left;'>Finn frem en penn eller en annen tynn gjenstand</li><li style='text-align: left;'>Stikk pennen inn i hullet merket med RESET</li><li style='text-align: left;'>Skru på ruteren med Av/På-bryteren samtidig som du holder pennen i RESET-hullet</li><li style='text-align: left;'>Hold pennen inne i 30 sekunder, og slipp</li><li style='text-align: left;'>Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter</li></ol>\n\n<p>NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren.&nbsp;</p><p><a href=\"/privat/kundeservice/bredbandshjelp/utstyr/zyxel-8702/oppkobling/velg-kontakt/fiber/\" target=\"\">Hjelp til oppkobling</a></p>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

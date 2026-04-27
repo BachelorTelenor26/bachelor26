@@ -1,0 +1,23 @@
+{
+  "title": "Hvilken ruter har du?",
+  "query": "",
+  "body": "",
+  "choices": [
+    {
+      "label": "WiFi Ruter eller WiFi Ruter II",
+      "secondaryLabel": "WiFi Ruter"
+    },
+    {
+      "label": "Zyxel P8702N",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Huawei B818",
+      "secondaryLabel": "Huawei B818"
+    },
+    {
+      "label": "Jeg har en annen ruter",
+      "secondaryLabel": ""
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Internettlampe",
+  "query": "",
+  "body": "<p>Nå som ruteren er tilkoblet strøm, bør du undersøke hvordan internettlampen lyser.</p><p>Dersom du fortsatt ikke kommer på nett, vil dette gi en indikasjon på hvor feilen ligger.</p>",
+  "choices": [
+    {
+      "label": "Mørk",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Hvit",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Grønn",
+      "secondaryLabel": ""
+    }
+  ]
+}

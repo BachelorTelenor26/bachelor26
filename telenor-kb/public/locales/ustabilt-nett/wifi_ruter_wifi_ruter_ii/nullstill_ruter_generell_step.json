@@ -1,0 +1,15 @@
+{
+  "title": "Nullstill ruteren",
+  "query": "Løste dette problemet?",
+  "body": "<ol><li>Finn frem en penn eller en annen tynn gjenstand</li><li>Stikk pennen inn i hullet merket med RESET</li><li>Hold pennen inne i 10 sekunder og slipp</li><li>Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter</li></ol>\n\n<div style='text-align: center;'>NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren. </div><div style='text-align: center;'><a href='http://www.telenor.no/privat/kundeservice/bredbandshjelp/utstyr/wifi-ruter/oppkobling/velg-kontakt/'>Hjelp til oppkobling</a></div>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

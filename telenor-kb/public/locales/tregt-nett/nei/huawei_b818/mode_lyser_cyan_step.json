@@ -1,0 +1,15 @@
+{
+  "title": "Du er tilkoblet 4G/4G+",
+  "query": "Har du sterke signaler?",
+  "body": "<p>Ruteren din mottar signaler på 4G eller 4G+ og er tilkoblet mobilnettet. Dette skal i utgangspunktet gi god internettforbindelse, men undersøk også at du mottar sterke signaler for best mulig dekning.</p>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

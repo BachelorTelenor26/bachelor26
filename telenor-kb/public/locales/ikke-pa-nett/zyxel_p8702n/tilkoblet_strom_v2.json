@@ -1,0 +1,19 @@
+{
+  "title": "Sjekk at ruteren er tilkoblet strøm",
+  "query": "Hvordan lyser strømlampen nå?",
+  "body": "<ul><li><p>Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten</p></li><li><p>Sjekk at bryteren for av/på står <em>på</em></p></li><li><p>Test et annet strømuttak du vet fungerer</p></li></ul>",
+  "choices": [
+    {
+      "label": "Mørk",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Stabilt blå",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Rød",
+      "secondaryLabel": ""
+    }
+  ]
+}

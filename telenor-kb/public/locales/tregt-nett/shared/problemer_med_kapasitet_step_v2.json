@@ -1,0 +1,15 @@
+{
+  "title": "Er du koblet til WiFi?",
+  "query": "",
+  "body": "<p>Det kan virke som at problemet oppstår når de er flere på nett samtidig.&nbsp;</p><p>Dette kan skyldes at du har en lavere hastighet enn det du har behov for, feil på vår linje, eller at problemet skyldes svak WiFi-dekning.</p>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

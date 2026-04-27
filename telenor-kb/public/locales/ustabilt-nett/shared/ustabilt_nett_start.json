@@ -1,0 +1,11 @@
+{
+  "title": "Ustabilt nett",
+  "query": "",
+  "body": "<p>Velg&nbsp;<strong>Start</strong>&nbsp;dersom du opplever ustabilt internett hjemme, så veileder vi deg gjennom feilsøkingen.</p>",
+  "choices": [
+    {
+      "label": "Start",
+      "secondaryLabel": ""
+    }
+  ]
+}

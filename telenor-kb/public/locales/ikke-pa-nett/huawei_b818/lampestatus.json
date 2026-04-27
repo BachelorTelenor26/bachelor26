@@ -1,0 +1,27 @@
+{
+  "title": "Lampestatus",
+  "query": "Lyser lampene som på bildet?",
+  "body": "<p>Den øverste lampen (POWER) skal lyse stabilt grønn, mens den nederste (MODE) skal lyse turkis når ruteren er tilkoblet mobilnettet på 4G/4G+.</p>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei, POWER lyser ikke",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei, MODE lyser rødt",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei, MODE lyser blått",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei, MODE lyser gult",
+      "secondaryLabel": ""
+    }
+  ]
+}

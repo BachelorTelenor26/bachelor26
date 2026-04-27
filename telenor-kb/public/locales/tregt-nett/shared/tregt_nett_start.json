@@ -1,0 +1,11 @@
+{
+  "title": "Tregt nett",
+  "query": "",
+  "body": "<p>Velg&nbsp;<strong>Start</strong>&nbsp;dersom du opplever tregt internett hjemme, så veileder vi deg gjennom feilsøkingen.</p>",
+  "choices": [
+    {
+      "label": "Start",
+      "secondaryLabel": ""
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Sjekk at ruteren er tilkoblet strøm",
+  "query": "Lyser POWER-lampen nå?",
+  "body": "<ul><li><p>Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten</p></li><li><p>Sjekk at ruteren er skrudd på </p></li><li><p>Test eventuelt et annet strømuttak du vet fungerer</p></li></ul>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Koble til WiFi",
+  "query": "",
+  "body": "<p>Du må koble til WiFi på enheten du bruker.&nbsp;</p><ul><li><p>Sjekk at Trådløst-lampen lyser på ruteren. Lyser den ikke, kan du skru den på ved å trykke på den blå knappen.&nbsp;</p></li><li><p>Passordet finner du på undersiden av ruteren (etter WPA2) dersom du ikke selv har endret det.</p></li></ul>",
+  "choices": [
+    {
+      "label": "Koble til WiFi på PC eller mobil",
+      "secondaryLabel": ""
+    }
+  ]
+}

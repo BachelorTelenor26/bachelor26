@@ -1,0 +1,15 @@
+{
+  "title": "Restart modem",
+  "query": "Løste dette problemet?",
+  "body": "<ol><li>Ta ut strømkontakten</li><li>Vent i 10 sekunder</li><li>Sett inn strømkontakten</li></ol><div>NB: Det kan ta noen minutter før modemet er tilkoblet. </div>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

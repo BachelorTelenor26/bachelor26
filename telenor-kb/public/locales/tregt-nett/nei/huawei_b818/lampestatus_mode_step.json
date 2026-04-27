@@ -1,0 +1,19 @@
+{
+  "title": "Lampestatus",
+  "query": "Hvilken farge lyser MODE-lampen?",
+  "body": "<p style='text-align: center;'>MODE-lampen indikerer hvilken type mobildekning du har på ruteren.</p>",
+  "choices": [
+    {
+      "label": "Gul",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Blå",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Turkis",
+      "secondaryLabel": ""
+    }
+  ]
+}

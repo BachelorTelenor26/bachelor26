@@ -1,0 +1,11 @@
+{
+  "title": "Koble til WiFi",
+  "query": "",
+  "body": "<p>Du må koble til WiFi på enheten du bruker.&nbsp;</p><p>Passordet finner du på undersiden av ruteren (etter WiFi Key) dersom du ikke selv har endret det. </p><p>Her finner du <a href=\"https://www.telenor.no/privat/kundeservice/mobiltbredband/mbb818.jsp\" target=\"_blank\">mer informasjon om innstillinger og trådløst nett</a>.</p>",
+  "choices": [
+    {
+      "label": "Koble til WiFi på PC eller mobil",
+      "secondaryLabel": ""
+    }
+  ]
+}

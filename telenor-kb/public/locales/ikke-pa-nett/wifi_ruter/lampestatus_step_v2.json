@@ -1,0 +1,31 @@
+{
+  "title": "Lampestatus",
+  "query": "Lyser lampene som på bildet?",
+  "body": "<p>Den øverste lampen (Internett) skal lyse stabilt grønn, mens den nederste (strøm) skal lyse stabilt hvit.</p>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei, strømlampen er mørk",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei, strømlampen er grønn",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei, internettlampen er mørk",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei, internettlampen blinker rødt",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei, internettlampen blinker gult",
+      "secondaryLabel": ""
+    }
+  ]
+}

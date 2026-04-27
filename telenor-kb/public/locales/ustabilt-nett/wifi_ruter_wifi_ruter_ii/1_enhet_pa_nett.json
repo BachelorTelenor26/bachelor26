@@ -1,0 +1,15 @@
+{
+  "title": "Koble vekk andre enheter",
+  "query": "Er det fremdeles ustabilt?",
+  "body": "<p>Koble fra internett på alle datamaskiner og mobiltelefoner unntatt den du bruker. Dette kan du gjøre ved å:&nbsp;</p><ul><li><p>Slå av enhetene</p></li><li><p>Dra ut nettverkskabelen</p></li><li><p>Koble fra WiFi&nbsp;</p></li></ul><p>Test stabiliteten på internettet når du kun har tilkoblet en enhet.</p>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Bruker du WiFi?",
+  "query": "",
+  "body": "<p style='text-align: center;'>Lampene på ruteren lyser som de skal. </p><p style='text-align: center;'>Siden du fortsatt opplever problemer, kan feilen skyldes WiFi-tilkobling eller problemer med noe av utstyret. </p>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Ikke på nett",
+  "query": "",
+  "body": "<p>Velg&nbsp;<strong>Start</strong>&nbsp;dersom du ikke får koblet deg til internett, så veileder vi deg gjennom feilsøkingen.</p>",
+  "choices": [
+    {
+      "label": "Start",
+      "secondaryLabel": ""
+    }
+  ]
+}

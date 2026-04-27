@@ -1,0 +1,15 @@
+{
+  "title": "Er du tilkoblet WiFi?",
+  "query": "",
+  "body": "<p>Det kan være forskjell på hvordan hastigheten oppleves på trådløst nett og med nettverkskabel. WiFi er ofte utsatt for flere forstyrrelser i hjemmet som kan påvirke hastigheten.&nbsp;</p><p><a href=\"/privat/artikler/internett/tradlost-nettverk/slik-plasserer-du-ruteren-din/\">Les mer om hva som kan påvirke WiFi</a>.</p>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

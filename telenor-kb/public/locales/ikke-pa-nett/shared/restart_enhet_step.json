@@ -1,0 +1,15 @@
+{
+  "title": "Restart enheten",
+  "query": "Løste dette problemet?",
+  "body": "<p>Det virker som problemet ligger på enheten du bruker. Problemer kan ofte løses ved hjelp av en omstart.<br>Forsøk å slå enheten din av og på.</p>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

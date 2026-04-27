@@ -1,0 +1,23 @@
+{
+  "title": "Internettlampe",
+  "query": "Hvilken farge lyser lampen?",
+  "body": "<p style='text-align: center;'>Nå som ruteren er tilkoblet strøm, bør du undersøke hvordan internettlampen lyser.</p><p style='text-align: center;'>Dersom du fortsatt ikke kommer på nett, vil dette gi en indikasjon på hvor feilen ligger. </p>",
+  "choices": [
+    {
+      "label": "Grønn - Internett fungerer",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Grønn - Internett fungerer fortsatt ikke",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Rød",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Mørk",
+      "secondaryLabel": ""
+    }
+  ]
+}

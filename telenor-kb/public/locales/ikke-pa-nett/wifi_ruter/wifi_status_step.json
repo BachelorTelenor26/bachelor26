@@ -1,0 +1,15 @@
+{
+  "title": "Er du tilkoblet WiFi?",
+  "query": "",
+  "body": "<div style='text-align: center;'>Sjekk om WiFi-ikonet på PC eller mobil viser tilkoblet. <br />På PC gjør du dette ved å holde musepekeren over ikonet. På mobil kan du gå inn på Innstillinger og deretter WiFi.</div>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

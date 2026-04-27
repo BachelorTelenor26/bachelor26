@@ -1,0 +1,15 @@
+{
+  "title": "Sjekk nettverkskabelen",
+  "query": "Løste noe av dette problemet?",
+  "body": "<p>Ustabilitet kan skyldes problemer med nettverkskabelen eller uttakene kabelen er koblet til.</p><ul><li><p>Sjekk at kabelen ikke er skadet</p></li><li><p>Bytt LAN-uttak på baksiden av ruteren</p></li><li><p>Bytt nettverkskabelen med en annen</p></li></ul>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

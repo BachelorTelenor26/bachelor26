@@ -1,0 +1,19 @@
+{
+  "title": "Hvilken type internett har du?",
+  "query": "",
+  "body": "<div style='text-align: center;'>Vi leverer internett gjennom flere typer teknologier. </div><div style='text-align: center;'>Er du usikker på hvilken type du har, kan du undersøke hvordan utstyret ditt er koblet opp.</div>",
+  "choices": [
+    {
+      "label": "Fiber",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Kabel (Coax)",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Trådløst Bredbånd",
+      "secondaryLabel": "Trådløst Bredbånd"
+    }
+  ]
+}

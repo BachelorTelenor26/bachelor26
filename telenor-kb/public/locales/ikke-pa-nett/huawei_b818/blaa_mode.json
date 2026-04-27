@@ -1,0 +1,15 @@
+{
+  "title": "Du er tilkoblet 3G",
+  "query": "Gjelder problemet på en eller flere enheter?",
+  "body": "<p>Ruteren din mottar signaler på 3G og er tilkoblet mobilnettet.</p>",
+  "choices": [
+    {
+      "label": "En",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Flere",
+      "secondaryLabel": ""
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Riktig hastighet",
+  "query": "Vil du feilsøke problemer med ustabilt nett?",
+  "body": "<p>Testen måler riktig hastighet for ditt abonnement. Ønsker du høyere hastighet, kan du oppgradere på <a href=\"https://www.telenor.no/minesider/\">Mine sider</a>.</p><p>Opplever du at hastigheten varierer med hyppige mellomrom, kan det skyldes at nettet er ustabilt.&nbsp;</p>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    }
+  ]
+}

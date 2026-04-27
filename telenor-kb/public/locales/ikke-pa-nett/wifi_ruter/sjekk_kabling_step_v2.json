@@ -1,0 +1,15 @@
+{
+  "title": "Sjekk kabling",
+  "query": "Løste dette problemet?",
+  "body": "<p>En eller flere av kablene kan være koblet feil.&nbsp; &nbsp;<br>Følg veiledning for&nbsp;<a href=\"/privat/kundeservice/bredbandshjelp/utstyr/wifi-ruter/oppkobling/velg-kontakt/\">oppkobling av Internett over kabel</a>&nbsp;for hjelp med riktig kabling.</p>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}

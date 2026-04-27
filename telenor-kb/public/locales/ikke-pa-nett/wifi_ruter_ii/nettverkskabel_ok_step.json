@@ -1,0 +1,15 @@
+{
+  "title": "Problemer med WiFi",
+  "query": "Vil du fortsette feilsøkingen?",
+  "body": "<p>Du kommer på nett med nettverkskabel tilkoblet. Dette betyr at problemet ikke ligger på våre linjer, men på WiFi-tilkoblingen.</p><p>Siden du har testet WiFi på flere enheter, er det sannsynlig at problemet ligger på ruteren eller annet nettverksutstyr du har tilkoblet.&nbsp;</p><p>Du kan fortsette å bruke internett med nettverkskabel, eller feilsøke videre på utstyret.</p><p><strong>Er enhetene du har testet med av eldre årgang?</strong><br>I noen tilfeller kan eldre enheter få problemer med å koble seg til WiFi Ruter II som har den nyeste sikkerhetsstandarden for nettverkspassord. Les mer her om hvordan du kan løse problemet: <a href=\"/kundeservice/delt/wpa3/\" target=\"_blank\">WPA3 - Problemer med tilkobling på WiFi Ruter II</a></p>",
+  "choices": [
+    {
+      "label": "Ja",
+      "secondaryLabel": ""
+    },
+    {
+      "label": "Nei",
+      "secondaryLabel": ""
+    }
+  ]
+}
