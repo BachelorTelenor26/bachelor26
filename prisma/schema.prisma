@@ -1,15 +1,155 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client"
-  output   = "../generated/prisma"
+  output   = "../telenor-kb/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+}
+
+// Troubleshooting categories such as ikke-pa-nett, tregt-nett and ustabilt-nett.
+model Category {
+  id        String    @id @default(cuid())
+  name      String
+  slug      String    @unique
+  icon      String?
+  articles  Article[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+// Device/router families used to scope troubleshooting articles.
+model DeviceType {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  description String?
+  imageUrl    String?
+  articles    Article[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+// A troubleshooting flow entry, scoped by one category and one device type.
+model Article {
+  id           String                 @id @default(cuid())
+  title        String
+  slug         String                 @unique
+  ingress      String?
+  categoryId   String
+  category     Category               @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  deviceTypeId String
+  deviceType   DeviceType             @relation(fields: [deviceTypeId], references: [id], onDelete: Restrict)
+  steps        Step[]
+  sessions     TroubleshootingSession[]
+  keywords     String[]               @default([])
+  updatedAt    DateTime               @updatedAt
+  createdAt    DateTime               @default(now())
+
+  @@index([categoryId])
+  @@index([deviceTypeId])
+}
+
+// One step in a troubleshooting flow. Title/content are localization keys.
+model Step {
+  id             String            @id @default(cuid())
+  title          String
+  content        String
+  agentNote      String?
+  imageUrl       String?
+  articleId      String
+  article        Article           @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  choices        StepChoice[]      @relation("FromStep")
+  incomingLinks  StepChoice[]      @relation("ToStep")
+  sessionAnswers SessionStepAnswer[]
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  @@index([articleId])
+}
+
+// Directed choice edge from one step to another step (or terminal end).
+model StepChoice {
+  id            String             @id @default(cuid())
+  stepId        String
+  step          Step               @relation("FromStep", fields: [stepId], references: [id], onDelete: Cascade)
+  label         String
+  buttonText    String?
+  value         String?
+  nextStepId    String?
+  nextStep      Step?              @relation("ToStep", fields: [nextStepId], references: [id], onDelete: SetNull)
+  sortOrder     Int                @default(0)
+  isTerminal    Boolean            @default(false)
+  terminalReason TerminalReason?
+  sessionAnswers SessionStepAnswer[]
+  createdAt     DateTime           @default(now())
+  updatedAt     DateTime           @updatedAt
+
+  @@unique([stepId, sortOrder])
+  @@index([nextStepId])
+}
+
+// Captures one answered step in a troubleshooting session.
+model SessionStepAnswer {
+  id         String                 @id @default(cuid())
+  sessionId  String
+  session    TroubleshootingSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  stepId     String
+  step       Step                   @relation(fields: [stepId], references: [id], onDelete: Cascade)
+  choiceId   String?
+  choice     StepChoice?            @relation(fields: [choiceId], references: [id], onDelete: SetNull)
+  customText String?
+  createdAt  DateTime               @default(now())
+
+  @@unique([sessionId, stepId])
+  @@index([choiceId])
+}
+
+// User session state while traversing an article flow.
+model TroubleshootingSession {
+  id               String             @id @default(cuid())
+  sessionCode      String             @unique
+  articleId        String
+  article          Article            @relation(fields: [articleId], references: [id], onDelete: Restrict)
+  completed        Boolean            @default(false)
+  outcome          SessionOutcome     @default(IN_PROGRESS)
+  escalationReason String?
+  routerModel      String?
+  customerId       String?
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  answers          SessionStepAnswer[]
+  customer         User?              @relation(fields: [customerId], references: [id], onDelete: SetNull)
+
+  @@index([articleId])
+  @@index([outcome])
+}
+
+// Backoffice users who can access internal tooling.
+model User {
+  id        String                   @id @default(cuid())
+  email     String                   @unique
+  role      Role                     @default(CUSTOMER)
+  sessions  TroubleshootingSession[]
+  createdAt DateTime                 @default(now())
+  updatedAt DateTime                 @updatedAt
+}
+
+enum Role {
+  AGENT
+  CUSTOMER
+}
+
+enum SessionOutcome {
+  IN_PROGRESS
+  RESOLVED
+  ESCALATED
+  ABANDONED
+}
+
+enum TerminalReason {
+  EXTERNAL_REDIRECT
+  FLOW_EXIT_EXPECTED_SPEED
+  FLOW_EXIT_NO_NEXT_STEP
+  FILTERED_CROSS_FLOW
 }
