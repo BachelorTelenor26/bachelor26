@@ -129,6 +129,8 @@ model TroubleshootingSession {
 model User {
   id        String                   @id @default(cuid())
   email     String                   @unique
+  firstName String
+  lastName  String
   role      Role                     @default(CUSTOMER)
   sessions  TroubleshootingSession[]
   createdAt DateTime                 @default(now())

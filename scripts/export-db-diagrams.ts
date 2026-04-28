@@ -297,7 +297,7 @@ function buildSchemaMermaid(): string {
 }
 
 async function main() {
-  const prismaClientPath = "../generated/prisma/client";
+  const prismaClientPath = "../prisma/generated/prisma/client";
   const prismaModule = await import(prismaClientPath);
   const adapterModulePath = "@prisma/adapter-pg";
   const adapterModule = await import(adapterModulePath);
