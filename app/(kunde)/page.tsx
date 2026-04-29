@@ -1,10 +1,46 @@
 import SearchBar from "../components/kunde/SearchBar";
 import CategoryCard from "../components/kunde/CategoryCard";
-import { WifiOff, WifiLow, Router } from "lucide-react";
+import { WifiOff, WifiLow, WifiSync, Router } from "lucide-react";
 import ArticleListItem from "../components/kunde/ArticleListItem";
 import { articles } from "../lib/mockData";
 
-export default function KundePage() {
+// Midlertidig ikon-mapping til vi har ikoner i databasen og også beskrivelse
+const categoryMap: Record<
+  string,
+  {
+    icon: React.FC<{ className?: string }>;
+    description: string;
+  }
+> = {
+  "ikke-pa-nett": { icon: WifiOff, description: "Nettet er helt nede hjemme" },
+  "tregt-nett": {
+    icon: WifiLow,
+    description: "Nett som dropper eller er sakte",
+  },
+  "ustabilt-nett": {
+    icon: WifiSync,
+    description: "Ustabilt eller varierende nett",
+  },
+};
+
+async function getCategories() {
+  const res = await fetch("http://localhost:3000/api/categories", {
+    cache: "no-store",
+  });
+  return res.json();
+}
+
+async function getArticles() {
+  const res = await fetch("http://localhost:3000/api/articles", {
+    cache: "no-store",
+  });
+  return res.json();
+}
+
+export default async function KundePage() {
+  const categories = await getCategories();
+  const articles = await getArticles();
+
   return (
     <>
       <section className="text-center">
@@ -16,8 +52,13 @@ export default function KundePage() {
           treg Wi-Fi til nett som ikke fungerer. Selvbetjening som gir deg
           kontroll.
         </p>
-        <SearchBar 
-          popularSearches={['Router lyser rødt', 'Treg wifi', 'Mobil mister dekning', 'Bytte passord']}
+        <SearchBar
+          popularSearches={[
+            "Router lyser rødt",
+            "Treg wifi",
+            "Mobil mister dekning",
+            "Bytte passord",
+          ]}
         />
       </section>
 
@@ -30,63 +71,44 @@ export default function KundePage() {
           </span>
         </div>
         <div className="grid grid-cols-3 gap-4">
-          {/* Kun for å se design ,dette må refactors til å heller iterere gjennom det vi får fra db  */}
-          <CategoryCard
-            icon={WifiOff}
-            title="Ingen internettforbindelse"
-            description="Nettet er helt nede hjemme"
-            href="/kategorier/ingen-internett"
-          />
-
-          <CategoryCard
-            icon={WifiLow}
-            title="Tregt eller ustabilt nett"
-            description="Nettet som dropper eller er sakte"
-            href="/kategorier/ingen-internett"
-          />
-
-          <CategoryCard
-            icon={Router}
-            title="Ruter lyser rødt"
-            description="Ruter som lyser rødt"
-            href="/kategorier/ingen-internett"
-          />
-
-          <CategoryCard
-            icon={Router}
-            title="Ruter lyser rødt"
-            description="Ruter som lyser rødt"
-            href="/kategorier/ingen-internett"
-          />
-
-          <CategoryCard
-            icon={Router}
-            title="Ruter lyser rødt"
-            description="Ruter som lyser rødt"
-            href="/kategorier/ingen-internett"
-          />
-
-          <CategoryCard
-            icon={Router}
-            title="Ruter lyser rødt"
-            description="Ruter som lyser rødt"
-            href="/kategorier/ingen-internett"
-          />
+          {categories.map(
+            (category: { id: string; name: string; slug: string }) => {
+              const entry = categoryMap[category.slug];
+              const Icon = entry?.icon ?? Router;
+              return (
+                <CategoryCard
+                  key={category.id}
+                  icon={Icon}
+                  title={category.name}
+                  description={entry?.description ?? ""}
+                  href={`/kategorier/${category.slug}`}
+                />
+              );
+            },
+          )}
         </div>
       </section>
 
-        {/* Mest leste */}
-        <section className="font-bold mt-12">
-          <h2 className="font-semibold text-gray-900 mb-4">
-            Mest leste akkurat nå
-          </h2>
-          <div className="border border-gray-300 rounded-xl overflow-hidden">
-            {articles.map((article) => (
-              <ArticleListItem key={article.slug} article={article} />
-            ))}
-          </div>
-        </section>
-
+      {/* Mest leste */}
+      <section className="font-bold mt-12">
+        <h2 className="font-semibold text-gray-900 mb-4">
+          Mest leste akkurat nå
+        </h2>
+        <div className="border border-gray-300 rounded-xl overflow-hidden">
+          {articles
+            .slice(0, 6)
+            .map(
+              (article: {
+                slug: string;
+                title: string;
+                category: { name: string };
+                deviceType: { name: string };
+              }) => (
+                <ArticleListItem key={article.slug} article={article} />
+              ),
+            )}
+        </div>
+      </section>
     </>
   );
 }
