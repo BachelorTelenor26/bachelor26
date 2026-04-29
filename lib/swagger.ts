@@ -4,10 +4,10 @@ const options: swaggerJsdoc.Options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Telenor Kunnskapsplattform API',
+      title: 'Telenor Kunnskapsbase API',
       version: '1.0.0',
       description:
-        'API for kunnskapsplattformen — feilsøking for kunder og agenter hos Telenor.',
+        'API for Kunnskapsbase — feilsøking for kunder og agenter hos Telenor.',
     },
     servers: [
       { url: 'http://localhost:3000', description: 'Lokalt' },
