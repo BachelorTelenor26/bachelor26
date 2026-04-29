@@ -1,0 +1,2373 @@
+=== ikke-pa-nett\huawei_b818\andre_enheter_wifi.json ===
+Kategori: ikke-pa-nett
+Ruter: huawei_b818
+Tittel: Fungerer WiFi på andre enheter?
+Body:
+Forsøk å koble til WiFi på en annen enhet.
+Dette kan for eksempel være en annen mobiltelefon, PC eller nettbrett.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\huawei_b818\blaa_mode.json ===
+Kategori: ikke-pa-nett
+Ruter: huawei_b818
+Tittel: Du er tilkoblet 3G
+Body:
+Ruteren din mottar signaler på 3G og er tilkoblet mobilnettet.
+Valg: En / Flere
+
+---
+
+=== ikke-pa-nett\huawei_b818\endre_plassering_av_ruter.json ===
+Kategori: ikke-pa-nett
+Ruter: huawei_b818
+Tittel: Plasser ruteren et annet sted i huset
+Body:
+Forsøk å få inn bedre signaler ved å plassere ruteren et annet sted i huset.
+MODE-lampen vil endre farge dersom du får 4G/4G+ dekning.
+Vi anbefaler at du plasserer ruteren:
+- Høyt
+- Sentralt
+- Gjerne i nærheten av et vindu
+Det kan være nyttig å se hvor du får best signaler på mobilen og flytte ruteren deretter.
+Legg også merke til lampene som indikerer signalstyrke for best mulig dekning.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\huawei_b818\gul_mode.json ===
+Kategori: ikke-pa-nett
+Ruter: huawei_b818
+Tittel: Du er tilkoblet 2G
+Body:
+Ruteren din mottar signaler på 2G og er tilkoblet mobilnettet. På grunn av svært lave hastigheter vil ikke 2G fungere optimalt til surfing på nett, og kan være årsaken til at du opplever at Internett ikke fungerer.
+Sjekk dekningen  i ditt område for å finne ut om du har tilgang til 4G/4G+.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\huawei_b818\hvilken_aksess.json ===
+Kategori: ikke-pa-nett
+Ruter: huawei_b818
+Tittel: Hvilken type Internett har du?
+Body:
+Vi leverer Internett gjennom flere typer teknologier. Over mobilnettet leverer vi Mobilt Bredbånd og Trådløst Bredbånd.
+- Mobilt Bredbånd kan du bruke alle steder der det er mobildekning, og har en gitt mengde mobildata tilgjengelig hver måned.
+- Trådløst Bredbånd fungerer kun på adressen der du bor.
+Valg: Trådløst Bredbånd / Mobilt Bredbånd
+
+---
+
+=== ikke-pa-nett\huawei_b818\installasjon_av_ruter.json ===
+Kategori: ikke-pa-nett
+Ruter: huawei_b818
+Tittel: Installasjon av ruter
+Body:
+1. Koble til ruteren med WiFi eller ved hjelp av en nettverkskabel
+2. En nettside vil automatisk dukke opp på maskinen. Denne må du klikke deg gjennom for å fullføre oppsettet.
+Merk : Om nettsiden ikke dukker opp automatisk, kan du søke den opp manuelt ved å skrive inn  192.168.1.1  i adressefeltet til nettleseren. Vi anbefaler at du bruker en av disse nettleserne: Google Chrome, Safari, Microsoft Edge eller Firefox.
+Se informasjon om Huawei B818 for mer hjelp med installasjon og oppsett.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\huawei_b818\koble_til_wifi.json ===
+Kategori: ikke-pa-nett
+Ruter: huawei_b818
+Tittel: Koble til WiFi
+Body:
+Du må koble til WiFi på enheten du bruker.
+Passordet finner du på undersiden av ruteren (etter WiFi Key) dersom du ikke selv har endret det.
+Her finner du  mer informasjon om innstillinger og trådløst nett .
+Valg: Koble til WiFi på PC eller mobil
+
+---
+
+=== ikke-pa-nett\huawei_b818\lampestatus.json ===
+Kategori: ikke-pa-nett
+Ruter: huawei_b818
+Tittel: Lampestatus
+Body:
+Den øverste lampen (POWER) skal lyse stabilt grønn, mens den nederste (MODE) skal lyse turkis når ruteren er tilkoblet mobilnettet på 4G/4G+.
+Valg: Ja / Nei, POWER lyser ikke / Nei, MODE lyser rødt / Nei, MODE lyser blått / Nei, MODE lyser gult
+
+---
+
+=== ikke-pa-nett\huawei_b818\mode_lyser_rodt.json ===
+Kategori: ikke-pa-nett
+Ruter: huawei_b818
+Tittel: Ruteren har ikke kontakt med mobilnettet
+Body:
+Problemet kan skyldes at ruteren ikke har kontakt med SIM-kortet.
+1. Trekk ut strømkabelen eller skru ruteren av med av/på-bryteren
+2. Ta SIM-kortet ut av ruteren
+3. Sett SIM-kortet tilbake på plass
+4. Koble til strøm og vent inntil 5 minutter på at ruteren starter opp.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\huawei_b818\nullstill_ruter.json ===
+Kategori: ikke-pa-nett
+Ruter: huawei_b818
+Tittel: Nullstill ruteren
+Body:
+NB! Før du nullstiller ruteren bør du sjekke at du har PIN-koden til SIM-kortet tilgjengelig. Alle endringer på ruteren vil tilbakestilles, og du må sette den opp på nytt.
+1. Finn frem en penn eller en annen tynn gjenstand
+2. Stikk pennen inn i hullet merket RESET
+3. Hold pennen inne i 20 sekunder og slipp
+4. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter.
+Valg: Neste
+
+---
+
+=== ikke-pa-nett\huawei_b818\power_lyser_ikke.json ===
+Kategori: ikke-pa-nett
+Ruter: huawei_b818
+Tittel: Sjekk at ruteren er tilkoblet strøm
+Body:
+- Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten
+- Sjekk at ruteren er skrudd på
+- Test eventuelt et annet strømuttak du vet fungerer
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\huawei_b818\restart_ruteren.json ===
+Kategori: ikke-pa-nett
+Ruter: huawei_b818
+Tittel: Restart ruteren
+Body:
+Problemet kan ofte løses ved å restarte ruteren. Dette gjør du slik:
+1. Trekk ut strømkontakten eller bruk av/på-bryteren
+2. La ruteren stå uten strøm i 10 sekunder
+3. Koble til strømmen igjen. NB! Det kan ta noen minutter før ruteren kobler seg til Internett igjen.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\huawei_b818\sjekk_tilkobling.json ===
+Kategori: ikke-pa-nett
+Ruter: huawei_b818
+Tittel: Sjekk tilkobling
+Body:
+- Sjekk at enheten du bruker er tilkoblet ruteren via WiFi eller nettverkskabel.  Les hvordan du kobler til WiFi på våre utstyr-sider.
+- Dersom du har tilgang til en ekstra mobil eller datamaskin, undersøk om problemet er det samme på denne enheten. Er problemet det samme, kan du velge  Flere  på forrige steg.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\huawei_b818\wifi_status.json ===
+Kategori: ikke-pa-nett
+Ruter: huawei_b818
+Tittel: Er du tilkoblet WiFi?
+Body:
+Sjekk om WiFi-ikonet på PC eller mobil viser tilkoblet.   På PC gjør du dette ved å holde musepekeren over ikonet. På mobil kan du gå inn på Innstillinger og deretter WiFi.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\jeg_har_en_annen_ruter\annen_ruter_result.json ===
+Kategori: ikke-pa-nett
+Ruter: jeg_har_en_annen_ruter
+Tittel: Eldre rutere
+Body:
+Du finner hjelp til blant annet lampestatus, nettverksnavn og passord, og innstillinger på ruteren på vår utstyrsoversikt.
+Eldre utstyr kan også være en årsak til problemer med Internett. Ved å oppgradere utstyret kan du oppleve at Internett både blir mer stabilt, og gir bedre WiFi-dekning.
+Vi anbefaler vår WiFi Ruter og WiFi Forsterker med  Fornøydhetsgaranti , disse kan du bestille på Mine Sider. Har du Mobilt Bredbånd, finner du til enhver tid  det nyeste utstyret i vår nettbutikk .
+Valg: Mine sider
+
+---
+
+=== ikke-pa-nett\shared\alltid_wifi_result.json ===
+Kategori: ikke-pa-nett
+Ruter: shared
+Tittel: Vi vil gjerne snakke med deg
+Body:
+Med Internett fra oss og leieavtale på WiFi Ruter har du  Alltid WiFi og Fornøydhetsgaranti! 
+Kontakt oss på  915 09000 , så hjelper vi deg videre.  
+Les mer om hvordan du kan  forbedre WiFi-dekningen , eller bestill en eller flere WiFi Forsterkere på  Mine sider .
+Valg: 
+
+---
+
+=== ikke-pa-nett\shared\defekt_ruter_result.json ===
+Kategori: ikke-pa-nett
+Ruter: shared
+Tittel: Ruteren kan være defekt
+Body:
+Det kan være at ruteren din er defekt. Årsakene til dette kan være mange, men ofte kan det oppstå  problemer ved lyn og torden .
+Ta kontakt med kundeservice, så kan vi sjekke mer og eventuelt bestille en ny ruter til deg. 
+Se kontaktinformasjon og åpningstider
+Valg: 
+
+---
+
+=== ikke-pa-nett\shared\flere_enheter.json ===
+Kategori: ikke-pa-nett
+Ruter: shared
+Tittel: Fungerer WiFi på andre enheter?
+Body:
+Forsøk å koble til WiFi på en annen enhet.
+Dette kan for eksempel være en annen mobiltelefon, PC eller nettbrett.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\shared\ikke_pa_nett_start.json ===
+Kategori: ikke-pa-nett
+Ruter: shared
+Tittel: Ikke på nett
+Body:
+Velg  Start  dersom du ikke får koblet deg til internett, så veileder vi deg gjennom feilsøkingen.
+Valg: Start
+
+---
+
+=== ikke-pa-nett\shared\koble_til_wifi_step.json ===
+Kategori: ikke-pa-nett
+Ruter: shared
+Tittel: Koble til WiFi
+Body:
+Du må koble til WiFi på enheten du bruker.
+Er du usikker på hva passordet ditt er, kan du sende SMS til 2000 med kodeord  wifi 000 000 00  (siste 8 siffer i S/N)
+Valg: Koble til WiFi på PC eller mobil
+
+---
+
+=== ikke-pa-nett\shared\kontakt_leverandor_result.json ===
+Kategori: ikke-pa-nett
+Ruter: shared
+Tittel: Problemer med enhet
+Body:
+Problemet skyldes ikke internettforbindelsen, men enheten du bruker.
+I noen tilfeller kan eldre enheter få problemer med å koble seg til WiFi Ruter II som har den nyeste sikkerhetsstandarden for nettverkspassord. Les mer her om hvordan du kan løse problemet:  WPA3 - Problemer med tilkobling på WiFi Ruter II
+Hvis dette ikke løser problemet, bør du kontakte leverandøren av enheten din for mer hjelp.
+Valg: 
+
+---
+
+=== ikke-pa-nett\shared\kontakt_oss_result.json ===
+Kategori: ikke-pa-nett
+Ruter: shared
+Tittel: Vi vil gjerne snakke med deg
+Body:
+Vi må undersøke problemet ditt nærmere. Ta kontakt med kundeservice, så hjelper vi deg videre.
+Se kontaktinformasjon og åpningstider
+Valg: 
+
+---
+
+=== ikke-pa-nett\shared\nettverkskabel_ok_step.json ===
+Kategori: ikke-pa-nett
+Ruter: shared
+Tittel: Problemer med WiFi
+Body:
+Du kommer på nett med nettverkskabel tilkoblet. Dette betyr at problemet ikke ligger på våre linjer, men på WiFi-tilkoblingen.
+Siden du har testet WiFi på flere enheter, er det sannsynlig at problemet ligger på ruteren eller annet nettverksutstyr du har tilkoblet.
+Du kan fortsette å bruke internett med nettverkskabel, eller feilsøke videre på utstyret.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\shared\nullstill_ruter_wifi_step.json ===
+Kategori: ikke-pa-nett
+Ruter: shared
+Tittel: Nullstill ruteren
+Body:
+1. Finn frem en penn eller en annen tynn gjenstand
+2. Stikk pennen inn i hullet merket med RESET
+3. Hold pennen inne i 10 sekunder og slipp
+4. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\shared\problem_lost_result.json ===
+Kategori: ikke-pa-nett
+Ruter: shared
+Tittel: Problemet er løst
+Body:
+Så godt å høre at du fikk løst problemet!
+Hvis dette er et problem du opplever ofte, bør du ta kontakt med oss på  kundeservice på 915 09000.
+Valg: 
+
+---
+
+=== ikke-pa-nett\shared\prov_nettverkskabel.json ===
+Kategori: ikke-pa-nett
+Ruter: shared
+Tittel: Prøv med en nettverkskabel
+Body:
+Problemer med hastighet kan gjelde kun for WiFi. For å finne ut om dette er problemet, anbefaler vi å koble en nettverkskabel mellom ruteren og PC’n.  Hopp over dette trinnet hvis du ikke har uttak for nettverkskabel på din PC.
+Valg: Ja / Nei / Hopp over
+
+---
+
+=== ikke-pa-nett\shared\restart_antenne.json ===
+Kategori: ikke-pa-nett
+Ruter: shared
+Tittel: Restart utendørs antenne
+Body:
+1. Trekk ut antenne-adapteret som står i stikkontakten
+2. Vent minst 10 sekunder
+3. Sett antenne-adapteret tilbake i stikkontakten. NB! Det kan ta noen minutter før utendørsantennen kobler seg opp til nettverket igjen
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\shared\restart_enhet_step.json ===
+Kategori: ikke-pa-nett
+Ruter: shared
+Tittel: Restart enheten
+Body:
+Det virker som problemet ligger på enheten du bruker. Problemer kan ofte løses ved hjelp av en omstart.  Forsøk å slå enheten din av og på.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\shared\restart_modem_step.json ===
+Kategori: ikke-pa-nett
+Ruter: shared
+Tittel: Restart modem
+Body:
+1. Ta ut strømkontakten
+2. Vent i 10 sekunder
+3. Sett inn strømkontakten
+NB: Det kan ta noen minutter før modemet er tilkoblet.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\shared\restart_ont_step.json ===
+Kategori: ikke-pa-nett
+Ruter: shared
+Tittel: Restart fiberboksen
+Body:
+1. Ta ut strømkontakten
+2. Vent i 1 minutt
+3. Sett inn strømkontakten
+NB: Det kan ta noen minutter før fiberboksen er tilkoblet.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\shared\sjekk_kabling.json ===
+Kategori: ikke-pa-nett
+Ruter: shared
+Tittel: Sjekk kabling
+Body:
+En eller flere av kablene kan være koblet feil.
+Følg veiledning for  oppkobling av Trådløst Bredbånd  for hjelp med riktig kabling.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\shared\wifi_tilkoblet.json ===
+Kategori: ikke-pa-nett
+Ruter: shared
+Tittel: Er du tilkoblet WiFi?
+Body:
+Sjekk om WiFi-ikonet på PC eller mobil viser tilkoblet.   På PC gjør du dette ved å holde musepekeren over ikonet. På mobil kan du gå inn på Innstillinger og deretter WiFi.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter\andre_enheter_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Fungerer WiFi på andre enheter?
+Body:
+Forsøk å koble til WiFi på en annen enhet.
+Dette kan for eksempel være en annen mobiltelefon, PC eller nettbrett.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter\bruker_du_wifi.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Bruker du WiFi?
+Body:
+Lampene på ruteren lyser som de skal.
+Siden du fortsatt opplever problemer, kan feilen skyldes WiFi-tilkobling eller problemer med noe av utstyret.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter\hvilken_aksess.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Hvilken type Internett har du?
+Body:
+Vi leverer internett gjennom flere typer teknologier.
+Er du usikker på hvilken type du har, kan du undersøke hvordan utstyret ditt er koblet opp.
+Valg: Fiber / Trådløst Bredbånd / Kabel (Coax)
+
+---
+
+=== ikke-pa-nett\wifi_ruter\internettlampe.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Internettlampe
+Body:
+Nå som ruteren er tilkoblet strøm, bør du undersøke hvordan internettlampen lyser.
+Dersom du fortsatt ikke kommer på nett, vil dette gi en indikasjon på hvor feilen ligger.
+Valg: Mørk / Hvit / Grønn
+
+---
+
+=== ikke-pa-nett\wifi_ruter\internettlampe_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Internettlampe
+Body:
+Nå som ruteren er tilkoblet strøm, bør du undersøke hvordan internettlampen lyser.
+Dersom du fortsatt ikke kommer på nett, vil dette gi en indikasjon på hvor feilen ligger.
+Valg: Stabilt grønn - Internett fungerer / Stabilt grønn - Internett fungerer fortsatt ikke / Blinker rød eller grønn / Lampen er mørk / Blinker gul
+
+---
+
+=== ikke-pa-nett\wifi_ruter\koble_til_wifi_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Koble til WiFi
+Body:
+Du må koble til WiFi på enheten du bruker.
+Er du usikker på hva passordet ditt er, kan du sende SMS til 2000 med kodeord  wifi 000 000 00  (siste 8 siffer i S/N)
+Valg: Koble til WiFi på PC eller mobil
+
+---
+
+=== ikke-pa-nett\wifi_ruter\lampestatus.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Lampestatus
+Body:
+Den øverste lampen (internett) skal lyse stabilt grønn, mens den nederste (strøm) skal lyse stabilt hvit.
+Valg: Ja / Nei, strømlampen er mørk / Nei, strømlampen er grønn / Nei, internettlampen er mørk / Nei, internettlampen blinker rødt / Nei, internettlampen blinker gult
+
+---
+
+=== ikke-pa-nett\wifi_ruter\lampestatus_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Lampestatus
+Body:
+Den øverste lampen (internett) skal lyse stabilt grønn, mens den nederste (strøm) skal lyse stabilt hvit.
+Valg: Ja / Nei, strømlampen er mørk / Nei, strømlampen er grønn / Nei, internettlampen er mørk / Nei, internettlampen blinker rødt / Nei, internettlampen blinker gult
+
+---
+
+=== ikke-pa-nett\wifi_ruter\lampestatus_step_v2.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Lampestatus
+Body:
+Den øverste lampen (Internett) skal lyse stabilt grønn, mens den nederste (strøm) skal lyse stabilt hvit.
+Valg: Ja / Nei, strømlampen er mørk / Nei, strømlampen er grønn / Nei, internettlampen er mørk / Nei, internettlampen blinker rødt / Nei, internettlampen blinker gult
+
+---
+
+=== ikke-pa-nett\wifi_ruter\nullstill_ruter_generell_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Nullstill ruteren
+Body:
+1. Finn frem en penn eller en annen tynn gjenstand
+2. Stikk pennen inn i hullet merket med RESET
+3. Hold pennen inne i 10 sekunder og slipp
+4. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter
+NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren.
+Hjelp til oppkobling
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter\nullstill_ruter_wifi_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Nullstill ruteren
+Body:
+1. Finn frem en penn eller en annen tynn gjenstand
+2. Stikk pennen inn i hullet merket med RESET
+3. Hold pennen inne i 10 sekunder og slipp
+4. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter\prov_nettverkskabel_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Prøv med en nettverkskabel
+Body:
+Problemer med hastighet kan gjelde kun for WiFi. For å finne ut om dette er problemet, anbefaler vi å koble en nettverkskabel mellom ruteren og PC’n.  Hopp over dette trinnet hvis du ikke har uttak for nettverkskabel på din PC.
+Valg: Ja / Nei / Hopp over
+
+---
+
+=== ikke-pa-nett\wifi_ruter\restart_ruter_ikke_nett_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Restart ruteren
+Body:
+Problemet kan ofte løses ved å restarte ruteren.  Dette gjør du slik:
+1. Trekk ut strømkontakten eller bruk av/på-bryteren
+2. La ruteren stå uten strøm i 10 sekunder
+3. Koble til strømmen igjen. NB! Det kan ta noen minutter før ruteren kobler seg til Internett igjen.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter\sjekk_kabling_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Sjekk kabling
+Body:
+En eller flere av kablene kan være koblet feil.
+Følg veiledning for  oppkobling av Fiber  for hjelp med riktig kabling.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter\sjekk_kabling_step_v2.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Sjekk kabling
+Body:
+En eller flere av kablene kan være koblet feil.     Følg veiledning for  oppkobling av Internett over kabel  for hjelp med riktig kabling.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter\tilkoblet_stroem_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Sjekk at ruteren er tilkoblet strøm
+Body:
+- Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten
+- Sjekk at bryteren for av/på står På
+- Test eventuelt et annet strømuttak du vet fungerer
+Valg: Mørk / Hvit / Grønn
+
+---
+
+=== ikke-pa-nett\wifi_ruter\tilkoblet_strom.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Sjekk at ruteren er tilkoblet strøm
+Body:
+- Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten
+- Sjekk at bryteren for av/på står På
+- Test eventuelt et annet strømuttak du vet fungerer
+Valg: Mørk / Hvit / Grønn
+
+---
+
+=== ikke-pa-nett\wifi_ruter\tilkoblet_strom_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Sjekk at ruteren er tilkoblet strøm
+Body:
+- Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten
+- Sjekk at bryteren for av/på står  på
+- Test et annet strømuttak du vet fungerer
+Valg: Mørk / Hvit / Grønn
+
+---
+
+=== ikke-pa-nett\wifi_ruter\tilkoblet_wifi_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Bruker du WiFi?
+Body:
+Lampene på ruteren lyser som de skal.
+Siden du fortsatt opplever problemer, kan feilen skyldes WiFi-tilkobling eller problemer med noe av utstyret.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter\wifi_status_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter
+Tittel: Er du tilkoblet WiFi?
+Body:
+Sjekk om WiFi-ikonet på PC eller mobil viser tilkoblet.   På PC gjør du dette ved å holde musepekeren over ikonet. På mobil kan du gå inn på Innstillinger og deretter WiFi.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\andre_enheter_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Fungerer WiFi på andre enheter?
+Body:
+Forsøk å koble til WiFi på en annen enhet.
+Dette kan for eksempel være en annen mobiltelefon, PC eller nettbrett.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\bruker_du_wifi.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Bruker du WiFi?
+Body:
+Lampene på ruteren lyser som de skal.
+Siden du fortsatt opplever problemer, kan feilen skyldes WiFi-tilkobling eller problemer med noe av utstyret.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\hvilken_aksess_wr2.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Hvilken type Internett har du?
+Body:
+Vi leverer internett gjennom flere typer teknologier.
+Er du usikker på hvilken type du har, kan du undersøke hvordan utstyret ditt er koblet opp.
+Valg: Fiber / Trådløst Bredbånd / Kabel (Coax)
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\internettlampe_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Internettlampe
+Body:
+Nå som ruteren er tilkoblet strøm, bør du undersøke hvordan internettlampen lyser.
+Dersom du fortsatt ikke kommer på nett, vil dette gi en indikasjon på hvor feilen ligger.
+Valg: Stabilt grønn - Internett fungerer / Stabilt grønn - Internett fungerer fortsatt ikke / Blinker rødt / Lampen er mørk / Blinker gul
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\internettlampe_step_v2.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Internettlampe
+Body:
+Nå som ruteren er tilkoblet strøm, bør du undersøke hvordan internettlampen lyser.
+Dersom du fortsatt ikke kommer på nett, vil dette gi en indikasjon på hvor feilen ligger.
+Valg: Stabilt grønn - Internett fungerer / Stabilt grønn - Internett fungerer fortsatt ikke / Blinker rødt / Lampen er mørk / Blinker gul
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\internettlampe_step_v3.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Internettlampe
+Body:
+Nå som ruteren er tilkoblet strøm, bør du undersøke hvordan internettlampen lyser.
+Dersom du fortsatt ikke kommer på nett, vil dette gi en indikasjon på hvor feilen ligger.
+Valg: Stabilt grønn - Internett fungerer / Stabilt grønn - Internett fungerer fortsatt ikke / Blinker rødt / Lampen er mørk / Blinker gul
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\lampestatus.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Lampestatus
+Body:
+Den øverste lampen (internett) skal lyse stabilt grønn, mens den nederste (strøm) skal lyse stabilt hvit.
+Valg: Ja / Nei, strømlampen er mørk / Nei, strømlampen er grønn / Nei, internettlampen er mørk / Nei, internettlampen blinker rødt / Nei, internettlampen blinker gult
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\lampestatus_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Lampestatus
+Body:
+Den øverste lampen (internett) skal lyse stabilt grønn, mens den nederste (strøm) skal lyse stabilt hvit.
+Valg: Ja / Nei, strømlampen er mørk / Nei, strømlampen er grønn / Nei, internettlampen er mørk / Nei, internettlampen blinker rødt / Nei, internettlampen blinker gult
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\lampestatus_step_v2.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Lampestatus
+Body:
+Den øverste lampen (internett) skal lyse stabilt grønn, mens den nederste (strøm) skal lyse stabilt hvit.
+Valg: Ja / Nei, strømlampen er mørk / Nei, strømlampen er grønn / Nei, internettlampen er mørk / Nei, internettlampen blinker rødt / Nei, internettlampen blinker gult
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\nettverkskabel_ok_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Problemer med WiFi
+Body:
+Du kommer på nett med nettverkskabel tilkoblet. Dette betyr at problemet ikke ligger på våre linjer, men på WiFi-tilkoblingen.
+Siden du har testet WiFi på flere enheter, er det sannsynlig at problemet ligger på ruteren eller annet nettverksutstyr du har tilkoblet.
+Du kan fortsette å bruke internett med nettverkskabel, eller feilsøke videre på utstyret.
+Er enhetene du har testet med av eldre årgang?  I noen tilfeller kan eldre enheter få problemer med å koble seg til WiFi Ruter II som har den nyeste sikkerhetsstandarden for nettverkspassord. Les mer her om hvordan du kan løse problemet:  WPA3 - Problemer med tilkobling på WiFi Ruter II
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\nullstill_ruter_generell_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Nullstill ruteren
+Body:
+1. Finn frem en penn eller en annen tynn gjenstand
+2. Stikk pennen inn i hullet merket med RESET
+3. Hold pennen inne i 10 sekunder og slipp
+4. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\prov_nettverkskabel_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Prøv med en nettverkskabel
+Body:
+Problemer med hastighet kan gjelde kun for WiFi. For å finne ut om dette er problemet, anbefaler vi å koble en nettverkskabel mellom ruteren og PC’n.  Hopp over dette trinnet hvis du ikke har uttak for nettverkskabel på din PC.
+Valg: Ja / Nei / Hopp over
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\restart_antenne.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Restart utendørs antenne
+Body:
+1. Trekk ut antenne-adapteret som står i stikkontakten
+2. Vent minst 10 sekunder
+3. Sett antenne-adapteret tilbake i stikkontakten. NB! Det kan ta noen minutter før utendørsantennen kobler seg opp til nettverket igjen
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\restart_modem_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Restart modem
+Body:
+1. Ta ut strømkontakten
+2. Vent i 10 sekunder
+3. Sett inn strømkontakten
+NB: Det kan ta noen minutter før modemet er tilkoblet.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\restart_ruter_wr2.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Restart ruteren
+Body:
+Problemet kan ofte løses ved å restarte ruteren.  Dette gjør du slik:
+1. Trekk ut strømkontakten eller bruk av/på-bryteren
+2. La ruteren stå uten strøm i 10 sekunder
+3. Koble til strømmen igjen. NB! Det kan ta noen minutter før ruteren kobler seg til Internett igjen.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\sjekk_kabling.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Sjekk kabling
+Body:
+En eller flere av kablene kan være koblet feil.
+Følg veiledning for  oppkobling av WiFi Ruter II  for hjelp med riktig kabling.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\sjekk_kabling_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Sjekk kabling
+Body:
+En eller flere av kablene kan være koblet feil.
+Følg veiledning for  oppkobling av WiFi Ruter II  for hjelp med riktig kabling.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\sjekk_kabling_step_v2.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Sjekk kabling
+Body:
+En eller flere av kablene kan være koblet feil.     Følg veiledning for  oppkobling av WiFi Ruter II  for hjelp med riktig kabling.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\tilkoblet_strom_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Sjekk at ruteren er tilkoblet strøm
+Body:
+- Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten
+- Sjekk at bryteren for av/på står  På
+- Test eventuelt et annet strømuttak du vet fungerer
+Noen strømforsyninger har også en liten lampe/diode som lyser når den får strøm - sjekk evt. om den lyser når det står koblet til.
+Valg: Mørk / Hvit / Grønn
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\tilkoblet_strom_step_v2.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Sjekk at ruteren er tilkoblet strøm
+Body:
+- Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten
+- Sjekk at bryteren for av/på står  På
+- Test eventuelt et annet strømuttak du vet fungerer
+Valg: Mørk / Hvit / Grønn
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\tilkoblet_strom_step_v3.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Sjekk at ruteren er tilkoblet strøm
+Body:
+- Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten
+- Sjekk at bryteren for av/på står  På
+- Test eventuelt et annet strømuttak du vet fungerer
+Valg: Mørk / Hvit / Grønn
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\tilkoblet_wifi_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Bruker du WiFi?
+Body:
+Lampene på ruteren lyser som de skal.
+Siden du fortsatt opplever problemer, kan feilen skyldes WiFi-tilkobling eller problemer med noe av utstyret.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\wifi_ruter_ii\wifi_status_step.json ===
+Kategori: ikke-pa-nett
+Ruter: wifi_ruter_ii
+Tittel: Er du tilkoblet WiFi?
+Body:
+Sjekk om WiFi-ikonet på PC eller mobil viser tilkoblet.   På PC gjør du dette ved å holde musepekeren over ikonet. På mobil kan du gå inn på Innstillinger og deretter WiFi.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\andre_enheter_step.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Fungerer WiFi på andre enheter?
+Body:
+Forsøk å koble til WiFi på en annen enhet.
+Dette kan for eksempel være en annen mobiltelefon, PC eller nettbrett.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\boot_loop_step.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Ruteren starter ikke opp
+Body:
+Dersom Power-lampen blinker blått over en lengre periode (mer enn 5 minutter) eller lyser stabilt rødt, skyldes dette ofte feil på ruteren.
+Problemet kan i enkelte tilfeller løses ved å ta en spesiell form for nullstilling.
+1. Skru av ruteren med Av/På-bryteren
+2. Finn frem en penn eller en annen tynn gjenstand
+3. Stikk pennen inn i hullet merket med RESET
+4. Skru på ruteren med Av/På-bryteren samtidig som du holder pennen i RESET-hullet
+5. Hold pennen inne i 30 sekunder, og slipp
+6. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter
+NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren.
+Hjelp til oppkobling
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\boot_loop_step_v2.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Ruteren starter ikke opp
+Body:
+Dersom Power-lampen blinker blått over en lengre periode (mer enn 5 minutter) eller lyser stabilt rødt, skyldes dette ofte feil på ruteren.
+Problemet kan i enkelte tilfeller løses ved å ta en spesiell form for nullstilling.
+1. Skru av ruteren med Av/På-bryteren
+2. Finn frem en penn eller en annen tynn gjenstand
+3. Stikk pennen inn i hullet merket med RESET
+4. Skru på ruteren med Av/På-bryteren samtidig som du holder pennen i RESET-hullet
+5. Hold pennen inne i 30 sekunder, og slipp
+6. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter
+NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\defekt_ruter_result.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Ruteren er defekt
+Body:
+Ruteren din er dessverre defekt. Årsakene til dette kan være mange, men ofte kan det oppstå  problemer ved lyn og torden .
+Ta kontakt med kundeservice, så skal vi bestille en ny ruter til deg. 
+Se kontaktinformasjon og åpningstider
+Valg: 
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\hvilken_aksess_zyxel8702.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Hvilken type internett har du?
+Body:
+Vi leverer internett gjennom flere typer teknologier.
+Er du usikker på hvilken type du har, kan du undersøke hvordan utstyret ditt er koblet opp.
+Valg: Fiber / Kabel (Coax) / Trådløst Bredbånd
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\internettlampe_step.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Internettlampe
+Body:
+Nå som ruteren er tilkoblet strøm, bør du undersøke hvordan internettlampen lyser.
+Dersom du fortsatt ikke kommer på nett, vil dette gi en indikasjon på hvor feilen ligger.
+Valg: Grønn - Internett fungerer / Grønn - Internett fungerer fortsatt ikke / Rød / Mørk
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\internettlampe_step_v2.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Internettlampe
+Body:
+Nå som ruteren er tilkoblet strøm, bør du undersøke hvordan internettlampen lyser.
+Dersom du fortsatt ikke kommer på nett, vil dette gi en indikasjon på hvor feilen ligger.
+Valg: Grønn - Internett fungerer / Grønn - Internett fungerer fortsatt ikke / Rød / Mørk
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\internettlampe_step_v3.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Internettlampe
+Body:
+Nå som ruteren er tilkoblet strøm, bør du undersøke hvordan internettlampen lyser.
+Dersom du fortsatt ikke kommer på nett, vil dette gi en indikasjon på hvor feilen ligger.
+Valg: Grønn - Internett fungerer / Grønn - Internett fungerer fortsatt ikke / Rød / Mørk
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\koble_til_wifi_step.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Koble til WiFi
+Body:
+Du må koble til WiFi på enheten du bruker.
+- Sjekk at Trådløst-lampen lyser på ruteren. Lyser den ikke, kan du skru den på ved å trykke på den blå knappen.
+- Passordet finner du på undersiden av ruteren (etter WPA2) dersom du ikke selv har endret det.
+Valg: Koble til WiFi på PC eller mobil
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\lampestatus_step.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Lampestatus
+Body:
+Du kan aktivere lampene ved å trykke kort på den store blå knappen. Alle lamper på Zyxel P8702N skrur seg automatisk av etter 30 sekunder med unntak av Power og Trådløst.
+Lampene lyser som de skal når Power lyser stabilt blå, WAN lyser gul eller grønn, og Internett lyser grønn.
+Valg: Ja / Nei, Power er mørk / Nei, Power er rød eller blinker blå (i mer enn 5 minutter) / Nei, WAN-lampen er mørk / Nei, Internett er rød
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\lampestatus_step_v2.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Lampestatus
+Body:
+Du kan aktivere lampene ved å trykke kort på den store blå knappen. Alle lamper på Zyxel P8702N skrur seg automatisk av etter 30 sekunder med unntak av Power og Trådløst.Lampene lyser som de skal når Power lyser stabilt blå, WAN lyser gul eller grønn, og Internett lyser grønn. 
+Valg: Ja / Nei, Power er mørk / Nei, Power er rød eller blinker blå (i mer enn 5 minutter) / Nei, WAN-lampen er mørk / Nei, Internett er rød
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\lampestatus_step_v3.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Lampestatus
+Body:
+Du kan aktivere lampene ved å trykke kort på den store blå knappen. Alle lamper på Zyxel P8702N skrur seg automatisk av etter 30 sekunder med unntak av Power og Trådløst.
+Lampene lyser som de skal når Power lyser stabilt blå, WAN lyser gul eller grønn, og Internett lyser grønn.
+Valg: Ja / Nei, Power er mørk / Nei, Power er rød eller blinker blå (i mer enn 5 minutter) / Nei, WAN-lampen er mørk / Nei, Internett er rød
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\nettverkskabel_ok_step.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Problemer med WiFi
+Body:
+Du kommer på nett med nettverkskabel tilkoblet. Dette betyr at problemet ikke ligger på våre linjer, men på WiFi-tilkoblingen.
+Siden du har testet WiFi på flere enheter, er det sannsynlig at problemet ligger på ruteren eller annet nettverksutstyr du har tilkoblet.
+Du kan fortsette å bruke internett med nettverkskabel, eller feilsøke videre på utstyret.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\nullstill_ruter_generell_step.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Nullstill ruteren
+Body:
+1. Finn frem en penn eller en annen tynn gjenstand
+2. Stikk pennen inn i hullet merket med RESET
+3. Hold pennen inne i 10 sekunder og slipp
+4. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter
+NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren.
+Hjelp til oppkobling
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\nullstill_ruter_wifi_step.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Nullstill ruteren
+Body:
+1. Finn frem en penn eller en annen tynn gjenstand
+2. Stikk pennen inn i hullet merket med RESET
+3. Hold pennen inne i 10 sekunder og slipp
+4. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\prov_nettverkskabel.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Prøv med en nettverkskabel
+Body:
+Problemer med Internett kan gjelde kun for WiFi. For å finne ut om dette er problemet, anbefaler vi å koble en nettverkskabel mellom ruteren og PC’n.   Hopp over dette trinnet hvis du ikke har uttak for nettverkskabel på din PC.
+Valg: Ja / Nei / Hopp over
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\restart_modem_step.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Restart modem
+Body:
+1. Ta ut strømkontakten
+2. Vent i 10 sekunder
+3. Sett inn strømkontakten
+NB: Det kan ta noen minutter før modemet er tilkoblet.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\restart_ont_step.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Restart fiberboksen
+Body:
+1. Ta ut strømkontakten
+2. Vent i 1 minutt
+3. Sett inn strømkontakten
+NB: Det kan ta noen minutter før fiberboksen er tilkoblet.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\restart_ruter_ikke_nett_step.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Restart ruteren
+Body:
+Problemet kan ofte løses ved å restarte ruteren. Dette gjør du slik:
+1. Trekk ut strømkontakten eller bruk av/på-bryteren
+2. La ruteren stå uten strøm i 10 sekunder
+3. Koble til strømmen igjen. NB! Det kan ta noen minutter før ruteren kobler seg til Internett igjen.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\sjekk_kabling_step.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Sjekk kabling
+Body:
+En eller flere av kablene kan være koblet feil.
+Følg veiledning for  oppkobling av Fiber  for hjelp med riktig kabling.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\sjekk_kabling_step_v2.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Sjekk kabling
+Body:
+En eller flere av kablene kan være koblet feil.     Følg veiledning for  oppkobling av Internett over kabel  for hjelp med riktig kabling.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\sjekk_kabling_step_v3.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Sjekk kabling
+Body:
+En eller flere av kablene kan være koblet feil.
+Følg veiledning for  oppkobling  for hjelp med riktig kabling.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\tilkoblet_strom.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Sjekk at ruteren er tilkoblet strøm
+Body:
+- Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten
+- Sjekk at bryteren for av/på står  på
+- Test et annet strømuttak du vet fungerer
+Valg: Mørk / Stabilt blå / Rød
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\tilkoblet_strom_step.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Sjekk at ruteren er tilkoblet strøm
+Body:
+- Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten
+- Sjekk at bryteren for av/på står  på
+- Test et annet strømuttak du vet fungerer
+Valg: Mørk / Stabilt blå / Rød
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\tilkoblet_strom_v2.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Sjekk at ruteren er tilkoblet strøm
+Body:
+- Sjekk at strømkabelen sitter godt i på ruteren og i strømkontakten
+- Sjekk at bryteren for av/på står  på
+- Test et annet strømuttak du vet fungerer
+Valg: Mørk / Stabilt blå / Rød
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\tilkoblet_wifi_step.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Bruker du WiFi?
+Body:
+Lampene på ruteren lyser som de skal.
+Siden du fortsatt opplever problemer, kan feilen skyldes WiFi-tilkobling eller problemer med noe av utstyret.
+Valg: Ja / Nei
+
+---
+
+=== ikke-pa-nett\zyxel_p8702n\wifi_status_step.json ===
+Kategori: ikke-pa-nett
+Ruter: zyxel_p8702n
+Tittel: Er du tilkoblet WiFi?
+Body:
+Sjekk om WiFi-ikonet på PC eller mobil viser tilkoblet.   På PC gjør du dette ved å holde musepekeren over ikonet. På mobil kan du gå inn på Innstillinger og deretter WiFi.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\nei\huawei_b818\endre_plassering_av_ruter_step.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Forsøk å endre plassering av ruter
+Body:
+Forsøk å få inn bedre signaler ved å plassere ruteren et annet sted i huset.
+MODE-lampen vil endre farge dersom du får 4G/4G+ dekning.
+Vi anbefaler at du plasserer ruteren:
+- Høyt
+- Sentralt
+- Gjerne i nærheten av et vindu
+Det kan være nyttig å se hvor du får best signaler på mobilen og flytte ruteren deretter.
+Legg også merke til lampene som indikerer signalstyrke for best mulig dekning.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\nei\huawei_b818\hvilken_aksess.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Hvilken type Internett har du?
+Body:
+Vi leverer Internett gjennom flere typer teknologier. Over mobilnettet leverer vi Mobilt Bredbånd og Trådløst Bredbånd.
+- Mobilt bredbånd kan du bruke alle steder der det er mobildekning, og har en gitt mengde mobildata tilgjengelig hver måned.
+- Trådløst Bredbånd fungerer kun på adressen der du bor.
+Valg: Trådløst Bredbånd / Mobilt Bredbånd
+
+---
+
+=== tregt-nett\nei\huawei_b818\lampestatus_mode_step.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Lampestatus
+Body:
+MODE-lampen indikerer hvilken type mobildekning du har på ruteren.
+Valg: Gul / Blå / Turkis
+
+---
+
+=== tregt-nett\nei\huawei_b818\mode_lyser_blaatt_step.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Du er tilkoblet 3G
+Body:
+Ruteren din mottar signaler på 3G og er tilkoblet mobilnettet. 3G kan fungere fint til surfing på Internett, men du får bedre hastighet og kapasitet med 4G/4G+. Kanskje er 3G-dekningen årsaken til at du opplever nettet som ustabilt.
+Sjekk dekningen  i ditt område for å finne ut om du har tilgang til 4G/4G+.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\nei\huawei_b818\mode_lyser_cyan_step.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Du er tilkoblet 4G/4G+
+Body:
+Ruteren din mottar signaler på 4G eller 4G+ og er tilkoblet mobilnettet. Dette skal i utgangspunktet gi god internettforbindelse, men undersøk også at du mottar sterke signaler for best mulig dekning.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\nei\huawei_b818\mode_lyser_gult_step.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Du er tilkoblet 2G
+Body:
+Ruteren din mottar signaler på 2G og er tilkoblet mobilnettet. På grunn av svært lave hastigheter vil ikke 2G fungere optimalt til surfing på nett.
+Sjekk dekningen  i ditt område for å finne ut om du har tilgang til 4G/4G+.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\nei\huawei_b818\plassering_4g.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Forsøk å endre plassering av ruter
+Body:
+Forsøk å få inn bedre signaler ved å plassere ruteren et annet sted i huset.
+Vi anbefaler at du plasserer ruteren:
+- Høyt
+- Sentralt
+- Gjerne i nærheten av et vindu
+Det kan være nyttig å se hvor du får best signaler på mobilen og flytte ruteren deretter.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\nei\jeg_har_en_annen_ruter\annen_ruter_result.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Eldre rutere
+Body:
+Du finner hjelp til blant annet lampestatus, nettverksnavn og passord, og innstillinger på ruteren på vår utstyrsoversikt.
+Eldre utstyr kan også være en årsak til problemer med Internett. Ved å oppgradere utstyret kan du oppleve at Internett både blir mer stabilt, og gir bedre WiFi-dekning.
+Vi anbefaler vår WiFi Ruter og WiFi Forsterker med  Fornøydhetsgaranti , disse kan du bestille på Mine Sider. Har du Mobilt Bredbånd, finner du til enhver tid  det nyeste utstyret i vår nettbutikk .
+Valg: Mine sider
+
+---
+
+=== tregt-nett\nei\wifi_ruter_eller_wifi_ruter_ii\1_enhet_pa_nett.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Koble vekk andre enheter
+Body:
+Koble fra internett på alle datamaskiner og mobiltelefoner unntatt den du bruker. Dette kan du gjøre ved å:
+- Slå av enhetene
+- Dra ut nettverkskabelen
+- Koble fra WiFi 
+Test hastigheten på Internett  når du kun har tilkoblet en enhet.
+Valg: Speedometer / Ja / Nei
+
+---
+
+=== tregt-nett\nei\wifi_ruter_eller_wifi_ruter_ii\copy_of_restart_ruter_tregt_step.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Slå ruteren av og på
+Body:
+Problemet kan ofte løses ved å restarte ruteren. Dette gjør du slik:
+1. Trekk ut strømkontakten eller bruk av/på-bryteren
+2. La ruteren stå uten strøm i 10 sekunder
+3. Koble til strømmen igjen. NB! Det kan ta noen minutter før ruteren kobler seg til Internett igjen
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\nei\wifi_ruter_eller_wifi_ruter_ii\flere_paa_nett_step.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Flere på nett
+Body:
+Antall enheter (PC, nettbrett, mobiler etc.) tilkoblet nettet kan påvirke hastigheten.
+Hastigheten blir fordelt på alle brukere, noe som kan skape utfordringer hvis f.eks hele familien ser på Netflix samtidig.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\nei\zyxel_p8702n\1_enhet_pa_nett.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Koble vekk andre enheter
+Body:
+Koble fra internett på alle datamaskiner og mobiltelefoner unntatt den du bruker. Dette kan du gjøre ved å:
+- Slå av enhetene
+- Dra ut nettverkskabelen
+- Koble fra WiFi 
+Test hastigheten på Internett  når du kun har tilkoblet en enhet.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\nei\zyxel_p8702n\flere_pa_nett.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Flere på nett
+Body:
+Antall enheter (PC, nettbrett, mobiler etc.) tilkoblet nettet kan påvirke hastigheten.
+Hastigheten blir fordelt på alle brukere, noe som kan skape utfordringer hvis f.eks hele familien ser på Netflix samtidig.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\nei\zyxel_p8702n\kontakt_leverandor_result.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Problemer med enhet
+Body:
+Problemet skyldes ikke internettforbindelsen, men enheten du bruker.
+I noen tilfeller kan eldre enheter få problemer med å koble seg til WiFi Ruter II som har den nyeste sikkerhetsstandarden for nettverkspassord. Les mer her om hvordan du kan løse problemet:  WPA3 - Problemer med tilkobling på WiFi Ruter II
+Hvis dette ikke løser problemet, bør du kontakte leverandøren av enheten din for mer hjelp.
+Valg: 
+
+---
+
+=== tregt-nett\nei\zyxel_p8702n\nettverkskabel_ok_step.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Problemer med WiFi
+Body:
+Du får riktig hastighet med nettverkskabel tilkoblet. Dette betyr at problemet ikke ligger på våre linjer, men på WiFi-dekningen.
+Problemer med WiFi kan skyldes utstyret du har tilkoblet, din PC eller mobiltelefon, eller andre forhold.
+Du kan fortsette å bruke internett via nettverkskabel, eller feilsøke videre på utstyret.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\nei\zyxel_p8702n\nullstill_ruter_generell_step.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Nullstill ruteren
+Body:
+1. Finn frem en penn eller en annen tynn gjenstand
+2. Stikk pennen inn i hullet merket med RESET
+3. Hold pennen inne i 10 sekunder og slipp
+4. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter
+NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren.
+Hjelp til oppkobling
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\nei\zyxel_p8702n\nullstill_ruter_wifi_step.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Nullstill ruteren
+Body:
+1. Finn frem en penn eller en annen tynn gjenstand
+2. Stikk pennen inn i hullet merket med RESET
+3. Hold pennen inne i 10 sekunder og slipp
+4. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\nei\zyxel_p8702n\prov_nettverkskabel.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Prøv med en nettverkskabel
+Body:
+Problemer med hastighet kan gjelde kun for WiFi. For å finne ut om dette er problemet, anbefaler vi å koble en nettverkskabel mellom ruteren og PC’n.
+Sjekk at kabelen ikke har synlige skader før du kobler den til.
+Hopp over dette trinnet hvis du ikke har uttak for nettverkskabel på din PC.
+Valg: Ja / Nei / Hopp over
+
+---
+
+=== tregt-nett\nei\zyxel_p8702n\restart_ruter_tregt_step.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Restart ruteren
+Body:
+Problemet kan ofte løses ved å restarte ruteren. Dette gjør du slik:
+1. Trekk ut strømkontakten eller bruk av/på-bryteren
+2. La ruteren stå uten strøm i 10 sekunder
+3. Koble til strømmen igjen. NB! Det kan ta noen minutter før ruteren kobler seg til Internett igjen.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\nei\zyxel_p8702n\sjekk_kabler_step.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Sjekk nettverkskabelen
+Body:
+Tregt nett kan skyldes problemer med nettverkskabelen eller uttakene kabelen er koblet til.
+- Sjekk at kabelen ikke er skadet
+- Bytt LAN-uttak på baksiden av ruteren
+- Bytt nettverkskabelen med en annen
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\nei\zyxel_p8702n\wifi_step.json ===
+Kategori: tregt-nett
+Ruter: nei
+Tittel: Er du tilkoblet WiFi?
+Body:
+Det kan være forskjell på hvordan hastigheten oppleves på trådløst nett og med nettverkskabel. WiFi er ofte utsatt for flere forstyrrelser i hjemmet som kan påvirke hastigheten.
+Les mer om hva som kan påvirke WiFi .
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\1_enhet_pa_nett.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Koble vekk andre enheter
+Body:
+Koble fra internett på alle datamaskiner og mobiltelefoner unntatt den du bruker. Dette kan du gjøre ved å:
+- Slå av enhetene
+- Dra ut nettverkskabelen
+- Koble fra WiFi
+Test stabiliteten på internettet når du kun har tilkoblet en enhet.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\1_enhet_pa_nett_v2.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Koble vekk andre enheter
+Body:
+Koble fra internett på alle datamaskiner og mobiltelefoner unntatt den du bruker. Dette kan du gjøre ved å:
+- Slå av enhetene
+- Dra ut nettverkskabelen
+- Koble fra WiFi
+Test stabiliteten på internettet når du kun har tilkoblet en enhet.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\alltid_wifi_result.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Vi vil gjerne snakke med deg
+Body:
+Med Internett fra oss og leieavtale på WiFi Ruter har du  Alltid WiFi og Fornøydhetsgaranti! 
+Kontakt oss på  915 09000 , så hjelper vi deg videre.  
+Les mer om hvordan du kan  forbedre WiFi-dekningen , eller bestill en eller flere WiFi Forsterkere på  Mine sider .
+Valg: 
+
+---
+
+=== tregt-nett\shared\flere_pa_nett.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Flere på nett
+Body:
+Antall enheter (PC, nettbrett, mobiler etc.) tilkoblet nettet kan påvirke hastighet og opplevd stabilitet.
+Hastigheten blir fordelt på alle brukere, noe som kan skape utfordringer hvis f.eks hele familien ser på Netflix samtidig.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\flere_pa_nett_v2.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Flere på nett
+Body:
+Antall enheter (PC, nettbrett, mobiler etc.) tilkoblet nettet kan påvirke hastighet og opplevd stabilitet.
+Hastigheten blir fordelt på alle brukere, noe som kan skape utfordringer hvis f.eks hele familien ser på Netflix samtidig.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\godt_signal_gronn.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Sterke signaler
+Body:
+Grønn lampe indikerer at WiFi forsterkeren mottar sterke signaler og fungerer optimalt.
+Er du ikke fornøyd med dekningen, kan du lese mer om  plassering av forsterkeren her.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\godt_signal_gul.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Gode signaler
+Body:
+Gul lampe indikerer at WiFi Forsterkeren mottar gode signaler. Forsterkeren kan fungere svært godt med denne statusen, men prøv gjerne å plassere den nærmere ruteren.
+Best plassering for forsterkeren er et sted mellom ruteren og der du ønsker god dekning.  Les mer om plassering.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\har_du_forsterker_step.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: WiFi Forsterker
+Body:
+WiFi Forsterker sikrer god dekning i boliger med krevende dekningsforhold.
+Forsterkeren viderefører de trådløse signalene som blir sendt fra din ruter, for å sikre dekning på et størst mulig areal.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\hastighetstest.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Sjekk hastigheten
+Body:
+Sjekk hvilken hastighet du måler på internett ved hjelp av  vårt speedometer .
+Er du usikker på hvilken hastighet du abonnerer på, kan du se dette på  Mine sider.
+Valg: Speedometer / Ja / Nei
+
+---
+
+=== tregt-nett\shared\ikke_hastighetsproblem_result.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Riktig hastighet
+Body:
+Testen måler riktig hastighet for ditt abonnement. Ønsker du høyere hastighet, kan du oppgradere på  Mine sider .
+Opplever du at hastigheten varierer med hyppige mellomrom, kan det skyldes at nettet er ustabilt.
+Valg: Ja
+
+---
+
+=== tregt-nett\shared\ingen_signal_mork.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Ingen signal
+Body:
+Mørk lampe indikerer at WiFi Forsterkeren hverken sender eller mottar signaler.
+Sjekk at forsterkeren er koblet opp mot ruteren.
+Slik kobler opp din WiFi Forsterker.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\kontakt_oss_result.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Vi vil gjerne snakke med deg
+Body:
+Vi må undersøke problemet ditt nærmere. Ta kontakt med kundeservice, så hjelper vi deg videre.
+Se kontaktinformasjon og åpningstider
+Valg: 
+
+---
+
+=== tregt-nett\shared\nettverkskabel_ok_step.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Problemer med WiFi
+Body:
+Du får riktig hastighet med nettverkskabel tilkoblet. Dette betyr at problemet ikke ligger på våre linjer, men på WiFi-dekningen.
+Problemer med WiFi kan skyldes utstyret du har tilkoblet, din PC eller mobiltelefon, eller andre forhold.
+Du kan fortsette å bruke internett via nettverkskabel, eller feilsøke videre på utstyret.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\nettverkskabel_ok_step_v2.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Problemer med WiFi
+Body:
+Du får riktig hastighet med nettverkskabel tilkoblet. Dette betyr at problemet ikke ligger på våre linjer, men på WiFi-dekningen.
+Problemer med WiFi kan skyldes utstyret du har tilkoblet, din PC eller mobiltelefon, eller andre forhold.
+Du kan fortsette å bruke internett via nettverkskabel, eller feilsøke videre på utstyret.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\nettverkskabel_ok_step_v3.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Problemer med WiFi
+Body:
+Du får riktig hastighet med nettverkskabel tilkoblet. Dette betyr at problemet ikke ligger på våre linjer, men på WiFi-dekningen.
+Problemer med WiFi kan skyldes utstyret du har tilkoblet, din PC eller mobiltelefon, eller andre forhold.
+Du kan fortsette å bruke internett via nettverkskabel, eller feilsøke videre på utstyret.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\nullstill_ruter_begge.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Nullstill ruteren
+Body:
+1. Finn frem en penn eller en annen tynn gjenstand
+2. Stikk pennen inn i hullet merket med RESET
+3. Hold pennen inne i 10 sekunder og slipp
+4. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter
+NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\nullstill_ruter_generell_step.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Nullstill ruteren
+Body:
+1. Finn frem en penn eller en annen tynn gjenstand
+2. Stikk pennen inn i hullet merket med RESET
+3. Hold pennen inne i 10 sekunder og slipp
+4. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter
+NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren.
+Hjelp til oppkobling
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\nullstill_ruter_wifi_forsterker_step.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Nullstill ruteren
+Body:
+1. Finn frem en penn eller en annen tynn gjenstand
+2. Stikk pennen inn i hullet merket med RESET
+3. Hold pennen inne i 10 sekunder og slipp
+4. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter
+NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\problemer_med_kapasitet_step.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Er du koblet til WiFi?
+Body:
+Det kan virke som at problemet oppstår når dere er flere på nett samtidig.
+Dette kan skyldes at du har en lavere hastighet enn det du har behov for, feil på vår linje, eller at problemet skyldes svak WiFi-dekning.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\problemer_med_kapasitet_step_v2.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Er du koblet til WiFi?
+Body:
+Det kan virke som at problemet oppstår når de er flere på nett samtidig.
+Dette kan skyldes at du har en lavere hastighet enn det du har behov for, feil på vår linje, eller at problemet skyldes svak WiFi-dekning.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\problemer_med_kapasitet_step_v3.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Er du koblet til WiFi?
+Body:
+Det kan virke som at problemet oppstår når dere er flere på nett samtidig.
+Dette kan skyldes at du har en lavere hastighet enn det du har behov for, feil på vår linje, eller at problemet skyldes svak WiFi-dekning.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\problem_lost_result.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Problemet er løst
+Body:
+Så godt å høre at du fikk løst problemet!
+Hvis dette er et problem du opplever ofte, bør du ta kontakt med oss på  kundeservice på 915 09000.
+Valg: 
+
+---
+
+=== tregt-nett\shared\prov_nettverkskabel.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Prøv med en nettverkskabel
+Body:
+Problemer med stabilitet kan gjelde kun for WiFi. For å finne ut om dette er problemet, anbefaler vi å koble en nettverkskabel mellom ruteren og PC’n.
+Sjekk at kabelen ikke har synlige skader før du kobler den til.
+Hopp over dette trinnet hvis du ikke har uttak for nettverkskabel på din PC.
+Valg: Ja / Nei / Hopp over
+
+---
+
+=== tregt-nett\shared\prov_nettverkskabel_step.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Prøv med en nettverkskabel
+Body:
+Problemer med hastighet kan gjelde kun for WiFi. For å finne ut om dette er problemet, anbefaler vi å koble en nettverkskabel mellom ruteren og PC’n.
+Sjekk at kabelen ikke har synlige skader før du kobler den til.
+Hopp over dette trinnet hvis du ikke har uttak for nettverkskabel på din PC.
+Valg: Ja / Nei / Hopp over
+
+---
+
+=== tregt-nett\shared\prov_nettverkskabel_v2.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Prøv med en nettverkskabel
+Body:
+Problemer med stabilitet kan gjelde kun for WiFi. For å finne ut om dette er problemet, anbefaler vi å koble en nettverkskabel mellom ruteren og PC’n.
+Sjekk at kabelen ikke har synlige skader før du kobler den til.
+Hopp over dette trinnet hvis du ikke har uttak for nettverkskabel på din PC.
+Valg: Ja / Nei / Hopp over
+
+---
+
+=== tregt-nett\shared\restart_ruter_step.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Restart ruteren
+Body:
+Problemet kan ofte løses ved å restarte ruteren. Dette gjør du slik:
+1. Trekk ut strømkontakten eller bruk av/på-bryteren
+2. La ruteren stå uten strøm i 10 sekunder
+3. Koble til strømmen igjen. NB! Det kan ta noen minutter før ruteren kobler seg til Internett igjen.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\restart_ruter_ustabilt_step.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Restart ruteren
+Body:
+Problemet kan ofte løses ved å restarte ruteren. Dette gjør du slik:
+1. Trekk ut strømkontakten eller bruk av/på-bryteren
+2. La ruteren stå uten strøm i 10 sekunder
+3. Koble til strømmen igjen. NB! Det kan ta noen minutter før ruteren kobler seg til Internett igjen.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\signalstyrke_step.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Signalstyrke
+Body:
+Lampen for signalstyrke på forsterkeren lyser forskjellig avhengig av hvor god dekning du har.
+Valg: Grønn / Rød / Gul / Mørk
+
+---
+
+=== tregt-nett\shared\sjekk_kabler_step.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Sjekk nettverkskabelen
+Body:
+Ustabilitet kan skyldes problemer med nettverkskabelen eller uttakene kabelen er koblet til.
+- Sjekk at kabelen ikke er skadet
+- Bytt LAN-uttak på baksiden av ruteren
+- Bytt nettverkskabelen med en annen
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\sjekk_kabler_step_v2.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Sjekk nettverkskabelen
+Body:
+Tregt nett kan skyldes problemer med nettverkskabelen eller uttakene kabelen er koblet til.
+- Sjekk at kabelen ikke er skadet
+- Bytt LAN-uttak på baksiden av ruteren
+- Bytt nettverkskabelen med en annen
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\sjekk_kabler_step_v3.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Sjekk nettverkskabelen
+Body:
+Ustabilitet kan skyldes problemer med nettverkskabelen eller uttakene kabelen er koblet til.
+- Sjekk at kabelen ikke er skadet
+- Bytt LAN-uttak på baksiden av ruteren
+- Bytt nettverkskabelen med en annen
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\svakt_signal_step.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: 
+Body:
+Rød lampe indikerer at WiFi Forsterkeren mottar svake signaler. Forsøk å plassere forsterkeren nærmere ruteren.
+Best plassering for forsterkeren er et sted mellom ruteren og der du ønsker god dekning.  Les mer om plassering.
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\tregt_nett_start.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Tregt nett
+Body:
+Velg  Start  dersom du opplever tregt internett hjemme, så veileder vi deg gjennom feilsøkingen.
+Valg: Start
+
+---
+
+=== tregt-nett\shared\tregt_step.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Restart ruteren
+Body:
+Problemet kan ofte løses ved å restarte ruteren. Dette gjør du slik:
+1. Trekk ut strømkontakten eller bruk av/på-bryteren
+2. La ruteren stå uten strøm i 10 sekunder
+3. Koble til strømmen igjen. NB! Det kan ta noen minutter før ruteren kobler seg til Internett igjen
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\wifi_step.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Er du tilkoblet WiFi?
+Body:
+Det kan være forskjell på hvordan stabiliteten oppleves på trådløst nett og med nettverkskabel. WiFi er ofte utsatt for flere forstyrrelser i hjemmet som kan påvirke stabiliteten.
+Les mer om hva som kan påvirke WiFi
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\wifi_step_v2.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Er du tilkoblet WiFi?
+Body:
+Det kan være forskjell på hvordan hastigheten oppleves på trådløst nett og med nettverkskabel. WiFi er ofte utsatt for flere forstyrrelser i hjemmet som kan påvirke hastigheten.
+Les mer om hva som kan påvirke WiFi .
+Valg: Ja / Nei
+
+---
+
+=== tregt-nett\shared\wifi_step_v3.json ===
+Kategori: tregt-nett
+Ruter: shared
+Tittel: Er du tilkoblet WiFi?
+Body:
+Det kan være forskjell på hvordan stabiliteten oppleves på trådløst nett og med nettverkskabel. WiFi er ofte utsatt for flere forstyrrelser i hjemmet som kan påvirke stabiliteten.
+Les mer om hva som kan påvirke WiFi
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\huawei_b818\endre_plassering_av_ruter_step.json ===
+Kategori: ustabilt-nett
+Ruter: huawei_b818
+Tittel: Forsøk å endre plassering av ruter
+Body:
+Forsøk å få inn bedre signaler ved å plassere ruteren et annet sted i huset.
+MODE-lampen vil endre farge dersom du får 4G/4G+ dekning.
+Vi anbefaler at du plasserer ruteren:
+- Høyt
+- Sentralt
+- Gjerne i nærheten av et vindu
+Det kan være nyttig å se hvor du får best signaler på mobilen og flytte ruteren deretter.
+Legg også merke til lampene som indikerer signalstyrke for best mulig dekning.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\huawei_b818\lampestatus_mode_step.json ===
+Kategori: ustabilt-nett
+Ruter: huawei_b818
+Tittel: Lampestatus
+Body:
+MODE-lampen indikerer hvilken type mobildekning du har på ruteren.
+Valg: Gul / Blå / Turkis
+
+---
+
+=== ustabilt-nett\huawei_b818\mode_lyser_blaatt_step.json ===
+Kategori: ustabilt-nett
+Ruter: huawei_b818
+Tittel: Du er tilkoblet 3G
+Body:
+Ruteren din mottar signaler på 3G og er tilkoblet mobilnettet. 3G kan fungere fint til surfing på Internett, men du får bedre hastighet og kapasitet med 4G/4G+. Kanskje er 3G-dekningen årsaken til at du opplever nettet som ustabilt.
+Sjekk dekningen  i ditt område for å finne ut om du har tilgang til 4G/4G+.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\huawei_b818\mode_lyser_cyan_step.json ===
+Kategori: ustabilt-nett
+Ruter: huawei_b818
+Tittel: Du er tilkoblet 4G/4G+
+Body:
+Ruteren din mottar signaler på 4G eller 4G+ og er tilkoblet mobilnettet. Dette skal i utgangspunktet gi god internettforbindelse, men undersøk også at du mottar sterke signaler for best mulig dekning.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\huawei_b818\mode_lyser_gult_step.json ===
+Kategori: ustabilt-nett
+Ruter: huawei_b818
+Tittel: Du er tilkoblet 2G
+Body:
+Ruteren din mottar signaler på 2G og er tilkoblet mobilnettet. På grunn av svært lave hastigheter vil ikke 2G fungere optimalt til surfing på nett.
+Sjekk dekningen  i ditt område for å finne ut om du har tilgang til 4G/4G+.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\huawei_b818\plassering_4g.json ===
+Kategori: ustabilt-nett
+Ruter: huawei_b818
+Tittel: Forsøk å endre plassering av ruter
+Body:
+Forsøk å få inn bedre signaler ved å plassere ruteren et annet sted i huset.
+Vi anbefaler at du plasserer ruteren:
+- Høyt
+- Sentralt
+- Gjerne i nærheten av et vindu
+Det kan være nyttig å se hvor du får best signaler på mobilen og flytte ruteren deretter.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\huawei_b818\restart_ruter_step.json ===
+Kategori: ustabilt-nett
+Ruter: huawei_b818
+Tittel: Restart ruteren
+Body:
+Problemet kan ofte løses ved å restarte ruteren. Dette gjør du slik:
+1. Trekk ut strømkontakten eller bruk av/på-bryteren
+2. La ruteren stå uten strøm i 10 sekunder
+3. Koble til strømmen igjen. NB! Det kan ta noen minutter før ruteren kobler seg til Internett igjen.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\jeg_har_en_annen_ruter\annen_ruter_result.json ===
+Kategori: ustabilt-nett
+Ruter: jeg_har_en_annen_ruter
+Tittel: Eldre rutere
+Body:
+Du finner hjelp til blant annet lampestatus, nettverksnavn og passord, og innstillinger på ruteren på vår utstyrsoversikt.
+Eldre utstyr kan også være en årsak til problemer med Internett. Ved å oppgradere utstyret kan du oppleve at Internett både blir mer stabilt, og gir bedre WiFi-dekning.
+Vi anbefaler vår WiFi Ruter og WiFi Forsterker med  Fornøydhetsgaranti , disse kan du bestille på Mine Sider. Har du Mobilt Bredbånd, finner du til enhver tid  det nyeste utstyret i vår nettbutikk .
+Valg: Mine sider
+
+---
+
+=== ustabilt-nett\shared\kontakt_oss_result.json ===
+Kategori: ustabilt-nett
+Ruter: shared
+Tittel: Vi vil gjerne snakke med deg
+Body:
+Vi må undersøke problemet ditt nærmere. Ta kontakt med kundeservice, så hjelper vi deg videre.
+Se kontaktinformasjon og åpningstider
+Valg: 
+
+---
+
+=== ustabilt-nett\shared\problem_lost_result.json ===
+Kategori: ustabilt-nett
+Ruter: shared
+Tittel: Problemet er løst
+Body:
+Så godt å høre at du fikk løst problemet!
+Hvis dette er et problem du opplever ofte, bør du ta kontakt med oss på  kundeservice på 915 09000.
+Valg: 
+
+---
+
+=== ustabilt-nett\shared\ustabilt_nett_start.json ===
+Kategori: ustabilt-nett
+Ruter: shared
+Tittel: Ustabilt nett
+Body:
+Velg  Start  dersom du opplever ustabilt internett hjemme, så veileder vi deg gjennom feilsøkingen.
+Valg: Start
+
+---
+
+=== ustabilt-nett\wifi_ruter_wifi_ruter_ii\1_enhet_pa_nett.json ===
+Kategori: ustabilt-nett
+Ruter: wifi_ruter_wifi_ruter_ii
+Tittel: Koble vekk andre enheter
+Body:
+Koble fra internett på alle datamaskiner og mobiltelefoner unntatt den du bruker. Dette kan du gjøre ved å:
+- Slå av enhetene
+- Dra ut nettverkskabelen
+- Koble fra WiFi
+Test stabiliteten på internettet når du kun har tilkoblet en enhet.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\wifi_ruter_wifi_ruter_ii\alltid_wifi_result.json ===
+Kategori: ustabilt-nett
+Ruter: wifi_ruter_wifi_ruter_ii
+Tittel: Vi vil gjerne snakke med deg
+Body:
+Med Internett fra oss og leieavtale på WiFi Ruter har du  Alltid WiFi og Fornøydhetsgaranti! 
+Kontakt oss på  915 09000 , så hjelper vi deg videre.  
+Les mer om hvordan du kan  forbedre WiFi-dekningen , eller bestill en eller flere WiFi Forsterkere på  Mine sider .
+Valg: 
+
+---
+
+=== ustabilt-nett\wifi_ruter_wifi_ruter_ii\flere_pa_nett.json ===
+Kategori: ustabilt-nett
+Ruter: wifi_ruter_wifi_ruter_ii
+Tittel: Flere på nett
+Body:
+Antall enheter (PC, nettbrett, mobiler etc.) tilkoblet nettet kan påvirke hastighet og opplevd stabilitet.
+Hastigheten blir fordelt på alle brukere, noe som kan skape utfordringer hvis f.eks hele familien ser på Netflix samtidig.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\wifi_ruter_wifi_ruter_ii\godt_signal_gronn.json ===
+Kategori: ustabilt-nett
+Ruter: wifi_ruter_wifi_ruter_ii
+Tittel: Sterke signaler
+Body:
+Grønn lampe indikerer at WiFi forsterkeren mottar sterke signaler og fungerer optimalt.
+Er du ikke fornøyd med dekningen, kan du lese mer om  plassering av forsterkeren her.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\wifi_ruter_wifi_ruter_ii\godt_signal_gul.json ===
+Kategori: ustabilt-nett
+Ruter: wifi_ruter_wifi_ruter_ii
+Tittel: Gode signaler
+Body:
+Gul lampe indikerer at WiFi Forsterkeren mottar gode signaler. Forsterkeren kan fungere svært godt med denne statusen, men prøv gjerne å plassere den nærmere ruteren.
+Best plassering for forsterkeren er et sted mellom ruteren og der du ønsker god dekning.  Les mer om plassering.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\wifi_ruter_wifi_ruter_ii\har_du_forsterker_step.json ===
+Kategori: ustabilt-nett
+Ruter: wifi_ruter_wifi_ruter_ii
+Tittel: WiFi Forsterker
+Body:
+WiFi Forsterker sikrer god dekning i boliger med krevende dekningsforhold.
+Forsterkeren viderefører de trådløse signalene som blir sendt fra din ruter, for å sikre dekning på et størst mulig areal.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\wifi_ruter_wifi_ruter_ii\ingen_signal_mork.json ===
+Kategori: ustabilt-nett
+Ruter: wifi_ruter_wifi_ruter_ii
+Tittel: Ingen signal
+Body:
+Mørk lampe indikerer at WiFi Forsterkeren hverken sender eller mottar signaler.
+Sjekk at forsterkeren er koblet opp mot ruteren.
+Slik kobler opp din WiFi Forsterker.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\wifi_ruter_wifi_ruter_ii\nettverkskabel_ok_step.json ===
+Kategori: ustabilt-nett
+Ruter: wifi_ruter_wifi_ruter_ii
+Tittel: Problemer med WiFi
+Body:
+Du får riktig hastighet med nettverkskabel tilkoblet. Dette betyr at problemet ikke ligger på våre linjer, men på WiFi-dekningen.
+Problemer med WiFi kan skyldes utstyret du har tilkoblet, din PC eller mobiltelefon, eller andre forhold.
+Du kan fortsette å bruke internett via nettverkskabel, eller feilsøke videre på utstyret.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\wifi_ruter_wifi_ruter_ii\nullstill_ruter_begge.json ===
+Kategori: ustabilt-nett
+Ruter: wifi_ruter_wifi_ruter_ii
+Tittel: Nullstill ruteren
+Body:
+1. Finn frem en penn eller en annen tynn gjenstand
+2. Stikk pennen inn i hullet merket med RESET
+3. Hold pennen inne i 10 sekunder og slipp
+4. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter
+NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\wifi_ruter_wifi_ruter_ii\nullstill_ruter_generell_step.json ===
+Kategori: ustabilt-nett
+Ruter: wifi_ruter_wifi_ruter_ii
+Tittel: Nullstill ruteren
+Body:
+1. Finn frem en penn eller en annen tynn gjenstand
+2. Stikk pennen inn i hullet merket med RESET
+3. Hold pennen inne i 10 sekunder og slipp
+4. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter
+NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren.
+Hjelp til oppkobling
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\wifi_ruter_wifi_ruter_ii\nullstill_ruter_wifi_forsterker_step.json ===
+Kategori: ustabilt-nett
+Ruter: wifi_ruter_wifi_ruter_ii
+Tittel: Nullstill ruteren
+Body:
+1. Finn frem en penn eller en annen tynn gjenstand
+2. Stikk pennen inn i hullet merket med RESET
+3. Hold pennen inne i 10 sekunder og slipp
+4. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter
+NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\wifi_ruter_wifi_ruter_ii\problemer_med_kapasitet_step.json ===
+Kategori: ustabilt-nett
+Ruter: wifi_ruter_wifi_ruter_ii
+Tittel: Er du koblet til WiFi?
+Body:
+Det kan virke som at problemet oppstår når dere er flere på nett samtidig.
+Dette kan skyldes at du har en lavere hastighet enn det du har behov for, feil på vår linje, eller at problemet skyldes svak WiFi-dekning.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\wifi_ruter_wifi_ruter_ii\prov_nettverkskabel.json ===
+Kategori: ustabilt-nett
+Ruter: wifi_ruter_wifi_ruter_ii
+Tittel: Prøv med en nettverkskabel
+Body:
+Problemer med stabilitet kan gjelde kun for WiFi. For å finne ut om dette er problemet, anbefaler vi å koble en nettverkskabel mellom ruteren og PC’n.
+Sjekk at kabelen ikke har synlige skader før du kobler den til.
+Hopp over dette trinnet hvis du ikke har uttak for nettverkskabel på din PC.
+Valg: Ja / Nei / Hopp over
+
+---
+
+=== ustabilt-nett\wifi_ruter_wifi_ruter_ii\signalstyrke_step.json ===
+Kategori: ustabilt-nett
+Ruter: wifi_ruter_wifi_ruter_ii
+Tittel: Signalstyrke
+Body:
+Lampen for signalstyrke på forsterkeren lyser forskjellig avhengig av hvor god dekning du har.
+Valg: Grønn / Rød / Gul / Mørk
+
+---
+
+=== ustabilt-nett\wifi_ruter_wifi_ruter_ii\sjekk_kabler_step.json ===
+Kategori: ustabilt-nett
+Ruter: wifi_ruter_wifi_ruter_ii
+Tittel: Sjekk nettverkskabelen
+Body:
+Ustabilitet kan skyldes problemer med nettverkskabelen eller uttakene kabelen er koblet til.
+- Sjekk at kabelen ikke er skadet
+- Bytt LAN-uttak på baksiden av ruteren
+- Bytt nettverkskabelen med en annen
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\wifi_ruter_wifi_ruter_ii\svakt_signal_step.json ===
+Kategori: ustabilt-nett
+Ruter: wifi_ruter_wifi_ruter_ii
+Tittel: 
+Body:
+Rød lampe indikerer at WiFi Forsterkeren mottar svake signaler. Forsøk å plassere forsterkeren nærmere ruteren.
+Best plassering for forsterkeren er et sted mellom ruteren og der du ønsker god dekning.  Les mer om plassering.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\wifi_ruter_wifi_ruter_ii\tregt_step.json ===
+Kategori: ustabilt-nett
+Ruter: wifi_ruter_wifi_ruter_ii
+Tittel: Restart ruteren
+Body:
+Problemet kan ofte løses ved å restarte ruteren. Dette gjør du slik:
+1. Trekk ut strømkontakten eller bruk av/på-bryteren
+2. La ruteren stå uten strøm i 10 sekunder
+3. Koble til strømmen igjen. NB! Det kan ta noen minutter før ruteren kobler seg til Internett igjen
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\wifi_ruter_wifi_ruter_ii\wifi_step.json ===
+Kategori: ustabilt-nett
+Ruter: wifi_ruter_wifi_ruter_ii
+Tittel: Er du tilkoblet WiFi?
+Body:
+Det kan være forskjell på hvordan stabiliteten oppleves på trådløst nett og med nettverkskabel. WiFi er ofte utsatt for flere forstyrrelser i hjemmet som kan påvirke stabiliteten.
+Les mer om hva som kan påvirke WiFi
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\zyxel_p8702n\1_enhet_pa_nett.json ===
+Kategori: ustabilt-nett
+Ruter: zyxel_p8702n
+Tittel: Koble vekk andre enheter
+Body:
+Koble fra internett på alle datamaskiner og mobiltelefoner unntatt den du bruker. Dette kan du gjøre ved å:
+- Slå av enhetene
+- Dra ut nettverkskabelen
+- Koble fra WiFi
+Test stabiliteten på internettet når du kun har tilkoblet en enhet.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\zyxel_p8702n\flere_pa_nett.json ===
+Kategori: ustabilt-nett
+Ruter: zyxel_p8702n
+Tittel: Flere på nett
+Body:
+Antall enheter (PC, nettbrett, mobiler etc.) tilkoblet nettet kan påvirke hastighet og opplevd stabilitet.
+Hastigheten blir fordelt på alle brukere, noe som kan skape utfordringer hvis f.eks hele familien ser på Netflix samtidig.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\zyxel_p8702n\kontakt_leverandor_result.json ===
+Kategori: ustabilt-nett
+Ruter: zyxel_p8702n
+Tittel: Problemer med enhet
+Body:
+Problemet skyldes ikke internettforbindelsen, men enheten du bruker.
+I noen tilfeller kan eldre enheter få problemer med å koble seg til WiFi Ruter II som har den nyeste sikkerhetsstandarden for nettverkspassord. Les mer her om hvordan du kan løse problemet:  WPA3 - Problemer med tilkobling på WiFi Ruter II
+Hvis dette ikke løser problemet, bør du kontakte leverandøren av enheten din for mer hjelp.
+Valg: 
+
+---
+
+=== ustabilt-nett\zyxel_p8702n\nettverkskabel_ok_step.json ===
+Kategori: ustabilt-nett
+Ruter: zyxel_p8702n
+Tittel: Problemer med WiFi
+Body:
+Du får riktig hastighet med nettverkskabel tilkoblet. Dette betyr at problemet ikke ligger på våre linjer, men på WiFi-dekningen.
+Problemer med WiFi kan skyldes utstyret du har tilkoblet, din PC eller mobiltelefon, eller andre forhold.
+Du kan fortsette å bruke internett via nettverkskabel, eller feilsøke videre på utstyret.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\zyxel_p8702n\nullstill_ruter_generell_step.json ===
+Kategori: ustabilt-nett
+Ruter: zyxel_p8702n
+Tittel: Nullstill ruteren
+Body:
+1. Finn frem en penn eller en annen tynn gjenstand
+2. Stikk pennen inn i hullet merket med RESET
+3. Hold pennen inne i 10 sekunder og slipp
+4. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter
+NB: Hvis nettverksnavn og passord eller andre innstillinger ikke er lagret, vil disse stilles tilbake til det de opprinnelig var når du fikk ruteren.
+Hjelp til oppkobling
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\zyxel_p8702n\nullstill_ruter_wifi_step.json ===
+Kategori: ustabilt-nett
+Ruter: zyxel_p8702n
+Tittel: Nullstill ruteren
+Body:
+1. Finn frem en penn eller en annen tynn gjenstand
+2. Stikk pennen inn i hullet merket med RESET
+3. Hold pennen inne i 10 sekunder og slipp
+4. Vent mens ruteren kobles opp. Dette kan ta inntil 5 minutter
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\zyxel_p8702n\problemer_med_kapasitet_step.json ===
+Kategori: ustabilt-nett
+Ruter: zyxel_p8702n
+Tittel: Er du koblet til WiFi?
+Body:
+Det kan virke som at problemet oppstår når dere er flere på nett samtidig.
+Dette kan skyldes at du har en lavere hastighet enn det du har behov for, feil på vår linje, eller at problemet skyldes svak WiFi-dekning.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\zyxel_p8702n\prov_nettverkskabel.json ===
+Kategori: ustabilt-nett
+Ruter: zyxel_p8702n
+Tittel: Prøv med en nettverkskabel
+Body:
+Problemer med stabilitet kan gjelde kun for WiFi. For å finne ut om dette er problemet, anbefaler vi å koble en nettverkskabel mellom ruteren og PC’n.
+Sjekk at kabelen ikke har synlige skader før du kobler den til.
+Hopp over dette trinnet hvis du ikke har uttak for nettverkskabel på din PC.
+Valg: Ja / Nei / Hopp over
+
+---
+
+=== ustabilt-nett\zyxel_p8702n\restart_ruter_ustabilt_step.json ===
+Kategori: ustabilt-nett
+Ruter: zyxel_p8702n
+Tittel: Restart ruteren
+Body:
+Problemet kan ofte løses ved å restarte ruteren. Dette gjør du slik:
+1. Trekk ut strømkontakten eller bruk av/på-bryteren
+2. La ruteren stå uten strøm i 10 sekunder
+3. Koble til strømmen igjen. NB! Det kan ta noen minutter før ruteren kobler seg til Internett igjen.
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\zyxel_p8702n\sjekk_kabler_step.json ===
+Kategori: ustabilt-nett
+Ruter: zyxel_p8702n
+Tittel: Sjekk nettverkskabelen
+Body:
+Ustabilitet kan skyldes problemer med nettverkskabelen eller uttakene kabelen er koblet til.
+- Sjekk at kabelen ikke er skadet
+- Bytt LAN-uttak på baksiden av ruteren
+- Bytt nettverkskabelen med en annen
+Valg: Ja / Nei
+
+---
+
+=== ustabilt-nett\zyxel_p8702n\wifi_step.json ===
+Kategori: ustabilt-nett
+Ruter: zyxel_p8702n
+Tittel: Er du tilkoblet WiFi?
+Body:
+Det kan være forskjell på hvordan stabiliteten oppleves på trådløst nett og med nettverkskabel. WiFi er ofte utsatt for flere forstyrrelser i hjemmet som kan påvirke stabiliteten.
+Les mer om hva som kan påvirke WiFi
+Valg: Ja / Nei
