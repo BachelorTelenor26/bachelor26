@@ -1,9 +1,13 @@
-import Link from "next/link"
-import { ChevronRight } from "lucide-react"
-import type { Article } from "../../lib/mockData"
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 interface ArticleListItemProps {
-  article: Article
+  article: {
+    slug: string;
+    title: string;
+    category: { name: string };
+    deviceType: { name: string };
+  };
 }
 
 export default function ArticleListItem({ article }: ArticleListItemProps) {
@@ -15,10 +19,10 @@ export default function ArticleListItem({ article }: ArticleListItemProps) {
       <div>
         <p className="text-sm font-medium text-gray-900">{article.title}</p>
         <p className="text-xs text-gray-500 mt-0.5">
-          {article.category} · oppdatert {article.updatedAt}
+          {article.category.name} — {article.deviceType.name}
         </p>
       </div>
       <ChevronRight className="w-4 h-4 text-gray-400 shrink-0" />
     </Link>
-  )
+  );
 }
