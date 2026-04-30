@@ -1,23 +1,16 @@
 'use client'
 
 import { authClient } from '@/lib/auth-client'
-import { useRouter } from 'next/navigation'
+import DashboardGreeting from "../../components/agent/DashboardGreeting"
+import DashboardActions from "../../components/agent/DashboardActions"
 
 export default function DashboardPage() {
-  const router = useRouter()
-
-  const handleSignOut = async () => {
-    await authClient.signOut({
-      fetchOptions: {
-        onSuccess: () => router.push('/agent/login')
-      }
-    })
-  }
+  const { data: session } = authClient.useSession()
 
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <button onClick={handleSignOut}>Logg ut</button>
+    <div className="flex items-center justify-between mb-8">
+      <DashboardGreeting name={session?.user?.name ?? ''} />
+      <DashboardActions />
     </div>
   )
 }
