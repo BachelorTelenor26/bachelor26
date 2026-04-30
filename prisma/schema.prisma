@@ -7,134 +7,172 @@ datasource db {
   provider = "postgresql"
 }
 
-// Troubleshooting categories such as ikke-pa-nett, tregt-nett and ustabilt-nett.
 model Category {
   id        String    @id @default(cuid())
   name      String
   slug      String    @unique
   icon      String?
-  articles  Article[]
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
+  articles  Article[]
 }
 
-// Device/router families used to scope troubleshooting articles.
 model DeviceType {
   id          String    @id @default(cuid())
   name        String
   slug        String    @unique
   description String?
   imageUrl    String?
-  articles    Article[]
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
+  articles    Article[]
 }
 
-// A troubleshooting flow entry, scoped by one category and one device type.
 model Article {
-  id           String                 @id @default(cuid())
+  id           String                   @id @default(cuid())
   title        String
-  slug         String                 @unique
+  slug         String                   @unique
   ingress      String?
   categoryId   String
-  category     Category               @relation(fields: [categoryId], references: [id], onDelete: Restrict)
   deviceTypeId String
-  deviceType   DeviceType             @relation(fields: [deviceTypeId], references: [id], onDelete: Restrict)
+  keywords     String[]                 @default([])
+  updatedAt    DateTime                 @updatedAt
+  createdAt    DateTime                 @default(now())
+  category     Category                 @relation(fields: [categoryId], references: [id])
+  deviceType   DeviceType               @relation(fields: [deviceTypeId], references: [id])
   steps        Step[]
   sessions     TroubleshootingSession[]
-  keywords     String[]               @default([])
-  updatedAt    DateTime               @updatedAt
-  createdAt    DateTime               @default(now())
 
   @@index([categoryId])
   @@index([deviceTypeId])
 }
 
-// One step in a troubleshooting flow. Title/content are localization keys.
 model Step {
-  id             String            @id @default(cuid())
+  id             String              @id @default(cuid())
   title          String
   localeKey      String
   agentNote      String?
   imageUrl       String?
   articleId      String
-  article        Article           @relation(fields: [articleId], references: [id], onDelete: Cascade)
-  choices        StepChoice[]      @relation("FromStep")
-  incomingLinks  StepChoice[]      @relation("ToStep")
+  createdAt      DateTime            @default(now())
+  updatedAt      DateTime            @updatedAt
   sessionAnswers SessionStepAnswer[]
-  createdAt      DateTime          @default(now())
-  updatedAt      DateTime          @updatedAt
+  article        Article             @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  incomingLinks  StepChoice[]        @relation("ToStep")
+  choices        StepChoice[]        @relation("FromStep")
 
   @@index([articleId])
 }
 
-// Directed choice edge from one step to another step (or terminal end).
 model StepChoice {
-  id            String             @id @default(cuid())
-  stepId        String
-  step          Step               @relation("FromStep", fields: [stepId], references: [id], onDelete: Cascade)
-  label         String
-  buttonText    String?
-  value         String?
-  nextStepId    String?
-  nextStep      Step?              @relation("ToStep", fields: [nextStepId], references: [id], onDelete: SetNull)
-  sortOrder     Int                @default(0)
-  isTerminal    Boolean            @default(false)
+  id             String              @id @default(cuid())
+  stepId         String
+  label          String
+  buttonText     String?
+  value          String?
+  nextStepId     String?
+  sortOrder      Int                 @default(0)
+  isTerminal     Boolean             @default(false)
   terminalReason TerminalReason?
+  createdAt      DateTime            @default(now())
+  updatedAt      DateTime            @updatedAt
   sessionAnswers SessionStepAnswer[]
-  createdAt     DateTime           @default(now())
-  updatedAt     DateTime           @updatedAt
+  nextStep       Step?               @relation("ToStep", fields: [nextStepId], references: [id])
+  step           Step                @relation("FromStep", fields: [stepId], references: [id], onDelete: Cascade)
 
   @@unique([stepId, sortOrder])
   @@index([nextStepId])
 }
 
-// Captures one answered step in a troubleshooting session.
 model SessionStepAnswer {
   id         String                 @id @default(cuid())
   sessionId  String
-  session    TroubleshootingSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
   stepId     String
-  step       Step                   @relation(fields: [stepId], references: [id], onDelete: Cascade)
   choiceId   String?
-  choice     StepChoice?            @relation(fields: [choiceId], references: [id], onDelete: SetNull)
   customText String?
   createdAt  DateTime               @default(now())
+  choice     StepChoice?            @relation(fields: [choiceId], references: [id])
+  session    TroubleshootingSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  step       Step                   @relation(fields: [stepId], references: [id], onDelete: Cascade)
 
   @@unique([sessionId, stepId])
   @@index([choiceId])
 }
 
-// User session state while traversing an article flow.
 model TroubleshootingSession {
-  id               String             @id @default(cuid())
-  sessionCode      String             @unique
+  id               String              @id @default(cuid())
+  sessionCode      String              @unique
   articleId        String
-  article          Article            @relation(fields: [articleId], references: [id], onDelete: Restrict)
-  completed        Boolean            @default(false)
-  outcome          SessionOutcome     @default(IN_PROGRESS)
+  completed        Boolean             @default(false)
+  outcome          SessionOutcome      @default(IN_PROGRESS)
   escalationReason String?
   routerModel      String?
   customerId       String?
-  createdAt        DateTime           @default(now())
-  updatedAt        DateTime           @updatedAt
+  createdAt        DateTime            @default(now())
+  updatedAt        DateTime            @updatedAt
   answers          SessionStepAnswer[]
-  customer         User?              @relation(fields: [customerId], references: [id], onDelete: SetNull)
+  article          Article             @relation(fields: [articleId], references: [id])
+  customer         User?               @relation(fields: [customerId], references: [id])
 
   @@index([articleId])
   @@index([outcome])
 }
 
-// Backoffice users who can access internal tooling.
 model User {
-  id        String                   @id @default(cuid())
-  email     String                   @unique
-  firstName String
-  lastName  String
-  role      Role                     @default(CUSTOMER)
-  sessions  TroubleshootingSession[]
-  createdAt DateTime                 @default(now())
-  updatedAt DateTime                 @updatedAt
+  id            String    @id @default(cuid())
+  name          String   
+  email         String    @unique
+  emailVerified Boolean   @default(false)
+  firstName     String
+  lastName      String
+  role          Role      @default(AGENT)
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  sessions      TroubleshootingSession[]
+  authSessions  Session[]
+  accounts      Account[]
+}
+
+
+model Session {
+  id        String   @id @default(cuid())
+  expiresAt DateTime
+  token     String   @unique
+  ipAddress String?
+  userAgent String?
+  userId    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Account {
+  id                    String    @id @default(cuid())
+  accountId             String
+  providerId            String
+  userId                String
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([providerId, accountId])
+}
+
+model Verification {
+  id         String   @id @default(cuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }
 
 enum Role {
