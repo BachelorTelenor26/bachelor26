@@ -32,7 +32,7 @@ export default function AgentLoginPage() {
     <div className="min-h-screen grid grid-cols-1 md:grid-cols-2">
 
       {/* Venstre side — markedsføring */}
-      <aside className="bg-[#0064FA] flex flex-col justify-between p-10">
+      <aside className="bg-[#1F74BF] flex flex-col justify-between p-10">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-lg bg-white/20 flex items-center justify-center">
             <span className="text-white font-bold text-sm">K</span>
@@ -106,7 +106,7 @@ export default function AgentLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="bg-[#0064FA] text-white rounded-lg px-4 py-3 text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#0055D4] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-[#1F74BF] text-white rounded-lg px-4 py-3 text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#0055D4] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <>
