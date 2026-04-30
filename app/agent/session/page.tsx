@@ -16,11 +16,10 @@ type SessionResult = {
     category: { name: string }
     deviceType: { name: string }
   }
-  answers: {
+  resolvedPath: {
     id: string
-    step: { title: string }
-    choice: { label: string } | null
-    customText: string | null
+    stepTitle: string
+    choiceLabel: string | null
   }[]
 }
 
@@ -34,10 +33,19 @@ export default function SesjonerPage() {
     setIsLoading(true)
 
     try {
-      const res = await fetch(`/api/sessions/${encodeURIComponent(code)}`)
+      const res = await fetch('/api/sessions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sessionCode: code }),
+      })
+
+      if (res.status === 400) {
+        setError('Ugyldig sesjonskode. Sjekk at koden er riktig.')
+        return
+      }
 
       if (res.status === 404) {
-        setError('Fant ingen sesjon med denne koden. Sjekk at koden er riktig.')
+        setError('Fant ingen guide for denne koden.')
         return
       }
 
@@ -82,12 +90,17 @@ export default function SesjonerPage() {
               createdAt={session.createdAt}
               articleTitle={session.article.title}
               categoryName={session.article.category.name}
-              stepCount={session.article.steps?.length ?? 0}
+              stepCount={session.resolvedPath.length}
             />
-            {session.answers.length > 0 && (
+            {session.resolvedPath.length > 0 && (
               <SessionStepList
-                answers={session.answers}
-                totalSteps={session.article.steps?.length ?? session.answers.length}
+                answers={session.resolvedPath.map((s) => ({
+                  id: s.id,
+                  step: { title: s.stepTitle },
+                  choice: s.choiceLabel ? { label: s.choiceLabel } : null,
+                  customText: null,
+                }))}
+                totalSteps={session.resolvedPath.length}
               />
             )}
           </div>

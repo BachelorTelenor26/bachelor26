@@ -82,7 +82,7 @@ export default async function KundePage() {
                   icon={Icon}
                   title={formatCategoryName(category.slug)}
                   description={entry?.description ?? ""}
-                  href={`/kategorier/${category.slug}`}
+                  href={`/feilsoking/${category.slug}`}
                 />
               );
             },

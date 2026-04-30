@@ -31,7 +31,7 @@ export default function SessionStepList({
               <Check className="w-3.5 h-3.5 text-green-600" />
             </div>
             <div>
-              <p className="text-sm text-gray-500 line-through">
+              <p className="text-sm text-gray-900">
                 {answer.step.title}
               </p>
               {answer.choice && (

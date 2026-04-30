@@ -13,7 +13,7 @@ interface ArticleListItemProps {
 export default function ArticleListItem({ article }: ArticleListItemProps) {
   return (
     <Link
-      href={`/feilsoking/${article.slug}`}
+      href={`/feilsoking/${article.category.slug}`}
       className="flex items-center justify-between px-4 py-4 border-b border-gray-100 hover:bg-gray-50 transition-colors"
     >
       <div>
