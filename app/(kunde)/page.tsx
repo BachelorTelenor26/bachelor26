@@ -2,7 +2,8 @@ import SearchBar from "../components/kunde/SearchBar";
 import CategoryCard from "../components/kunde/CategoryCard";
 import { WifiOff, WifiLow, WifiSync, Router } from "lucide-react";
 import ArticleListItem from "../components/kunde/ArticleListItem";
-import { articles } from "../lib/mockData";
+import { formatCategoryName } from '../lib/utils'
+
 
 // Midlertidig ikon-mapping til vi har ikoner i databasen og også beskrivelse
 const categoryMap: Record<
@@ -79,7 +80,7 @@ export default async function KundePage() {
                 <CategoryCard
                   key={category.id}
                   icon={Icon}
-                  title={category.name}
+                  title={formatCategoryName(category.slug)}
                   description={entry?.description ?? ""}
                   href={`/kategorier/${category.slug}`}
                 />
