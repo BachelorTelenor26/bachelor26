@@ -1,3 +1,6 @@
+"use client";
+import { useState, useEffect } from "react";
+
 interface SessionCardProps {
   sessionCode: string;
   outcome: string;
@@ -21,14 +24,29 @@ export default function SessionCard({
   deviceName,
 }: SessionCardProps) {
   const config = outcomeConfig[outcome] ?? outcomeConfig.IN_PROGRESS;
+ const [now, setNow] = useState(() => Date.now());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNow(Date.now());
+    }, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const timeAgo = () => {
     const diff = Math.floor(
-      (Date.now() - new Date(createdAt).getTime()) / 60000,
+      (now - new Date(createdAt).getTime()) / 60000
     );
+
     if (diff < 1) return "akkurat nå";
     if (diff < 60) return `${diff} min siden`;
-    return `${Math.floor(diff / 60)} t siden`;
+
+    const hours = Math.floor(diff / 60);
+    if (hours < 24) return `${hours} t siden`;
+
+    const days = Math.floor(hours / 24);
+    return `${days} d siden`;
   };
 
   return (

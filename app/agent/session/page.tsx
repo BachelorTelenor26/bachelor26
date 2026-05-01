@@ -35,29 +35,36 @@ export default function SesjonerPage() {
   const [isLoading, setIsLoading] = useState(false)
 
   const handleSubmit = async (code: string) => {
-    setError(null)
-    setIsLoading(true)
+  setError(null)
+  setIsLoading(true)
 
-    try {
-      const res = await fetch(`/api/sessions/${encodeURIComponent(code)}`)
+  try {
+    const res = await fetch(`/api/sessions/${encodeURIComponent(code)}`)
 
-      if (res.status === 404) {
-        setError('Fant ingen sesjon med denne koden. Sjekk at koden er riktig.')
-        return
-      }
-
-      if (!res.ok) {
-        setError('En feil oppstod. Prøv igjen senere.')
-        return
-      }
-
-      setSession(await res.json())
-    } catch {
-      setError('Nettverksfeil. Sjekk internettilkoblingen din.')
-    } finally {
-      setIsLoading(false)
+    if (res.status === 404) {
+      setError('Fant ingen sesjon med denne koden. Sjekk at koden er riktig.')
+      return
     }
+
+    if (!res.ok) {
+      setError('En feil oppstod. Prøv igjen senere.')
+      return
+    }
+
+    const data = await res.json()
+    setSession(data)
+
+    // Lagre i localStorage
+    const existing = JSON.parse(localStorage.getItem('recentSessions') ?? '[]') as string[]
+    const updated = [code, ...existing.filter((c) => c !== code)].slice(0, 5)
+    localStorage.setItem('recentSessions', JSON.stringify(updated))
+
+  } catch {
+    setError('Nettverksfeil. Sjekk internettilkoblingen din.')
+  } finally {
+    setIsLoading(false)
   }
+}
 
   return (
     <div>

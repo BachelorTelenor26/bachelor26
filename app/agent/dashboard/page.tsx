@@ -5,7 +5,6 @@ import DashboardGreeting from "../../components/agent/DashboardGreeting"
 import DashboardActions from "../../components/agent/DashboardActions"
 import RecentSessions from '@/app/components/agent/RecentSessions'
 import { mockSessions } from '@/lib/mockSessions'
-//import MostUsedGuides from '@/app/components/agent/MostUsedGuides'
 
 
 export default function DashboardPage() {
@@ -20,7 +19,7 @@ export default function DashboardPage() {
 
       <div className="grid grid-cols-3 gap-10">
         <div className="col-span-2">
-          <RecentSessions sessions={mockSessions} />
+          <RecentSessions/>
           
         </div>
         <div>
