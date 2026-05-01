@@ -1,24 +1,24 @@
-import { notFound } from 'next/navigation'
-import Link from 'next/link'
-import SessionCard from "@/app/components/agent/SessionCard"
-import SessionStepList from "@/app/components/agent/SessionStepList"
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import SessionCard from "@/app/components/agent/SessionCard";
+import SessionStepList from "@/app/components/agent/SessionStepList";
 
 async function getSession(code: string) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/sessions/${code}`,
-    { cache: 'no-store' }
-  )
-  if (!res.ok) return null
-  return res.json()
+    { cache: "no-store" },
+  );
+  if (!res.ok) return null;
+  return res.json();
 }
 
 export default async function SessionDetailPage({
   params,
 }: {
-  params: { code: string }
+  params: { code: string };
 }) {
-  const session = await getSession(params.code)
-  if (!session) notFound()
+  const session = await getSession(params.code);
+  if (!session) notFound();
 
   return (
     <div className="max-w-3xl">
@@ -38,18 +38,19 @@ export default async function SessionDetailPage({
           sessionCode={session.sessionCode}
           outcome={session.outcome}
           createdAt={session.createdAt}
-          articleTitle={session.article.title}
-          categoryName={session.article.category.name}
+          categorySlug={session.article.category.slug}
+          deviceSlug={session.article.deviceType.slug}
           stepCount={session.article.steps?.length ?? 0}
         />
 
         {session.answers.length > 0 && (
           <SessionStepList
             answers={session.answers}
-            totalSteps={session.article.steps?.length ?? session.answers.length}
+            nextStep={session.nextStep}
+            outcome={session.outcome}
           />
         )}
       </div>
     </div>
-  )
+  );
 }
