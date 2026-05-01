@@ -1,25 +1,30 @@
-'use client'
-import { useState } from 'react'
-import SessionLookup from '@/app/components/agent/SessionsLookup'
-import SessionCard from '@/app/components/agent/SessionCard'
-import SessionStepList from '@/app/components/agent/SessionStepList'
-import Link from 'next/link'
+"use client";
+import { useState } from "react";
+import SessionLookup from "@/app/components/agent/SessionsLookup";
+import SessionCard from "@/app/components/agent/SessionCard";
+import SessionStepList from "@/app/components/agent/SessionStepList";
+import Link from "next/link";
+import { formatCategoryName, formatDeviceName } from "@/app/lib/utils";
+import SessionNextSteps from "@/app/components/agent/SessionsNextSteps";
+
 
 type SessionResult = {
   sessionCode: string
   outcome: string
   createdAt: string
   routerModel: string | null
-  article: {
-    title: string
-    steps: unknown[]
-    category: { name: string }
-    deviceType: { name: string }
-  }
+  nextStep: { id: string; title: string } | null
+article: {
+  title: string
+  slug: string  
+  steps: { id: string; title: string }[]
+  category: { name: string; slug: string }
+  deviceType: { name: string; slug: string }
+}
   answers: {
     id: string
-    step: { title: string }
-    choice: { label: string } | null
+    step: { id: string; title: string }
+    choice: { label: string; nextStepId: string | null } | null
     customText: string | null
   }[]
 }
@@ -75,25 +80,35 @@ export default function SesjonerPage() {
 
       {session && (
         <div className="mt-6 grid grid-cols-2 gap-6">
-          <div className="flex flex-col gap-4">
-            <SessionCard
-              sessionCode={session.sessionCode}
+
+          <div className="bg-white rounded-xl border border-gray-200 p-5 flex flex-col gap-5">
+         <SessionCard
+  sessionCode={session.sessionCode}
+  outcome={session.outcome}
+  createdAt={session.createdAt}
+  categoryName={formatCategoryName(session.article.category.slug)}
+  deviceName={formatDeviceName(session.article.deviceType.slug)}
+/>
+
+            <hr className="border-gray-100" />
+
+            <SessionStepList
+              answers={session.answers}
+              nextStep={session.nextStep}
               outcome={session.outcome}
-              createdAt={session.createdAt}
-              articleTitle={session.article.title}
-              categoryName={session.article.category.name}
-              stepCount={session.article.steps?.length ?? 0}
             />
-            {session.answers.length > 0 && (
-              <SessionStepList
-                answers={session.answers}
-                totalSteps={session.article.steps?.length ?? session.answers.length}
-              />
-            )}
           </div>
+
           <div>
-            {/* SessionNextSteps og SessionSuggestions kommer her */}
+            <div className="flex flex-col gap-4">
+  <SessionNextSteps
+    articleSlug={session.article.slug}
+    nextStep={session.nextStep}
+    nextStepNumber={session.answers.length + 1}
+  />
+</div>
           </div>
+
         </div>
       )}
     </div>
