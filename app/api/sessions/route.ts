@@ -19,7 +19,11 @@ type PrismaStep = {
   choices: PrismaChoice[];
 };
 
-async function readLocale(localeKey: string): Promise<{ title?: string; choices?: { label: string }[] } | null> {
+async function readLocale(localeKey: string): Promise<{
+  title?: string;
+  body?: { type: string; content?: { text: string }[]; items?: { text: string }[][] }[];
+  choices?: { label: string }[];
+} | null> {
   try {
     const file = path.join(process.cwd(), "public", "locales", `${localeKey}.json`);
     const raw = await readFile(file, "utf-8");
@@ -54,27 +58,48 @@ function autoFollowSingle(step: PrismaStep, steps: PrismaStep[]): PrismaStep {
 async function resolvePath(
   steps: PrismaStep[],
   choiceIndices: number[]
-): Promise<Array<{ id: string; stepTitle: string; choiceLabel: string | null }>> {
+): Promise<Array<{ stepId: string; choiceId: string | null }>> {
   const raw = findRootStep(steps);
   if (!raw) return [];
   let current: PrismaStep | undefined = autoFollowSingle(raw, steps);
-  const result: Array<{ id: string; stepTitle: string; choiceLabel: string | null }> = [];
+  const result: Array<{ stepId: string; choiceId: string | null }> = [];
 
   for (let i = 0; i < choiceIndices.length && current; i++) {
     const sorted: PrismaChoice[] = [...current.choices].sort((a, b) => a.sortOrder - b.sortOrder);
     const chosen: PrismaChoice | undefined = sorted[choiceIndices[i]];
 
-    const locale = await readLocale(current.localeKey);
-    const stepTitle = locale?.title ?? current.title;
-    const choiceLabel = locale?.choices?.[choiceIndices[i]]?.label ?? chosen?.label ?? null;
-
-    result.push({ id: current.id, stepTitle, choiceLabel });
+    result.push({ stepId: current.id, choiceId: chosen?.id ?? null });
     if (!chosen || chosen.isTerminal || !chosen.nextStepId) break;
     const rawNext: PrismaStep | undefined = steps.find((s) => s.id === chosen.nextStepId);
     current = rawNext ? autoFollowSingle(rawNext, steps) : undefined;
   }
 
   return result;
+}
+
+export async function GET() {
+  try {
+    const sessions = await prisma.troubleshootingSession.findMany({
+      orderBy: { createdAt: "desc" },
+      take: 20,
+      include: {
+        article: {
+          include: {
+            category: true,
+            steps: { select: { id: true } },
+          },
+        },
+        answers: {
+          include: { step: true, choice: true },
+          orderBy: { createdAt: "asc" },
+        },
+      },
+    });
+    return NextResponse.json(sessions);
+  } catch (error) {
+    console.error("Feil i GET /api/sessions:", error);
+    return NextResponse.json({ error: "Kunne ikke hente sesjoner" }, { status: 500 });
+  }
 }
 
 export async function POST(request: Request) {
@@ -92,7 +117,6 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Ugyldig sesjonskode" }, { status: 400 });
     }
 
-    // Find the article whose slug hashes to this flowId
     const articles = await prisma.article.findMany({
       select: { id: true, slug: true },
     });
@@ -105,7 +129,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Upsert so repeated agent lookups are idempotent
     const session = await prisma.troubleshootingSession.upsert({
       where: { sessionCode },
       create: {
@@ -113,7 +136,7 @@ export async function POST(request: Request) {
         articleId: article.id,
         outcome: "IN_PROGRESS",
       },
-      update: {}, // preserve outcome/escalationReason if already set
+      update: {},
       include: {
         article: {
           include: {
@@ -133,9 +156,47 @@ export async function POST(request: Request) {
       },
     });
 
-    const resolvedPath = await resolvePath(session.article.steps, payload.choices);
+    const resolvedSteps = await resolvePath(session.article.steps, payload.choices);
 
-    return NextResponse.json({ ...session, resolvedPath });
+    // Save the customer's path as answers (idempotent via upsert)
+    await Promise.all(
+      resolvedSteps.map(({ stepId, choiceId }) =>
+        prisma.sessionStepAnswer.upsert({
+          where: { sessionId_stepId: { sessionId: session.id, stepId } },
+          create: { sessionId: session.id, stepId, choiceId },
+          update: { choiceId },
+        })
+      )
+    );
+
+    // Re-fetch to include the freshly saved answers
+    const sessionWithAnswers = await prisma.troubleshootingSession.findUnique({
+      where: { id: session.id },
+      include: {
+        article: { include: { category: true, deviceType: true } },
+        answers: {
+          include: { step: true, choice: true },
+          orderBy: { createdAt: "asc" },
+        },
+      },
+    });
+
+    // Resolve locale text for each answer
+    const resolvedAnswers = await Promise.all(
+      (sessionWithAnswers?.answers ?? []).map(async (a) => {
+        const locale = await readLocale(a.step.localeKey);
+        return {
+          ...a,
+          step: { ...a.step, title: locale?.title ?? a.step.title },
+          body: locale?.body ?? null,
+          choice: a.choice
+            ? { ...a.choice, label: locale?.choices?.[a.choice.sortOrder]?.label ?? a.choice.label }
+            : null,
+        };
+      })
+    );
+
+    return NextResponse.json({ ...sessionWithAnswers, answers: resolvedAnswers });
   } catch (error) {
     console.error("Feil i POST /api/sessions:", error);
     return NextResponse.json(

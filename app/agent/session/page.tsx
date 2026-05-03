@@ -6,20 +6,22 @@ import SessionStepList from '@/app/components/agent/SessionStepList'
 import Link from 'next/link'
 
 type SessionResult = {
+  id: string
   sessionCode: string
   outcome: string
   createdAt: string
   routerModel: string | null
   article: {
     title: string
-    steps: unknown[]
     category: { name: string }
     deviceType: { name: string }
   }
-  resolvedPath: {
+  answers: {
     id: string
-    stepTitle: string
-    choiceLabel: string | null
+    step: { title: string; imageUrl?: string | null }
+    body?: { type: string; content?: { text: string }[]; items?: { text: string }[][] }[] | null
+    choice: { label: string } | null
+    customText: string | null
   }[]
 }
 
@@ -90,17 +92,12 @@ export default function SesjonerPage() {
               createdAt={session.createdAt}
               articleTitle={session.article.title}
               categoryName={session.article.category.name}
-              stepCount={session.resolvedPath.length}
+              stepCount={session.answers.length}
             />
-            {session.resolvedPath.length > 0 && (
+            {session.answers.length > 0 && (
               <SessionStepList
-                answers={session.resolvedPath.map((s) => ({
-                  id: s.id,
-                  step: { title: s.stepTitle },
-                  choice: s.choiceLabel ? { label: s.choiceLabel } : null,
-                  customText: null,
-                }))}
-                totalSteps={session.resolvedPath.length}
+                answers={session.answers}
+                totalSteps={session.answers.length}
               />
             )}
           </div>
