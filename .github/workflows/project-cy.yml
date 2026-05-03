@@ -14,6 +14,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Clean up Docker resources
+        run: |
+          docker image prune -f || true
+          docker builder prune -f || true
+
       - name: Check disk usage on runner
         run: |
           echo "=== Disk usage summary ==="
