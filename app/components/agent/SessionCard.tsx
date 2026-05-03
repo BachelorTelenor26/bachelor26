@@ -4,6 +4,8 @@ interface SessionCardProps {
   createdAt: string;
   categoryName: string;
   deviceName: string;
+  articleTitle?: string;
+  stepCount?: number;
 }
 
 const outcomeConfig: Record<string, { label: string; className: string }> = {
@@ -19,6 +21,8 @@ export default function SessionCard({
   createdAt,
   categoryName,
   deviceName,
+  articleTitle,
+  stepCount,
 }: SessionCardProps) {
   const config = outcomeConfig[outcome] ?? outcomeConfig.IN_PROGRESS;
 
@@ -51,8 +55,14 @@ export default function SessionCard({
       <div>
         <div>
           <p className="text-xs text-gray-400 mb-2">Guide kunden brukte</p>
+          {articleTitle && (
+            <p className="text-sm font-semibold text-gray-900 mb-0.5">{articleTitle}</p>
+          )}
           <p className="text-sm font-medium text-gray-900">{categoryName}</p>
           <p className="text-xs text-gray-500 mt-0.5">{deviceName}</p>
+          {stepCount !== undefined && (
+            <p className="text-xs text-gray-400 mt-1">{stepCount} steg fullført</p>
+          )}
         </div>
       </div>
     </div>

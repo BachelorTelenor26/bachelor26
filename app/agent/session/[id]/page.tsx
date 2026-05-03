@@ -77,8 +77,9 @@ export default async function SessionDetailPage({
           sessionCode={session.sessionCode}
           outcome={session.outcome}
           createdAt={session.createdAt.toISOString()}
-          articleTitle={session.article.title}
           categoryName={session.article.category.name}
+          deviceName={session.article.deviceType.name}
+          articleTitle={session.article.title}
           stepCount={displayAnswers.length}
         />
 
