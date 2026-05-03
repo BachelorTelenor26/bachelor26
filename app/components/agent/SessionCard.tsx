@@ -26,14 +26,13 @@ export default function SessionCard({
 }: SessionCardProps) {
   const config = outcomeConfig[outcome] ?? outcomeConfig.IN_PROGRESS;
 
-  const timeAgo = () => {
-    const diff = Math.floor(
-      (Date.now() - new Date(createdAt).getTime()) / 60000,
-    );
-    if (diff < 1) return "akkurat nå";
-    if (diff < 60) return `${diff} min siden`;
-    return `${Math.floor(diff / 60)} t siden`;
-  };
+  const createdAtLabel = new Date(createdAt).toLocaleString("nb-NO", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 
   return (
     <div className="flex flex-col gap-5">
@@ -42,7 +41,7 @@ export default function SessionCard({
           <p className="text-xs text-gray-400 mb-0.5">Sesjon</p>
           <p className="font-bold text-gray-900 font-mono">{sessionCode}</p>
           <p className="text-xs text-gray-400 mt-0.5">
-            Opprettet {timeAgo()} · anonym
+            Opprettet {createdAtLabel} · anonym
           </p>
         </div>
         <span
