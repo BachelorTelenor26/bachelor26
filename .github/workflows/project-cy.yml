@@ -14,6 +14,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Clean up Docker resources
+        run: |
+          docker image prune -f || true
+          docker builder prune -f || true
+
       - name: Check disk usage on runner
         run: |
           echo "=== Disk usage summary ==="
@@ -65,7 +70,6 @@ jobs:
           BETTER_AUTH_URL: ${{ secrets.BETTER_AUTH_URL }}
 
       - name: Log in to DockerHub
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
