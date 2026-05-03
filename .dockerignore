@@ -1,0 +1,23 @@
+.git
+.github
+.next
+node_modules
+npm-debug.log*
+
+# local env files
+.env
+.env.*
+!.env.example
+
+# debug
+*.log
+
+# test output
+coverage/
+
+# scripts & dev tools
+scripts/
+visualizations/
+telenor-guides/
+prisma/migrations/
+README*.md
