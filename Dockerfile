@@ -7,6 +7,10 @@ RUN npm ci
 FROM node:22-alpine AS builder
 WORKDIR /app
 
+# Dummy value to satisfy Prisma's requirement for DATABASE_URL at build time. The actual value will be provided at runtime.
+ARG DATABASE_URL="postgresql://placeholder:placeholder@localhost:5432/placeholder"
+ENV DATABASE_URL=${DATABASE_URL}
+
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
