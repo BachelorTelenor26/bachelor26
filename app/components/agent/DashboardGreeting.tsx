@@ -19,7 +19,10 @@ export default function DashboardGreeting({ name }: DashboardGreetingProps) {
       day: 'numeric',
       month: 'long',
     })
-    return formatted.replace(/\b\w/g, (c) => c.toUpperCase())
+    return formatted
+      .split(' ')
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ')
   }
 
   const date = formatDate(currentDate)

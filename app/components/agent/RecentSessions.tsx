@@ -46,7 +46,7 @@ export default function RecentSessions({ sessions }: RecentSessionsProps) {
           return (
             <Link
               key={session.id}
-              href={`/agent/sesjoner?code=${session.sessionCode}`}
+              href={`/agent/session/${session.id}`}
               className="flex items-center justify-between px-5 py-4 border-b border-gray-100 last:border-0 hover:bg-gray-50 transition-colors"
             >
               <div className="flex items-center gap-4">

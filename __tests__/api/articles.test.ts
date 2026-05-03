@@ -1,5 +1,6 @@
 import { GET } from '../../app/api/articles/route'
 import { prisma } from '../../lib/prisma'
+import { jest, describe, it, beforeEach, afterEach, expect } from '@jest/globals'
 
 jest.mock('../../lib/prisma', () => ({
   prisma: {
@@ -10,6 +11,14 @@ jest.mock('../../lib/prisma', () => ({
 }))
 
 const mockPrisma = prisma as jest.Mocked<typeof prisma>
+
+beforeEach(() => {
+  jest.spyOn(console, 'error').mockImplementation(() => {})
+})
+
+afterEach(() => {
+  jest.restoreAllMocks()
+})
 
 const mockArticle = {
   id: '1',
@@ -31,7 +40,7 @@ describe('GET /api/articles', () => {
   })
 
   it('returnerer alle artikler uten filter', async () => {
-    ;(mockPrisma.article.findMany as jest.Mock).mockResolvedValue([mockArticle])
+    jest.mocked(mockPrisma.article.findMany).mockResolvedValue([mockArticle as any])
 
     const request = new Request('http://localhost:3000/api/articles')
     const response = await GET(request)
@@ -42,12 +51,12 @@ describe('GET /api/articles', () => {
   })
 
   it('filtrerer på category slug', async () => {
-    ;(mockPrisma.article.findMany as jest.Mock).mockResolvedValue([mockArticle])
+    jest.mocked(mockPrisma.article.findMany).mockResolvedValue([mockArticle as any])
 
     const request = new Request('http://localhost:3000/api/articles?category=ikke-pa-nett')
     const response = await GET(request)
 
-    expect(mockPrisma.article.findMany).toHaveBeenCalledWith(
+    expect(jest.mocked(mockPrisma.article.findMany)).toHaveBeenCalledWith(
       expect.objectContaining({
         where: expect.objectContaining({
           category: { slug: 'ikke-pa-nett' }
@@ -57,7 +66,7 @@ describe('GET /api/articles', () => {
   })
 
   it('returnerer 500 ved databasefeil', async () => {
-    ;(mockPrisma.article.findMany as jest.Mock).mockRejectedValue(new Error('DB feil'))
+    jest.mocked(mockPrisma.article.findMany).mockRejectedValue(new Error('DB feil'))
 
     const request = new Request('http://localhost:3000/api/articles')
     const response = await GET(request)

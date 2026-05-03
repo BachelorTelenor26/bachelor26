@@ -19,7 +19,7 @@ export default function CategoryCard({
       className="group block p-6 rounded-2xl bg-white border border-gray-300  hover:shadow-md transition-all duration-200"
     >
       {/* Icon with gradient background */}
-      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center mb-4 group-hover:from-blue-100 group-hover:to-blue-200 transition-colors">
+      <div className="w-12 h-12 rounded-xl bg-linear-to-br from-blue-50 to-blue-100 flex items-center justify-center mb-4 group-hover:from-blue-100 group-hover:to-blue-200 transition-colors">
         <Icon className="w-6 h-6 text-blue-600" />
       </div>
 

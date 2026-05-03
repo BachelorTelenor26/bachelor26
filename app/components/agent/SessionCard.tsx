@@ -4,6 +4,8 @@ interface SessionCardProps {
   createdAt: string;
   categoryName: string;
   deviceName: string;
+  articleTitle?: string;
+  stepCount?: number;
 }
 
 const outcomeConfig: Record<string, { label: string; className: string }> = {
@@ -19,17 +21,18 @@ export default function SessionCard({
   createdAt,
   categoryName,
   deviceName,
+  articleTitle,
+  stepCount,
 }: SessionCardProps) {
   const config = outcomeConfig[outcome] ?? outcomeConfig.IN_PROGRESS;
 
-  const timeAgo = () => {
-    const diff = Math.floor(
-      (Date.now() - new Date(createdAt).getTime()) / 60000,
-    );
-    if (diff < 1) return "akkurat nå";
-    if (diff < 60) return `${diff} min siden`;
-    return `${Math.floor(diff / 60)} t siden`;
-  };
+  const createdAtLabel = new Date(createdAt).toLocaleString("nb-NO", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 
   return (
     <div className="flex flex-col gap-5">
@@ -38,7 +41,7 @@ export default function SessionCard({
           <p className="text-xs text-gray-400 mb-0.5">Sesjon</p>
           <p className="font-bold text-gray-900 font-mono">{sessionCode}</p>
           <p className="text-xs text-gray-400 mt-0.5">
-            Opprettet {timeAgo()} · anonym
+            Opprettet {createdAtLabel} · anonym
           </p>
         </div>
         <span
@@ -51,8 +54,14 @@ export default function SessionCard({
       <div>
         <div>
           <p className="text-xs text-gray-400 mb-2">Guide kunden brukte</p>
+          {articleTitle && (
+            <p className="text-sm font-semibold text-gray-900 mb-0.5">{articleTitle}</p>
+          )}
           <p className="text-sm font-medium text-gray-900">{categoryName}</p>
           <p className="text-xs text-gray-500 mt-0.5">{deviceName}</p>
+          {stepCount !== undefined && (
+            <p className="text-xs text-gray-400 mt-1">{stepCount} steg fullført</p>
+          )}
         </div>
       </div>
     </div>

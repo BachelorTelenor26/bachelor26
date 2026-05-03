@@ -4,27 +4,23 @@ import SessionLookup from "@/app/components/agent/SessionsLookup";
 import SessionCard from "@/app/components/agent/SessionCard";
 import SessionStepList from "@/app/components/agent/SessionStepList";
 import Link from "next/link";
-import { formatCategoryName, formatDeviceName } from "@/app/lib/utils";
-import SessionNextSteps from "@/app/components/agent/SessionsNextSteps";
-
 
 type SessionResult = {
+  id: string
   sessionCode: string
   outcome: string
   createdAt: string
   routerModel: string | null
-  nextStep: { id: string; title: string } | null
-article: {
-  title: string
-  slug: string  
-  steps: { id: string; title: string }[]
-  category: { name: string; slug: string }
-  deviceType: { name: string; slug: string }
-}
+  article: {
+    title: string
+    category: { name: string }
+    deviceType: { name: string }
+  }
   answers: {
     id: string
-    step: { id: string; title: string }
-    choice: { label: string; nextStepId: string | null } | null
+    step: { title: string; imageUrl?: string | null }
+    body?: { type: string; content?: { text: string }[]; items?: { text: string }[][] }[] | null
+    choice: { label: string } | null
     customText: string | null
   }[]
 }
@@ -39,10 +35,19 @@ export default function SesjonerPage() {
     setIsLoading(true)
 
     try {
-      const res = await fetch(`/api/sessions/${encodeURIComponent(code)}`)
+      const res = await fetch('/api/sessions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sessionCode: code }),
+      })
+
+      if (res.status === 400) {
+        setError('Ugyldig sesjonskode. Sjekk at koden er riktig.')
+        return
+      }
 
       if (res.status === 404) {
-        setError('Fant ingen sesjon med denne koden. Sjekk at koden er riktig.')
+        setError('Fant ingen guide for denne koden.')
         return
       }
 
@@ -79,36 +84,21 @@ export default function SesjonerPage() {
       />
 
       {session && (
-        <div className="mt-6 grid grid-cols-2 gap-6">
+        <div className="mt-6 flex flex-col gap-6">
+          <SessionCard
+            sessionCode={session.sessionCode}
+            outcome={session.outcome}
+            createdAt={session.createdAt}
+            categoryName={session.article.category.name}
+            deviceName={session.article.deviceType.name}
+          />
 
-          <div className="bg-white rounded-xl border border-gray-200 p-5 flex flex-col gap-5">
-         <SessionCard
-  sessionCode={session.sessionCode}
-  outcome={session.outcome}
-  createdAt={session.createdAt}
-  categoryName={formatCategoryName(session.article.category.slug)}
-  deviceName={formatDeviceName(session.article.deviceType.slug)}
-/>
-
-            <hr className="border-gray-100" />
-
+          {session.answers.length > 0 && (
             <SessionStepList
               answers={session.answers}
-              nextStep={session.nextStep}
-              outcome={session.outcome}
+              totalSteps={session.answers.length}
             />
-          </div>
-
-          <div>
-            <div className="flex flex-col gap-4">
-  <SessionNextSteps
-    articleSlug={session.article.slug}
-    nextStep={session.nextStep}
-    nextStepNumber={session.answers.length + 1}
-  />
-</div>
-          </div>
-
+          )}
         </div>
       )}
     </div>
