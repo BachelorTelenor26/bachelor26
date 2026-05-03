@@ -13,21 +13,24 @@ export async function GET(_req: Request, { params }: RouteContext) {
       where: { id },
       include: {
         article: {
-          include: { category: true, deviceType: true },
+          include: {
+            category: true,
+            deviceType: true,
+          }
         },
         answers: {
           include: {
             step: true,
             choice: true,
           },
-          orderBy: { createdAt: "asc" },
+          orderBy: { createdAt: 'asc' },
         },
       },
     });
 
     if (!session) {
       return NextResponse.json(
-        { error: "Sesjon ikke funnet" },
+        { error: 'Sesjon ikke funnet' },
         { status: 404 }
       );
     }
@@ -35,9 +38,8 @@ export async function GET(_req: Request, { params }: RouteContext) {
     return NextResponse.json(session);
   } catch (error) {
     console.error("Feil i GET /api/sessions/[id]:", error);
-
     return NextResponse.json(
-      { error: "Kunne ikke hente sesjon" },
+      { error: 'Kunne ikke hente sesjon' },
       { status: 500 }
     );
   }
@@ -61,9 +63,8 @@ export async function PATCH(request: Request, { params }: RouteContext) {
     return NextResponse.json(session);
   } catch (error) {
     console.error("Feil i PATCH /api/sessions/[id]:", error);
-
     return NextResponse.json(
-      { error: "Kunne ikke oppdatere sesjon" },
+      { error: 'Kunne ikke oppdatere sesjon' },
       { status: 500 }
     );
   }

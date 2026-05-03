@@ -1,9 +1,9 @@
-'use client'
-import { useState } from 'react'
-import SessionLookup from '@/app/components/agent/SessionsLookup'
-import SessionCard from '@/app/components/agent/SessionCard'
-import SessionStepList from '@/app/components/agent/SessionStepList'
-import Link from 'next/link'
+"use client";
+import { useState } from "react";
+import SessionLookup from "@/app/components/agent/SessionsLookup";
+import SessionCard from "@/app/components/agent/SessionCard";
+import SessionStepList from "@/app/components/agent/SessionStepList";
+import Link from "next/link";
 
 type SessionResult = {
   id: string
@@ -84,26 +84,21 @@ export default function SesjonerPage() {
       />
 
       {session && (
-        <div className="mt-6 grid grid-cols-2 gap-6">
-          <div className="flex flex-col gap-4">
-            <SessionCard
-              sessionCode={session.sessionCode}
-              outcome={session.outcome}
-              createdAt={session.createdAt}
-              articleTitle={session.article.title}
-              categoryName={session.article.category.name}
-              stepCount={session.answers.length}
+        <div className="mt-6 flex flex-col gap-6">
+          <SessionCard
+            sessionCode={session.sessionCode}
+            outcome={session.outcome}
+            createdAt={session.createdAt}
+            categoryName={session.article.category.name}
+            deviceName={session.article.deviceType.name}
+          />
+
+          {session.answers.length > 0 && (
+            <SessionStepList
+              answers={session.answers}
+              totalSteps={session.answers.length}
             />
-            {session.answers.length > 0 && (
-              <SessionStepList
-                answers={session.answers}
-                totalSteps={session.answers.length}
-              />
-            )}
-          </div>
-          <div>
-            {/* SessionNextSteps og SessionSuggestions kommer her */}
-          </div>
+          )}
         </div>
       )}
     </div>
