@@ -1,6 +1,6 @@
 import { GET } from '../../app/api/categories/route'
 import { prisma } from '../../lib/prisma'
-import { jest } from '@jest/globals'
+import { jest, describe, it, beforeEach, afterEach, expect } from '@jest/globals'
 
 jest.mock('../../lib/prisma', () => ({
   prisma: {
@@ -15,6 +15,11 @@ const mockPrisma = prisma as jest.Mocked<typeof prisma>
 describe('GET /api/categories', () => {
   beforeEach(() => {
     jest.clearAllMocks()
+    jest.spyOn(console, 'error').mockImplementation(() => {})
+  })
+
+  afterEach(() => {
+    jest.restoreAllMocks()
   })
 
   it('returnerer liste over kategorier', async () => {
@@ -23,7 +28,7 @@ describe('GET /api/categories', () => {
       { id: '2', name: 'Tregt nett', slug: 'tregt-nett', icon: null, createdAt: new Date(), updatedAt: new Date() },
     ]
 
-    ;(mockPrisma.category.findMany as jest.Mock).mockResolvedValue(mockCategories)
+    jest.mocked(mockPrisma.category.findMany).mockResolvedValue(mockCategories as any)
 
     const response = await GET()
     const data = await response.json()
@@ -34,7 +39,7 @@ describe('GET /api/categories', () => {
   })
 
   it('returnerer 500 ved databasefeil', async () => {
-    ;(mockPrisma.category.findMany as jest.Mock).mockRejectedValue(new Error('DB feil'))
+    jest.mocked(mockPrisma.category.findMany).mockRejectedValue(new Error('DB feil'))
 
     const response = await GET()
 
