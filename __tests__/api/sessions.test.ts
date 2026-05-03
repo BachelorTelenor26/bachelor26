@@ -10,6 +10,10 @@ jest.mock('../../lib/prisma', () => ({
     },
     troubleshootingSession: {
       upsert: jest.fn(),
+      findUnique: jest.fn(),
+    },
+    sessionStepAnswer: {
+      upsert: jest.fn(),
     },
   },
 }))
@@ -44,6 +48,17 @@ describe('POST /api/sessions', () => {
       outcome: 'IN_PROGRESS',
       createdAt: new Date(),
       article: { id: 'article-1', steps: [], category: null, deviceType: null },
+      answers: [],
+    } as any)
+
+    jest.mocked(mockPrisma.troubleshootingSession.findUnique).mockResolvedValue({
+      id: 'session-1',
+      sessionCode: 'KS-A3F9',
+      articleId: 'article-1',
+      completed: false,
+      outcome: 'IN_PROGRESS',
+      createdAt: new Date(),
+      article: { id: 'article-1', category: null, deviceType: null },
       answers: [],
     } as any)
 
