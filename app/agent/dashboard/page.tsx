@@ -4,7 +4,7 @@ import { authClient } from '@/lib/auth-client'
 import DashboardGreeting from "../../components/agent/DashboardGreeting"
 import DashboardActions from "../../components/agent/DashboardActions"
 import RecentSessions from '@/app/components/agent/RecentSessions'
-import { mockSessions } from '@/lib/mockSessions'
+
 
 
 export default function DashboardPage() {

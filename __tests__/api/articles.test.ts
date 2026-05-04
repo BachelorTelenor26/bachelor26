@@ -1,5 +1,6 @@
 import { GET } from '../../app/api/articles/route'
 import { prisma } from '../../lib/prisma'
+import { jest, describe, it, expect, beforeEach } from '@jest/globals'
 
 jest.mock('../../lib/prisma', () => ({
   prisma: {
@@ -45,7 +46,7 @@ describe('GET /api/articles', () => {
     ;(mockPrisma.article.findMany as jest.Mock).mockResolvedValue([mockArticle])
 
     const request = new Request('http://localhost:3000/api/articles?category=ikke-pa-nett')
-    const response = await GET(request)
+    await GET(request)
 
     expect(mockPrisma.article.findMany).toHaveBeenCalledWith(
       expect.objectContaining({
