@@ -2,12 +2,12 @@ import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
 type RouteContext = {
-  params: Promise<{ code: string }>;
+  params: Promise<{ id: string }>;
 };
 
 export async function POST(request: Request, { params }: RouteContext) {
   try {
-    const { code } = await params;
+    const { id } = await params;
     const { stepId, choiceId, customText } = await request.json();
 
     if (!stepId) {
@@ -18,7 +18,7 @@ export async function POST(request: Request, { params }: RouteContext) {
     }
 
     const session = await prisma.troubleshootingSession.findUnique({
-      where: { sessionCode: code },
+      where: { id },
     });
 
     if (!session) {

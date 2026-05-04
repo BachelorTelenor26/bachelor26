@@ -82,7 +82,7 @@ export default async function KundePage() {
                   icon={Icon}
                   title={formatCategoryName(category.slug)}
                   description={entry?.description ?? ""}
-                  href={`/kategorier/${category.slug}`}
+                  href={`/feilsoking/${category.slug}`}
                 />
               );
             },
@@ -102,7 +102,7 @@ export default async function KundePage() {
               (article: {
                 slug: string;
                 title: string;
-                category: { name: string };
+                category: { name: string; slug: string };
                 deviceType: { name: string };
               }) => (
                 <ArticleListItem key={article.slug} article={article} />
