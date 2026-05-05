@@ -81,7 +81,7 @@ export async function GET() {
   try {
     const sessions = await prisma.troubleshootingSession.findMany({
       orderBy: { createdAt: "desc" },
-      take: 20,
+      take: 6,
       include: {
         article: {
           include: {

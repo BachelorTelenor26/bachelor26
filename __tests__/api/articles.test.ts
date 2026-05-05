@@ -54,7 +54,7 @@ describe('GET /api/articles', () => {
     jest.mocked(mockPrisma.article.findMany).mockResolvedValue([mockArticle as any])
 
     const request = new Request('http://localhost:3000/api/articles?category=ikke-pa-nett')
-    const response = await GET(request)
+    await GET(request)
 
     expect(jest.mocked(mockPrisma.article.findMany)).toHaveBeenCalledWith(
       expect.objectContaining({

@@ -2,7 +2,6 @@ import 'dotenv/config'
 import { prisma } from '../lib/prisma'
 import { randomBytes } from 'crypto'
 
-const generateCode = () => randomBytes(4).toString('hex').toUpperCase()
 
 async function main() {
   // Artikkler fra databasen
