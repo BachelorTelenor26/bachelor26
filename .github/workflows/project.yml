@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  ci:
+  ci-cd:
     runs-on: [self-hosted, linux, arm64]
 
     steps:
