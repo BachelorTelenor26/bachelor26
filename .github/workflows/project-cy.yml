@@ -107,7 +107,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: /home/server/project-horizon/deploy/pi/update.sh
+          script: sh /home/server/project-horizon/deploy/pi/update.sh
 
       - name: Verify production deployment
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
