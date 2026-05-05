@@ -1,6 +1,5 @@
 import 'dotenv/config'
 import { auth } from '../lib/auth'
-import { prisma } from '../lib/prisma'
 
 async function main() {
   const result = await auth.api.signUpEmail({

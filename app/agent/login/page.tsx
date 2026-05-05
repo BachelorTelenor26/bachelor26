@@ -123,9 +123,7 @@ export default function AgentLoginPage() {
 
           </form>
 
-          <p className="text-xs text-gray-400 text-center mt-6">
-            Glemt passord?
-          </p>
+         
         </div>
       </main>
 
