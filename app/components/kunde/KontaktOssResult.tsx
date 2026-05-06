@@ -46,9 +46,6 @@ export default function KontaktOssResult({
           <span className="font-mono text-2xl font-bold tracking-widest text-blue-900">
             {sessionCode}
           </span>
-          <p className="text-xs text-blue-500">
-            Gyldig i 24 timer. Ingen personopplysninger deles.
-          </p>
           <button
             onClick={handleCopy}
             className="mt-1 flex items-center gap-1.5 px-4 py-1.5 text-sm border border-blue-200 bg-white rounded-lg hover:bg-blue-50 transition-colors text-blue-700 font-medium"
