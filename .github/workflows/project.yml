@@ -121,7 +121,7 @@ jobs:
         with:
           urls: |
             https://telenor.jensnic.no/
-          budgetPath: .lighthouserc.json
+          configPath: .lighthouserc.json
           uploadArtifacts: true
           temporaryPublicStorage: true
 
@@ -136,6 +136,7 @@ jobs:
           if (!files.length) process.exit(0)
           const runs = files.map(file => {
             const raw = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf-8'))
+            if (!raw.categories) return null
             const cats = raw.categories
             return {
               runAt: raw.fetchTime ?? new Date().toISOString(),
@@ -147,7 +148,7 @@ jobs:
                 seo: cats.seo?.score ?? 0,
               }
             }
-          })
+          }).filter(Boolean)
           const avg = key => runs.reduce((s, r) => s + r.scores[key], 0) / runs.length
           const report = {
             generatedAt: new Date().toISOString(),

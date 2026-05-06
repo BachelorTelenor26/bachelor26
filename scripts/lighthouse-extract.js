@@ -15,6 +15,7 @@ files.sort()
 
 const runs = files.map((file) => {
   const raw = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf-8'))
+  if (!raw.categories) return null
   const cats = raw.categories
   const runAt = raw.fetchTime ?? new Date().toISOString()
   return {
@@ -27,7 +28,7 @@ const runs = files.map((file) => {
       seo: cats.seo?.score ?? 0,
     },
   }
-})
+}).filter(Boolean)
 
 function avg(key) {
   return runs.reduce((sum, r) => sum + r.scores[key], 0) / runs.length
