@@ -50,3 +50,4 @@ telenor-guides/
 .lighthouserc.local.json
 .chrome/
 .lighthouseci/
+public/lighthouse-report.json

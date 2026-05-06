@@ -13,8 +13,7 @@
     "validate:import": "npx tsx scripts/validate-import.ts",
     "db:studio": "npx prisma studio",
     "visualize:db": "npx tsx scripts/export-db-diagrams.ts",
-    "simulate:session-code": "npx tsx visualizations/simulate-session-code.ts",
-    "lighthouse:prod": "CHROME_PATH=.chrome/chrome/linux-148.0.7778.97/chrome-linux64/chrome npx @lhci/cli collect --url=https://telenor.jensnic.no/ --config=.lighthouserc.local.json && node scripts/lighthouse-extract.js"
+    "simulate:session-code": "npx tsx visualizations/simulate-session-code.ts"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.8.0",

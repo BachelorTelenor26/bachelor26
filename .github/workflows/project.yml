@@ -169,12 +169,3 @@ jobs:
         run: |
           curl --fail --retry 5 --retry-delay 5 --retry-connrefused https://telenor.jensnic.no/
 
-      - name: Commit Lighthouse report
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/lighthouse-report.json
-          git diff --cached --quiet || git commit -m "chore: update Lighthouse report [skip ci]"
-          git push
-
