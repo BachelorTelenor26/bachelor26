@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { articles } from "@/lib/mockData";
-import SearchBar from "./SearchBar";
+import SearchBar from "../shared/SearchBar";
 import Link from "next/link";
 
 export default function SokClient() {
@@ -34,13 +34,13 @@ export default function SokClient() {
         {/* Venstre side */}
         <div className="space-y-4">
           <SearchBar
-            defaultValue={query}
+            value={query}
             autoFocus
             onSearch={(q) => setQuery(q)}
           />
 
           <p className="text-sm text-gray-600 mb-4">
-            {filtered.length} treff for "{query}"
+            {filtered.length} treff for &quot;{query}&quot;
           </p>
 
           <div className="border rounded-xl overflow-hidden">

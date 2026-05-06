@@ -7,6 +7,7 @@ interface SearchBarProps {
   onSearch?: (query: string) => void;
   placeholder?: string;
   defaultValue?: string;
+  value?: string;
   autoFocus?: boolean;
   popularSearches?: string[];
 }
@@ -15,16 +16,21 @@ export default function SearchBar({
   onSearch,
   placeholder = "Søk...",
   defaultValue = "",
+  value,
   autoFocus = false,
   popularSearches = [],
 }: SearchBarProps) {
-  const [query, setQuery] = useState(defaultValue);
+  const [internalQuery, setInternalQuery] = useState(defaultValue);
+  const query = value ?? internalQuery;
  
   const inputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    setQuery(defaultValue);
-  }, [defaultValue]);
+  const setQuery = (nextQuery: string) => {
+    if (value === undefined) {
+      setInternalQuery(nextQuery);
+    }
+    onSearch?.(nextQuery);
+  };
 
   useEffect(() => {
     if (autoFocus) inputRef.current?.focus();
@@ -50,12 +56,10 @@ export default function SearchBar({
           <input
             ref={inputRef}
             value={query}
-           onChange={(e) => {
-            const val = e.target.value;
-            setQuery(val);
-          
-            onSearch?.(val); 
-          }}
+            onChange={(e) => {
+              const val = e.target.value;
+              setQuery(val);
+            }}
                       
             placeholder={placeholder}
             className="flex-1 outline-none bg-transparent"
@@ -66,8 +70,6 @@ export default function SearchBar({
               type="button"
               onClick={() => {
                 setQuery("");
-                onSearch?.("");
-        
               }}
             >
               <X className="w-4 h-4 text-gray-400" />
