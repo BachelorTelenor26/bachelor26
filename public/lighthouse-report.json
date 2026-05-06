@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-05-06T00:02:23.287Z",
+  "url": "https://telenor.jensnic.no/",
+  "averageScores": {
+    "performance": 1,
+    "accessibility": 0.9499999999999998,
+    "bestPractices": 0.96,
+    "seo": 0.9
+  },
+  "runs": [
+    {
+      "runAt": "2026-05-06T00:01:52.785Z",
+      "url": "https://telenor.jensnic.no/",
+      "scores": {
+        "performance": 1,
+        "accessibility": 0.95,
+        "bestPractices": 0.96,
+        "seo": 0.9
+      }
+    },
+    {
+      "runAt": "2026-05-06T00:02:04.114Z",
+      "url": "https://telenor.jensnic.no/",
+      "scores": {
+        "performance": 1,
+        "accessibility": 0.95,
+        "bestPractices": 0.96,
+        "seo": 0.9
+      }
+    },
+    {
+      "runAt": "2026-05-06T00:02:14.913Z",
+      "url": "https://telenor.jensnic.no/",
+      "scores": {
+        "performance": 1,
+        "accessibility": 0.95,
+        "bestPractices": 0.96,
+        "seo": 0.9
+      }
+    }
+  ]
+}
