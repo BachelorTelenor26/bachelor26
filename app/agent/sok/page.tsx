@@ -1,4 +1,4 @@
-import SearchPageClient from "../../components/shared/SearchPageClient";
+import SearchPageClient from "../../components/agent/SearchPageClient";
 
 async function search(query: string) {
   const res = await fetch(
@@ -16,15 +16,13 @@ export default async function AgentSokPage({
 }) {
   const query = searchParams.q?.trim() || "";
 
-  const data = query ? await search(query) : null;
-
   return (
     <div className="max-w-5xl mx-auto">
       <h1 className="text-3xl font-bold mb-6">
         Agentsøk
       </h1>
 
-      <SearchPageClient basePath="/agent/sok" />
+      <SearchPageClient />
 
      
     </div>

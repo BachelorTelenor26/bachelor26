@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { articles } from "@/lib/mockData";
-import SearchBar from "./SearchBar";
+import SearchBar from "../shared/SearchBar";
 import Link from "next/link";
 
 export default function SokClient() {

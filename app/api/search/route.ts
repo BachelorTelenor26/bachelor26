@@ -16,7 +16,7 @@ export async function GET(req: Request) {
   const [ customers, articles] = await Promise.all([
     
 
-    prisma.customer.findMany({
+    prisma.user.findMany({
       where: {
         OR: [
           { name: { contains: q, mode: "insensitive" } },
