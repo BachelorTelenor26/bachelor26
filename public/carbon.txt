@@ -1,0 +1,14 @@
+version = "0.5"
+last_updated = 2026-05-06
+
+[org]
+disclosures = [
+    { doc_type = "web-page", url = "https://www.websitecarbon.com/website/telenor-jensnic-no/", domain = "telenor.jensnic.no", title = "Carbon footprint estimate (websitecarbon.com)" },
+    { doc_type = "web-page", url = "https://telenor.jensnic.no/sustainability", domain = "telenor.jensnic.no", title = "Lighthouse performance and sustainability report" }
+]
+
+[upstream]
+services = [
+    { domain = "hub.docker.com", service_type = "other" },
+    { domain = "domene.shop", service_type = "dns" }
+]
