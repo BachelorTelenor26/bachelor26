@@ -114,3 +114,62 @@ jobs:
         run: |
           curl --fail --retry 5 --retry-delay 5 --retry-connrefused https://telenor.jensnic.no/
 
+      - name: Lighthouse performance audit
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        id: lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            https://telenor.jensnic.no/
+          budgetPath: .lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      - name: Update Lighthouse report
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          node - <<'EOF'
+          const fs = require('fs')
+          const path = require('path')
+          const dir = '${{ steps.lighthouse.outputs.resultsPath }}'
+          const files = fs.readdirSync(dir).filter(f => f.endsWith('.json') && !f.includes('manifest') && !f.startsWith('flags-')).sort()
+          if (!files.length) process.exit(0)
+          const runs = files.map(file => {
+            const raw = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf-8'))
+            const cats = raw.categories
+            return {
+              runAt: raw.fetchTime ?? new Date().toISOString(),
+              url: raw.finalUrl,
+              scores: {
+                performance: cats.performance?.score ?? 0,
+                accessibility: cats.accessibility?.score ?? 0,
+                bestPractices: cats['best-practices']?.score ?? 0,
+                seo: cats.seo?.score ?? 0,
+              }
+            }
+          })
+          const avg = key => runs.reduce((s, r) => s + r.scores[key], 0) / runs.length
+          const report = {
+            generatedAt: new Date().toISOString(),
+            url: runs[0].url,
+            averageScores: {
+              performance: avg('performance'),
+              accessibility: avg('accessibility'),
+              bestPractices: avg('bestPractices'),
+              seo: avg('seo'),
+            },
+            runs,
+          }
+          fs.writeFileSync('public/lighthouse-report.json', JSON.stringify(report, null, 2))
+          console.log('Report written. Averages:', JSON.stringify(report.averageScores))
+          EOF
+
+      - name: Commit Lighthouse report
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/lighthouse-report.json
+          git diff --cached --quiet || git commit -m "chore: update Lighthouse report [skip ci]"
+          git push
+
