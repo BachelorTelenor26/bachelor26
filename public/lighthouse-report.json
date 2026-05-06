@@ -1,41 +1,71 @@
 {
-  "generatedAt": "2026-05-06T00:02:23.287Z",
+  "generatedAt": "2026-05-06T01:05:59.668Z",
   "url": "https://telenor.jensnic.no/",
   "averageScores": {
-    "performance": 1,
-    "accessibility": 0.9499999999999998,
-    "bestPractices": 0.96,
-    "seo": 0.9
+    "performance": 0.9866666666666667,
+    "accessibility": 1,
+    "bestPractices": 1,
+    "seo": 1
   },
   "runs": [
     {
-      "runAt": "2026-05-06T00:01:52.785Z",
+      "runAt": "2026-05-06T01:05:16.231Z",
       "url": "https://telenor.jensnic.no/",
       "scores": {
         "performance": 1,
-        "accessibility": 0.95,
-        "bestPractices": 0.96,
-        "seo": 0.9
+        "accessibility": 1,
+        "bestPractices": 1,
+        "seo": 1
       }
     },
     {
-      "runAt": "2026-05-06T00:02:04.114Z",
+      "runAt": "2026-05-06T01:05:30.581Z",
       "url": "https://telenor.jensnic.no/",
       "scores": {
-        "performance": 1,
-        "accessibility": 0.95,
-        "bestPractices": 0.96,
-        "seo": 0.9
+        "performance": 0.98,
+        "accessibility": 1,
+        "bestPractices": 1,
+        "seo": 1
       }
     },
     {
-      "runAt": "2026-05-06T00:02:14.913Z",
+      "runAt": "2026-05-06T01:05:43.764Z",
+      "url": "https://telenor.jensnic.no/",
+      "scores": {
+        "performance": 0.98,
+        "accessibility": 1,
+        "bestPractices": 1,
+        "seo": 1
+      }
+    },
+    {
+      "runAt": "2026-05-06T01:05:16.231Z",
       "url": "https://telenor.jensnic.no/",
       "scores": {
         "performance": 1,
-        "accessibility": 0.95,
-        "bestPractices": 0.96,
-        "seo": 0.9
+        "accessibility": 1,
+        "bestPractices": 1,
+        "seo": 1
+      }
+    },
+    {
+      "runAt": "2026-05-06T01:05:30.581Z",
+      "url": "https://telenor.jensnic.no/",
+      "scores": {
+        "performance": 0.98,
+        "accessibility": 1,
+        "bestPractices": 1,
+        "seo": 1
+      }
+    },
+    {
+      "runAt": "2026-05-06T01:05:43.764Z",
+      "url": "https://telenor.jensnic.no/",
+      "scores": {
+        "performance": 0.98,
+        "accessibility": 1,
+        "bestPractices": 1,
+        "seo": 1
       }
     }
   ]
