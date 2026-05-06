@@ -67,7 +67,7 @@ export default async function KundePage() {
       <section className="mt-16">
         <div className="flex items-center justify-between mb-4">
           <h2 className="font-bold text-gray-900">Bla etter kategori</h2>
-          <span className="text-sm text-gray-400">
+          <span className="text-sm text-gray-600">
             Velg hva problemet gjelder
           </span>
         </div>
