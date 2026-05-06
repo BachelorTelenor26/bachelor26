@@ -44,10 +44,10 @@ export default function AgentLoginPage() {
         </div>
 
         <div>
-          <h1 className="text-3xl font-bold text-white leading-tight mb-4">
+          <h1 className="text-4xl md:text-5x1 font-semibold text-white leading-tight mb-6">
             Feilsøkingsverktøyet som holder deg ett steg foran.
           </h1>
-          <p className="text-white/80 text-sm leading-relaxed">
+          <p className="text-white/80 text-base leading-relaxed">
             Søkbar, oppdatert feilsøkingsinformasjon tilgjengelig
             der du trenger det — midt i samtalen.
           </p>
@@ -59,8 +59,8 @@ export default function AgentLoginPage() {
       </aside>
 
       {/* Høyre side — innloggingsskjema */}
-      <main className="flex items-center justify-center p-10">
-        <div className="w-full max-w-sm">
+      <main className="flex items-center justify-center bg-[#f5f7fa] p-10">
+        <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-1">Logg inn</h2>
           <p className="text-sm text-gray-500 mb-8">Bruk din ansatt-epost</p>
 
@@ -106,7 +106,7 @@ export default function AgentLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="bg-[#1F74BF] text-white rounded-lg px-4 py-3 text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#0055D4] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-[#1F74BF] cursor-pointer text-white rounded-lg px-4 py-3 text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#0055D4] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <>
@@ -123,7 +123,9 @@ export default function AgentLoginPage() {
 
           </form>
 
-         
+          <p className="text-xs text-gray-400 text-center mt-6">
+            Glemt passord?
+          </p>
         </div>
       </main>
 

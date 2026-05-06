@@ -25,7 +25,7 @@ export default function DashboardPage() {
         <DashboardActions />
       </div>
 
-      <div className="grid grid-cols-3 gap-10">
+      <div className="grid grid-cols-2 gap-10">
         <div className="col-span-2">
           <RecentSessions sessions={sessions} />
           <MostUsedGuides />

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
+import { Bell } from "lucide-react";
 
 type Session = {
   id: string
@@ -37,7 +38,7 @@ export default function RecentSessions({ sessions }: RecentSessionsProps) {
   return (
     <section>
       <h2 className="font-semibold text-gray-900 mb-3">Nylige kundesesjoner</h2>
-      <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+      <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
         {sessions.map((session) => {
           const config = outcomeConfig[session.outcome] ?? outcomeConfig.IN_PROGRESS
           const currentStep = session.answers.length
@@ -49,23 +50,29 @@ export default function RecentSessions({ sessions }: RecentSessionsProps) {
               href={`/agent/session/${session.id}`}
               className="flex items-center justify-between px-5 py-4 border-b border-gray-100 last:border-0 hover:bg-gray-50 transition-colors"
             >
-              <div className="flex items-center gap-4">
-                <div>
-                  <div className="flex items-center gap-2 mb-0.5">
-                    <span className="text-xs font-mono text-gray-500">
-                      {session.sessionCode}
-                    </span>
-                    <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${config.className}`}>
-                      {config.label}
-                    </span>
+              <div className="flex items-center gap-4 w-full">
+                
+                  <div className="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-semibold">
+                    <Bell/>
                   </div>
-                  <p className="text-sm font-medium text-gray-900">
-                    {session.article.title}
-                  </p>
-                  <p className="text-xs text-gray-400 mt-0.5">
-                    {session.article.category.name} · steg {currentStep}/{totalSteps} · {timeAgo(session.createdAt)}
-                  </p>
-                </div>
+                  <div className='flex-1 min-w-0'>
+                      <div className="flex items-center gap-2 mb-0.5">
+                        <span className="text-xs font-mono text-gray-500">
+                          {session.sessionCode}
+                        </span>
+                        <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${config.className}`}>
+                          {config.label}
+                        </span>
+                      </div>
+                      <p className="text-sm font-medium text-gray-900">
+                        {session.article.title}
+                      </p>
+                      <p className="text-xs text-gray-400 mt-0.5">
+                        {session.article.category.name} · steg {currentStep}/{totalSteps} · {timeAgo(session.createdAt)}
+                      </p>
+                  </div>
+                  
+                
               </div>
               <ChevronRight className="w-4 h-4 text-gray-400 shrink-0" />
             </Link>

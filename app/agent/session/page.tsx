@@ -72,10 +72,15 @@ export default function SesjonerPage() {
       >
         ← Dashbord
       </Link>
-
-      <h1 className="mb-6 text-2xl font-bold text-gray-900">
+  <div className='mb-6 space-y-2'>
+     <h1 className="mb-6 text-2xl font-bold text-gray-900">
         Slå opp kundesesjon
       </h1>
+
+      <p className='text-sm text-gray-600'>
+        Skriv inn en sesjons-ID for å hente kundens aktive økt og feilsøke problemer.
+      </p>
+    </div>
 
       <SessionLookup
         onSubmit={handleSubmit}
