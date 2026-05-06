@@ -46,3 +46,7 @@ __pycache__/
 **/generated/prisma
 
 telenor-guides/
+# Local Lighthouse testing
+.lighthouserc.local.json
+.chrome/
+.lighthouseci/

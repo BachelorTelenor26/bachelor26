@@ -74,7 +74,7 @@ export default function SearchBar({
     {/* må gjøres funksjonelt også  */}
       {popularSearches && popularSearches.length > 0 && (
         <div className="flex items-center gap-2 mt-3 flex-wrap justify-end">
-          <span className="text-xs text-gray-400">Populære søk:</span>
+          <span className="text-xs text-gray-600">Populære søk:</span>
           {popularSearches.map((term) => (
             <button
               key={term}
