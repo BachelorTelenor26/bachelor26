@@ -9,10 +9,14 @@ on:
 jobs:
   ci-cd:
     runs-on: [self-hosted, linux, arm64]
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Clean up Docker resources
         run: |
