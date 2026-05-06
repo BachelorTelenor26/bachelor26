@@ -3,7 +3,7 @@ import fs from 'fs'
 import path from 'path'
 
 export const metadata: Metadata = {
-  title: 'Bærekraft – Telenor Kunnskapsbase',
+  title: 'Bærekraft - Telenor Kunnskapsbase',
   description: 'Lighthouse-rapport og karbonavtrykk for Telenor Kunnskapsbase',
 }
 
@@ -35,6 +35,8 @@ interface WebsiteCarbonData {
   hostIsGreen: boolean | null
 }
 
+const RECENT_RUN_COUNT = 3
+
 function getReport(): LighthouseReport | null {
   try {
     const filePath = path.join(process.cwd(), 'public', 'lighthouse-report.json')
@@ -56,10 +58,42 @@ function extractMatch(text: string, regex: RegExp): string | null {
   return match?.[1]?.trim() ?? null
 }
 
+function normalizeWebsiteCarbonText(html: string) {
+  return html
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;|&#160;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function extractDataCountValue(html: string, anchor: RegExp): number | null {
+  const match = html.match(anchor)
+  if (!match) return null
+  return parseNumber(match[1])
+}
+
 function parseNumber(value: string | null): number | null {
   if (!value) return null
   const parsed = Number.parseFloat(value.replace(',', '.'))
   return Number.isNaN(parsed) ? null : parsed
+}
+
+function normalizePercent(value: number | null): number | null {
+  if (value === null) return null
+  let normalized = value
+  while (normalized > 100) normalized /= 100
+  return normalized
+}
+
+function formatCarbonNumber(value: number | null, digits = 2) {
+  if (value === null) return 'Ukjent'
+  return new Intl.NumberFormat('no-NO', {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: digits,
+  }).format(value)
 }
 
 async function getWebsiteCarbonData(): Promise<WebsiteCarbonData | null> {
@@ -74,13 +108,27 @@ async function getWebsiteCarbonData(): Promise<WebsiteCarbonData | null> {
     if (!response.ok) return null
 
     const html = await response.text()
-    const rating = extractMatch(html, /carbon rating of\s*([A-F][+-]?)/i)
-    const co2PerVisitGrams = parseNumber(extractMatch(html, /Only\s*([0-9]+(?:[.,][0-9]+)?)\s*g of CO2/i))
-    const cleanerThanPercent = parseNumber(extractMatch(html, /cleaner than\s*([0-9]+(?:[.,][0-9]+)?)\s*%/i))
-    const lastTested = extractMatch(html, /last tested on\s*([^.<]+)\./i)
-    const hostIsGreen = /uses\s+green energy/i.test(html)
+    const text = normalizeWebsiteCarbonText(html)
+    const rating = extractMatch(html, /highlight--grade--([A-F][+-]?)/i)
+      ?? extractMatch(text, /carbon rating of\s*([A-F]\s*[+-]?)/i)?.replace(/\s+/g, '')
+      ?? extractMatch(text, /Website Carbon Calculator\s+([A-F][+-]?)/i)
+      ?? extractMatch(text, /(^|\s)(A\+)(\s|$)/i)
+    const co2PerVisitGrams = extractDataCountValue(
+      html,
+      /report-carbon__amount[\s\S]*?data-count="([0-9]+(?:\.[0-9]+)?)"[\s\S]*?id="js-emission-count"/i
+    ) ?? parseNumber(
+      extractMatch(text, /Only\s*([0-9]+(?:[.,][0-9]+){0,2})\s*g of CO2/i)
+    )
+    const cleanerThanPercent = normalizePercent(
+      extractDataCountValue(
+        html,
+        /report-summary__subheading[\s\S]*?class="js-countup"[\s\S]*?data-count="([0-9]+(?:\.[0-9]+)?)"/i
+      ) ?? parseNumber(extractMatch(text, /cleaner than\s*([0-9]+(?:[.,][0-9]+){0,2})\s*%/i))
+    )
+    const lastTested = extractMatch(text, /last tested on\s*([^.]*)\./i)
+    const hostIsGreen = /uses\s+green energy/i.test(text)
       ? true
-      : /bog standard energy/i.test(html)
+      : /bog standard energy/i.test(text)
         ? false
         : null
 
@@ -121,6 +169,19 @@ function ScoreDot({ score }: { score: number }) {
 export default async function SustainabilityPage() {
   const report = getReport()
   const carbonData = await getWebsiteCarbonData()
+  const recentRuns = report
+    ? [...report.runs]
+        .sort((left, right) => new Date(right.runAt).getTime() - new Date(left.runAt).getTime())
+        .slice(0, RECENT_RUN_COUNT)
+    : []
+  const recentAverageScores = recentRuns.length
+    ? {
+        performance: recentRuns.reduce((sum, run) => sum + run.scores.performance, 0) / recentRuns.length,
+        accessibility: recentRuns.reduce((sum, run) => sum + run.scores.accessibility, 0) / recentRuns.length,
+        bestPractices: recentRuns.reduce((sum, run) => sum + run.scores.bestPractices, 0) / recentRuns.length,
+        seo: recentRuns.reduce((sum, run) => sum + run.scores.seo, 0) / recentRuns.length,
+      }
+    : report?.averageScores ?? null
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-12">
@@ -137,27 +198,25 @@ export default async function SustainabilityPage() {
         .
       </p>
 
-      {report ? (
+      {report && recentAverageScores ? (
         <>
-          {/* Average scores */}
           <div className="border border-gray-200 rounded-2xl p-6 mb-6">
             <div className="flex items-center justify-between mb-6">
               <h2 className="font-semibold text-gray-900">
-                Gjennomsnitt ({report.runs.length} målinger)
+                Gjennomsnitt ({recentRuns.length} målinger)
               </h2>
               <span className="text-xs text-gray-400">
                 {formatDate(report.generatedAt)}
               </span>
             </div>
             <div className="space-y-4">
-              <ScoreBar label="Ytelse" score={report.averageScores.performance} />
-              <ScoreBar label="Tilgjengelighet" score={report.averageScores.accessibility} />
-              <ScoreBar label="Beste praksis" score={report.averageScores.bestPractices} />
-              <ScoreBar label="SEO" score={report.averageScores.seo} />
+              <ScoreBar label="Ytelse" score={recentAverageScores.performance} />
+              <ScoreBar label="Tilgjengelighet" score={recentAverageScores.accessibility} />
+              <ScoreBar label="Beste praksis" score={recentAverageScores.bestPractices} />
+              <ScoreBar label="SEO" score={recentAverageScores.seo} />
             </div>
           </div>
 
-          {/* Per-run breakdown */}
           <div className="border border-gray-200 rounded-2xl p-6 mb-8">
             <h2 className="font-semibold text-gray-900 mb-4">Målinger</h2>
             <table className="w-full text-sm">
@@ -171,7 +230,7 @@ export default async function SustainabilityPage() {
                 </tr>
               </thead>
               <tbody>
-                {report.runs.map((run, i) => (
+                {recentRuns.map((run, i) => (
                   <tr key={i} className="border-b border-gray-50 last:border-0">
                     <td className="py-2 text-gray-500">
                       #{i + 1}{' '}
@@ -208,13 +267,13 @@ export default async function SustainabilityPage() {
               Karbonrating: <span className="font-semibold text-gray-900">{carbonData.rating ?? 'Ukjent'}</span>
             </p>
             <p>
-              CO₂ per sidevisning: <span className="font-semibold text-gray-900">{carbonData.co2PerVisitGrams ?? 'Ukjent'} g</span>
+              CO₂ per sidevisning: <span className="font-semibold text-gray-900">{formatCarbonNumber(carbonData.co2PerVisitGrams)} g</span>
             </p>
             <p>
-              Renere enn: <span className="font-semibold text-gray-900">{carbonData.cleanerThanPercent ?? 'Ukjent'}%</span>
+              Renere enn: <span className="font-semibold text-gray-900">{formatCarbonNumber(carbonData.cleanerThanPercent)}%</span>
             </p>
             <p>
-              Hosting: <span className="font-semibold text-gray-900">{carbonData.hostIsGreen === null ? 'Ukjent' : carbonData.hostIsGreen ? 'Grønn energi' : 'Ikke grønn energi'}</span>
+              Hosting: <span className="font-semibold text-gray-900">{carbonData.hostIsGreen === null ? 'Ukjent' : carbonData.hostIsGreen ? 'Grønn energi' : 'Bog standard energi'}</span>
             </p>
             <p>
               Sist testet: <span className="font-semibold text-gray-900">{carbonData.lastTested ?? 'Ukjent'}</span>
