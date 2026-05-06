@@ -27,6 +27,14 @@ interface LighthouseReport {
   runs: LighthouseRun[]
 }
 
+interface WebsiteCarbonData {
+  rating: string | null
+  co2PerVisitGrams: number | null
+  cleanerThanPercent: number | null
+  lastTested: string | null
+  hostIsGreen: boolean | null
+}
+
 function getReport(): LighthouseReport | null {
   try {
     const filePath = path.join(process.cwd(), 'public', 'lighthouse-report.json')
@@ -43,8 +51,49 @@ function formatDate(iso: string) {
   })
 }
 
-function formatTime(iso: string) {
-  return new Date(iso).toLocaleTimeString('no-NO', { hour: '2-digit', minute: '2-digit' })
+function extractMatch(text: string, regex: RegExp): string | null {
+  const match = text.match(regex)
+  return match?.[1]?.trim() ?? null
+}
+
+function parseNumber(value: string | null): number | null {
+  if (!value) return null
+  const parsed = Number.parseFloat(value.replace(',', '.'))
+  return Number.isNaN(parsed) ? null : parsed
+}
+
+async function getWebsiteCarbonData(): Promise<WebsiteCarbonData | null> {
+  try {
+    const response = await fetch('https://www.websitecarbon.com/website/telenor-jensnic-no/', {
+      next: { revalidate: 60 * 60 * 24 * 7 },
+      headers: {
+        'user-agent': 'Mozilla/5.0',
+      },
+    })
+
+    if (!response.ok) return null
+
+    const html = await response.text()
+    const rating = extractMatch(html, /carbon rating of\s*([A-F][+-]?)/i)
+    const co2PerVisitGrams = parseNumber(extractMatch(html, /Only\s*([0-9]+(?:[.,][0-9]+)?)\s*g of CO2/i))
+    const cleanerThanPercent = parseNumber(extractMatch(html, /cleaner than\s*([0-9]+(?:[.,][0-9]+)?)\s*%/i))
+    const lastTested = extractMatch(html, /last tested on\s*([^.<]+)\./i)
+    const hostIsGreen = /uses\s+green energy/i.test(html)
+      ? true
+      : /bog standard energy/i.test(html)
+        ? false
+        : null
+
+    return {
+      rating,
+      co2PerVisitGrams,
+      cleanerThanPercent,
+      lastTested,
+      hostIsGreen,
+    }
+  } catch {
+    return null
+  }
 }
 
 function ScoreBar({ label, score }: { label: string; score: number }) {
@@ -69,8 +118,9 @@ function ScoreDot({ score }: { score: number }) {
   return <span className={`font-mono font-semibold ${color}`}>{pct}</span>
 }
 
-export default function SustainabilityPage() {
+export default async function SustainabilityPage() {
   const report = getReport()
+  const carbonData = await getWebsiteCarbonData()
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-12">
@@ -93,7 +143,7 @@ export default function SustainabilityPage() {
           <div className="border border-gray-200 rounded-2xl p-6 mb-6">
             <div className="flex items-center justify-between mb-6">
               <h2 className="font-semibold text-gray-900">
-                Gjennomsnitt ({report.runs.length} kjøringer)
+                Gjennomsnitt ({report.runs.length} målinger)
               </h2>
               <span className="text-xs text-gray-400">
                 {formatDate(report.generatedAt)}
@@ -109,11 +159,11 @@ export default function SustainabilityPage() {
 
           {/* Per-run breakdown */}
           <div className="border border-gray-200 rounded-2xl p-6 mb-8">
-            <h2 className="font-semibold text-gray-900 mb-4">Kjøringer</h2>
+            <h2 className="font-semibold text-gray-900 mb-4">Målinger</h2>
             <table className="w-full text-sm">
               <thead>
                 <tr className="text-xs text-gray-400 border-b border-gray-100">
-                  <th className="text-left pb-2 font-normal">Kjøring</th>
+                  <th className="text-left pb-2 font-normal">Måling</th>
                   <th className="text-right pb-2 font-normal">Ytelse</th>
                   <th className="text-right pb-2 font-normal">Tilgjengelighet</th>
                   <th className="text-right pb-2 font-normal">Beste praksis</th>
@@ -126,7 +176,7 @@ export default function SustainabilityPage() {
                     <td className="py-2 text-gray-500">
                       #{i + 1}{' '}
                       <span className="text-xs text-gray-400">
-                        {formatDate(run.runAt)} {formatTime(run.runAt)}
+                        {formatDate(run.runAt)}
                       </span>
                     </td>
                     <td className="py-2 text-right"><ScoreDot score={run.scores.performance} /></td>
@@ -151,6 +201,27 @@ export default function SustainabilityPage() {
           Estimert CO₂ per sidevisning er beregnet av websitecarbon.com basert på
           overførte data og kjent energimiks for hosting-lokasjonen.
         </p>
+
+        {carbonData ? (
+          <div className="mb-4 text-sm text-gray-700 space-y-1">
+            <p>
+              Karbonrating: <span className="font-semibold text-gray-900">{carbonData.rating ?? 'Ukjent'}</span>
+            </p>
+            <p>
+              CO₂ per sidevisning: <span className="font-semibold text-gray-900">{carbonData.co2PerVisitGrams ?? 'Ukjent'} g</span>
+            </p>
+            <p>
+              Renere enn: <span className="font-semibold text-gray-900">{carbonData.cleanerThanPercent ?? 'Ukjent'}%</span>
+            </p>
+            <p>
+              Hosting: <span className="font-semibold text-gray-900">{carbonData.hostIsGreen === null ? 'Ukjent' : carbonData.hostIsGreen ? 'Grønn energi' : 'Ikke grønn energi'}</span>
+            </p>
+            <p>
+              Sist testet: <span className="font-semibold text-gray-900">{carbonData.lastTested ?? 'Ukjent'}</span>
+            </p>
+          </div>
+        ) : null}
+
         <a
           href="https://www.websitecarbon.com/website/telenor-jensnic-no/"
           target="_blank"
