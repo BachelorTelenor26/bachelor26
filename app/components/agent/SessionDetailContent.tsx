@@ -104,7 +104,7 @@ export default function SessionDetailContent({
   }
 
   return (
-    <div className="grid grid-cols-[1fr_460px] gap-8 items-start h-[calc(100vh-180px)]">
+    <div className="grid grid-cols-[1fr_460px] gap-8 items-start">
       <div className="flex flex-col gap-6">
         <form
           onSubmit={handleSessionUpdate}
@@ -193,7 +193,7 @@ export default function SessionDetailContent({
         )}
       </div>
 
-      <div className="sticky top-8 h-[calc(100vh-180px)]">
+      <div className="sticky top-8 self-start">
         <AiAssistPanel
           sessionId={session.id}
           initialHistory={initialHistory}

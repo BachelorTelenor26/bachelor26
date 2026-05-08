@@ -189,7 +189,7 @@ export default function AiAssistPanel({ sessionId, initialHistory = [] }: AiAssi
   )
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 p-5 h-full flex flex-col">
+    <div className="bg-white rounded-xl border border-gray-200 p-5 h-[75vh] max-h-[75vh] overflow-hidden flex flex-col">
       <div className="flex items-center gap-2 mb-4">
         <Sparkles className="w-4 h-4 text-[#1F74BF]" />
         <h2 className="font-semibold text-gray-900">AI-assistent</h2>
@@ -203,7 +203,7 @@ export default function AiAssistPanel({ sessionId, initialHistory = [] }: AiAssi
 
       <div
         ref={scrollRef}
-        className="flex-1 overflow-y-auto mb-4 pr-2 space-y-3 min-h-50"
+        className="flex-1 min-h-0 overflow-y-auto mb-4 pr-2 space-y-3"
       >
         {conversation.map((msg, idx) => (
           <div key={idx} className="space-y-2">
