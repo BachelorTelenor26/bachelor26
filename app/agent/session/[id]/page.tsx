@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import SessionCard from "@/app/components/agent/SessionCard"
-import SessionStepList from "@/app/components/agent/SessionStepList"
+import SessionDetailContent from "@/app/components/agent/SessionDetailContent"
+import type { SessionDetailData } from "@/app/components/agent/SessionDetailContent"
 import { prisma } from "@/lib/prisma"
 import { readFile } from "node:fs/promises"
 import path from "node:path"
@@ -29,6 +29,13 @@ async function getSession(id: string) {
         include: { step: true, choice: true },
         orderBy: { createdAt: 'asc' },
       },
+      aiInteractions: {
+        select: {
+          agentNotes: true,
+          aiResponse: true,
+        },
+        orderBy: { createdAt: 'asc' },
+      },
     },
   })
 }
@@ -41,6 +48,18 @@ export default async function SessionDetailPage({
   const { id } = await params
   const session = await getSession(id)
   if (!session) notFound()
+
+  const customer = session.customerId
+    ? await prisma.user.findUnique({
+        where: { id: session.customerId },
+        select: {
+          id: true,
+          email: true,
+          firstName: true,
+          lastName: true,
+        },
+      })
+    : null
 
   const displayAnswers = await Promise.all(
     session.answers.map(async (a) => {
@@ -59,8 +78,31 @@ export default async function SessionDetailPage({
     })
   )
 
+  const aiHistory = session.aiInteractions.flatMap((interaction) => {
+    const messages: Array<{ role: 'agent' | 'ai'; content: string }> = []
+    if (interaction.agentNotes?.trim()) {
+      messages.push({ role: 'agent', content: interaction.agentNotes.trim() })
+    }
+    if (interaction.aiResponse?.trim()) {
+      messages.push({ role: 'ai', content: interaction.aiResponse.trim() })
+    }
+    return messages
+  })
+
+  const initialSession: SessionDetailData = {
+    id: session.id,
+    sessionCode: session.sessionCode,
+    outcome: session.outcome,
+    escalationReason: session.escalationReason,
+    createdAt: session.createdAt.toISOString(),
+    routerModel: session.routerModel,
+    customer,
+    article: session.article,
+    answers: displayAnswers,
+  }
+
   return (
-    <div className="max-w-3xl">
+    <div>
       <Link
         href="/agent/dashboard"
         className="text-sm text-gray-500 hover:text-gray-700 flex items-center gap-1 mb-6"
@@ -68,30 +110,17 @@ export default async function SessionDetailPage({
         ← Dashbord
       </Link>
 
-    
       <h1 className="text-2xl font-bold text-gray-900 mb-6">
         Slå opp kundesesjon
       </h1>
 
       <p>Skriv inn en sesjons-ID for å hente kundens aktive økt og feilsøke problemer.</p>
 
-      <div className="flex flex-col gap-4">
-        <SessionCard
-          sessionCode={session.sessionCode}
-          outcome={session.outcome}
-          createdAt={session.createdAt.toISOString()}
-          categoryName={session.article.category.name}
-          deviceName={session.article.deviceType.name}
-          articleTitle={session.article.title}
-          stepCount={displayAnswers.length}
+      <div className="mt-6">
+        <SessionDetailContent
+          initialSession={initialSession}
+          initialHistory={aiHistory}
         />
-
-        {displayAnswers.length > 0 && (
-          <SessionStepList
-            answers={displayAnswers}
-            totalSteps={displayAnswers.length}
-          />
-        )}
       </div>
     </div>
   )

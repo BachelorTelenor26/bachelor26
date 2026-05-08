@@ -37,6 +37,7 @@ export default function SessionLookup({ onSubmit, error, isLoading }: SessionLoo
         <button
           type="submit"
           disabled={isLoading || code.length < 4}
+          suppressHydrationWarning
           className="rounded-lg bg-[#1F74BF] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-[#0055D4] disabled:cursor-not-allowed disabled:opacity-90"
         >
           {isLoading ? 'Søker...' : 'Slå opp'}

@@ -18,6 +18,7 @@
     "simulate:session-code": "npx tsx visualizations/simulate-session-code.ts"
   },
   "dependencies": {
+    "@google/genai": "^1.52.0",
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
     "better-auth": "^1.6.9",
