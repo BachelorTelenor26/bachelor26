@@ -174,6 +174,14 @@ export async function POST(request: Request) {
       where: { id: session.id },
       include: {
         article: { include: { category: true, deviceType: true } },
+        customer: {
+          select: {
+            id: true,
+            email: true,
+            firstName: true,
+            lastName: true,
+          },
+        },
         answers: {
           include: { step: true, choice: true },
           orderBy: { createdAt: "asc" },

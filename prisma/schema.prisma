@@ -23,6 +23,7 @@ model DeviceType {
   slug        String    @unique
   description String?
   imageUrl    String?
+  specs       String?
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   articles    Article[]
@@ -111,6 +112,7 @@ model TroubleshootingSession {
   createdAt        DateTime            @default(now())
   updatedAt        DateTime            @updatedAt
   answers          SessionStepAnswer[]
+  aiInteractions   AiAssistInteraction[]
   article          Article             @relation(fields: [articleId], references: [id])
   customer         User?               @relation(fields: [customerId], references: [id])
 
@@ -129,9 +131,10 @@ model User {
   image         String?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
-  sessions      TroubleshootingSession[]
-  authSessions  Session[]
-  accounts      Account[]
+  sessions       TroubleshootingSession[]
+  authSessions   Session[]
+  accounts       Account[]
+  aiInteractions AiAssistInteraction[]
 }
 
 
@@ -173,6 +176,21 @@ model Verification {
   expiresAt  DateTime
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
+}
+
+model AiAssistInteraction {
+  id         String                  @id @default(cuid())
+  agentId    String
+  sessionId  String?
+  agentNotes String?
+  aiResponse String
+  model      String
+  createdAt  DateTime                @default(now())
+  agent      User                    @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  session    TroubleshootingSession? @relation(fields: [sessionId], references: [id], onDelete: SetNull)
+
+  @@index([agentId])
+  @@index([sessionId])
 }
 
 enum Role {

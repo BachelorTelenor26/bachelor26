@@ -29,3 +29,34 @@ export function formatArticleTitle(categorySlug: string, deviceSlug: string): st
   const device = formatDeviceName(deviceSlug)
   return `${category} — ${device}`
 }
+
+export type ParsedAiResponse = {
+  direct: string
+  further: string
+}
+
+export function parseResponse(text: string): ParsedAiResponse | null {
+  const directHeader = /\*\*\s*Direkte løsning\s*\*\*/i
+  const furtherHeader = /\*\*\s*Videre feilsøking\s*\*\*/i
+
+  const directMatch = directHeader.exec(text)
+  const furtherMatch = furtherHeader.exec(text)
+
+  if (!directMatch && !furtherMatch) {
+    return null
+  }
+
+  const directStart = directMatch ? directMatch.index + directMatch[0].length : -1
+  const furtherStart = furtherMatch ? furtherMatch.index + furtherMatch[0].length : -1
+
+  const direct =
+    directStart >= 0
+      ? text
+          .slice(directStart, furtherMatch ? furtherMatch.index : text.length)
+          .trim()
+      : ''
+
+  const further = furtherStart >= 0 ? text.slice(furtherStart).trim() : ''
+
+  return { direct, further }
+}
