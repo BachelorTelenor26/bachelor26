@@ -3,6 +3,7 @@ import CategoryCard from "../components/kunde/CategoryCard";
 import { WifiOff, WifiLow, WifiSync, Router } from "lucide-react";
 import ArticleListItem from "../components/kunde/ArticleListItem";
 import { formatCategoryName } from '../lib/utils'
+import Image from "next/image";
 
 
 // Midlertidig ikon-mapping til vi har ikoner i databasen og også beskrivelse
@@ -45,22 +46,28 @@ export default async function KundePage() {
   return (
     <>
       <section className="text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Hva trenger du hjelp med?
-        </h1>
-        <p className="text-gray-500 mb-8 max-w-2xl mx-auto">
-          Løs bredbåndsproblemer selv.. Her finner du enkle guider for alt fra
-          treg Wi-Fi til nett som ikke fungerer. Selvbetjening som gir deg
-          kontroll.
-        </p>
-        <SearchBar
-          popularSearches={[
-            "Router lyser rødt",
-            "Treg wifi",
-            "Mobil mister dekning",
-            "Bytte passord",
-          ]}
-        />
+             
+        <div className="bg-white -mt-24 mx-auto max-w-3x1 rounded-2xl shadow-lg p-8">
+            
+            <h1 className="text-4xl font-bold text-black-50 mb-4">
+              Hva trenger du hjelp med?
+            </h1>
+
+            <p className="text-black-50 mb-9">
+              Løs bredbåndsproblemer selv.. Her finner du enkle guider for alt fra
+              treg Wi-Fi til nett som ikke fungerer. Selvbetjening som gir deg
+              kontroll.
+            </p>
+            <SearchBar
+              popularSearches={[
+                "Router lyser rødt",
+                "Treg wifi",
+                "Mobil mister dekning",
+                "Bytte passord",
+              ]}
+            />
+        </div>
+        
       </section>
 
       {/* Kategoriseksjon */}
@@ -95,7 +102,7 @@ export default async function KundePage() {
         <h2 className="font-semibold text-gray-900 mb-4">
           Mest leste akkurat nå
         </h2>
-        <div className="border border-gray-300 rounded-xl overflow-hidden">
+        <div className="border bg-[#ffffff] border-gray-300 rounded-xl overflow-hidden">
           {articles
             .slice(0, 6)
             .map(
