@@ -36,7 +36,7 @@ export default function DeviceSelector({
 
     
       {category && (
-        <span className="inline-block text-xs font-medium bg-blue-50 text-blue-600 px-3 py-1 rounded-full mb-4">
+        <span className="inline-block text-sm font-medium bg-blue-50 text-blue-600 px-3 py-1 rounded-full mb-4">
           {category}
         </span>
       )}
@@ -44,7 +44,7 @@ export default function DeviceSelector({
      
       <h1 className="text-2xl font-bold text-gray-900 mb-2">{title}</h1>
       {subtitle && (
-        <p className="text-gray-500 text-sm mb-8">{subtitle}</p>
+        <p className="text-gray-800 text-sm mb-8">{subtitle}</p>
       )}
 
      
@@ -55,16 +55,17 @@ export default function DeviceSelector({
             <button
               key={device.id}
               onClick={() => onSelect(device.id)}
-              className="flex items-center gap-4 p-5 border border-gray-200 rounded-xl text-left hover:border-blue-300 hover:shadow-sm transition-all"
+              className="group cursor-pointer flex items-center gap-4 p-5 border border-gray-200 bg-white hover:border-blue-300 rounded-xl text-left hover:shadow-sm transition-all duration-200"
             >
-              <div className="w-16 h-16 flex items-center justify-center shrink-0">
-                <Icon className="w-12 h-12 text-gray-400" />
+              <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-50 group-hover:bg-blue-50 transition">
+                <Icon className="w-12 h-12 text-gray-500 group-hover:text-blue-600 transition" />
               </div>
-              <div>
-                <p className="font-semibold text-gray-900 text-sm">
+
+              <div className='text-left'>
+                <p className="font-semibold text-gray-900 text-m group-hover:text-blue-600 transition">
                   {device.name}
                 </p>
-                <p className="text-gray-500 text-xs mt-0.5">
+                <p className="text-gray-500 text-sm mt-1 leading-snug">
                   {device.description}
                 </p>
               </div>
@@ -74,7 +75,7 @@ export default function DeviceSelector({
       </div>
 
       
-      <p className="text-xs text-gray-400 text-center mt-8">
+      <p className="text-xs text-gray-500 text-center mt-8">
         Usikker på hvilken ruter du har? Se etter modellnavnet på undersiden
         eller baksiden av enheten.
       </p>
