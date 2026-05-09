@@ -43,7 +43,7 @@ export default async function KundePage() {
   const articles = await getArticles();
 
   return (
-    <div>
+     <div className="-mt-13 md:-mt-15"> 
       <div className="relative -mx-4 mb-8 w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
         <HeroBanner />
       </div>

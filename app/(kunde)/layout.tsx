@@ -30,7 +30,7 @@ export default function KundeLayout({
       </header>
 
      
-   <main className="max-w-5xl mx-auto px-4 pb-13 md:pb-15">  
+<main className="flex-1 max-w-5xl mx-auto px-4 py-13 md:py-15">  
   {children}
 </main>
       <Footer />
