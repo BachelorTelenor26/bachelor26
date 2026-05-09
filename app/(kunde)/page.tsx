@@ -2,9 +2,9 @@ import SearchBar from "../components/kunde/SearchBar";
 import CategoryCard from "../components/kunde/CategoryCard";
 import { WifiOff, WifiLow, WifiSync, Router } from "lucide-react";
 import ArticleListItem from "../components/kunde/ArticleListItem";
-import { formatCategoryName } from '../lib/utils'
-import { BookOpen } from "lucide-react"
-
+import { formatCategoryName } from "../lib/utils";
+import { BookOpen } from "lucide-react";
+import HeroBanner from "../components/kunde/HeroBanner";
 // Midlertidig ikon-mapping til vi har ikoner i databasen og også beskrivelse
 const categoryMap: Record<
   string,
@@ -43,30 +43,30 @@ export default async function KundePage() {
   const articles = await getArticles();
 
   return (
-    <>
-      <section className="text-center">
-             
-        <div className="bg-white -mt-24 mx-auto max-w-3x1 rounded-2xl shadow-lg p-8">
-            
-            <h1 className="text-4xl font-bold text-black-50 mb-4">
-              Hva trenger du hjelp med?
-            </h1>
+    <div>
+      <div className="relative -mx-4 mb-8 w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+        <HeroBanner />
+      </div>
+       <section className="text-center -mt-20 relative z-10">
+        <div className="bg-white mx-auto max-w-3x1 rounded-2xl shadow-lg p-8">
+          <h1 className="text-4xl font-bold text-black-50 mb-4">
+            Hva trenger du hjelp med?
+          </h1>
 
-            <p className="text-black-50 mb-9">
-              Løs bredbåndsproblemer selv.. Her finner du enkle guider for alt fra
-              treg Wi-Fi til nett som ikke fungerer. Selvbetjening som gir deg
-              kontroll.
-            </p>
-            <SearchBar
-              popularSearches={[
-                "Router lyser rødt",
-                "Treg wifi",
-                "Mobil mister dekning",
-                "Bytte passord",
-              ]}
-            />
+          <p className="text-black-50 mb-9">
+            Løs bredbåndsproblemer selv.. Her finner du enkle guider for alt fra
+            treg Wi-Fi til nett som ikke fungerer. Selvbetjening som gir deg
+            kontroll.
+          </p>
+          <SearchBar
+            popularSearches={[
+              "Router lyser rødt",
+              "Treg wifi",
+              "Mobil mister dekning",
+              "Bytte passord",
+            ]}
+          />
         </div>
-        
       </section>
 
       {/* Kategoriseksjon */}
@@ -100,15 +100,15 @@ export default async function KundePage() {
       <section className="mt-12">
         <div className="flex items-center gap-2 mb-4">
           <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center">
-            <BookOpen className="w-5 h-5 text-blue-600"/>
+            <BookOpen className="w-5 h-5 text-blue-600" />
           </div>
           <h2 className="text-1g font-semibold text-gray-900">
             Mest leste akkurat nå
           </h2>
         </div>
-        
+
         <div className="border bg-[#ffffff] border-gray-300 rounded-xl overflow-hidden">
-          {articles  
+          {articles
             .slice(0, 6)
             .map(
               (article: {
@@ -119,9 +119,9 @@ export default async function KundePage() {
               }) => (
                 <ArticleListItem key={article.slug} article={article} />
               ),
-            )} 
+            )}
         </div>
       </section>
-    </>
+    </div>
   );
 }

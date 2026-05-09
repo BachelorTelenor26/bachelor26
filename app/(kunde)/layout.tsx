@@ -29,20 +29,10 @@ export default function KundeLayout({
         </nav>
       </header>
 
-      {/* hero banner */}
-      <div className='w-full h-[420px] overflow-hidden'>
-        <Image
-          src="/telenorHeroimg.png"
-          alt='Hero banner'
-          width={2000}
-          height={800}
-          className='w-full h-full object-cover'
-          priority
-        />
-      </div>
-      <main className="max-w-5xl mx-auto px-4 py-13 md:py-15">
-        {children}
-      </main>
+     
+   <main className="max-w-5xl mx-auto px-4 pb-13 md:pb-15">  
+  {children}
+</main>
       <Footer />
     </div>
   )
