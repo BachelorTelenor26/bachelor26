@@ -159,11 +159,11 @@ export default function TroubleshootingFlow({
       </Link>
 
       <div className="flex flex-wrap items-center gap-3 mb-4">
-        <span className="inline-block text-xs font-medium bg-blue-50 text-blue-600 px-3 py-1 rounded-full">
+        <span className="inline-block text-xs font-medium bg-blue-50 text-blue-600  py-1 rounded-full">
           {categoryName}
         </span>
-        <span className="text-xs text-gray-400">Oppdatert {updatedAt}</span>
-        <div className="ml-auto flex items-center gap-1.5 text-xs text-gray-500 border border-gray-200 rounded-lg px-2.5 py-1">
+        <span className="text-xs text-gray-700">Oppdatert {updatedAt}</span>
+        <div className="ml-auto flex items-center gap-1.5 bg-[#ffffff] text-xs text-gray-700 border border-gray-200 rounded-lg px-2.5 py-1">
           <span>
             {DEVICE_DISPLAY[article.deviceType.slug]?.name ?? article.deviceType.name}
           </span>
