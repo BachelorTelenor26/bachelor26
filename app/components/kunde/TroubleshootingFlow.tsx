@@ -143,13 +143,19 @@ export default function TroubleshootingFlow({
   const stepsToRender = activeStepIsTerminal ? activePath.slice(0, -1) : activePath;
   const terminalLocale = activeStepIsTerminal ? (localeMap[activeStep.id] ?? null) : null;
 
+
+  //  handle forrige knapp
+  const handlePrevious = useCallback(() => {
+    setHistory((prev) => prev.slice(0, -1));
+  }, []);
+
   return (
     <div className="max-w-3xl mx-auto px-4 py-10">
       <Link
         href={`/feilsoking/${categorySlug}`}
         className="text-sm text-gray-500 hover:text-gray-700 flex items-center gap-1 mb-8"
       >
-        ← Bytt enhet
+        ← Tilbake til Bytt enhet
       </Link>
 
       <div className="flex flex-wrap items-center gap-3 mb-4">
@@ -175,44 +181,62 @@ export default function TroubleshootingFlow({
         Start router på nytt, sjekk kabler og fiberboks steg for steg
       </p>
 
-      <div className="bg-white border border-gray-200 rounded-xl px-5">
-        <div className="py-2 border-b border-gray-100">
-          <p className="text-sm font-semibold text-gray-900">Feilsøking</p>
-        </div>
 
-        {stepsToRender.map((step, idx) => {
-          const locale = localeMap[step.id];
-          if (!locale) return null;
+      <div className="bg-white border border-gray-200 rounded-xl px-7">
+                  <div className="py-2 border-b border-gray-100">
+                    <p className="text-sm font-semibold text-gray-900">Feilsøking</p>
+                  </div>
 
-          const isAnswered = idx < history.length;
-          const isActive = idx === history.length;
-          const sortedChoices = [...step.choices].sort((a, b) => a.sortOrder - b.sortOrder);
+                  {stepsToRender.map((step, idx) => {
+                    const locale = localeMap[step.id];
+                    if (!locale) return null;
 
-          return (
-            <StepCard
-              key={step.id}
-              stepIndex={idx}
-              locale={locale}
-              choices={sortedChoices as StepChoiceData[]}
-              chosenIndex={isAnswered ? history[idx].choiceIndex : null}
-              isActive={isActive}
-              imageUrl={step.imageUrl}
-              onChoiceSelect={(choice, choiceIndex) =>
-                handleChoiceSelect(idx, choice, choiceIndex)
-              }
-              onEdit={() => handleEdit(idx)}
-            />
-          );
-        })}
-      </div>
+                    const isAnswered = idx < history.length;
+                    const isActive = idx === history.length;
+                    const sortedChoices = [...step.choices].sort((a, b) => a.sortOrder - b.sortOrder);
 
-      {activeStepIsTerminal && terminalLocale && (
-        <KontaktOssResult
-          locale={terminalLocale}
-          articleSlug={article.slug}
-          choiceIndices={history.map((h) => h.choiceIndex)}
-        />
-      )}
-    </div>
+                    return (
+                      <StepCard
+                        key={step.id}
+                        stepIndex={idx}
+                        locale={locale}
+                        choices={sortedChoices as StepChoiceData[]}
+                        chosenIndex={isAnswered ? history[idx].choiceIndex : null}
+                        isActive={isActive}
+                        imageUrl={step.imageUrl}
+                        onChoiceSelect={(choice, choiceIndex) =>
+                          handleChoiceSelect(idx, choice, choiceIndex)
+                        }
+                        onEdit={() => handleEdit(idx)}
+                      />
+                    );
+                  })}
+
+                  <button
+                      onClick={handlePrevious} 
+                      disabled={history.length === 0}
+                      className={`
+                        text-sm font-medium transition cursor-pointer m-5
+                        ${
+                          history.length === 0
+                            ? "text-gray-300 cursor-not-allowed"
+                            : "text-blue-600 hover:text-blue-500"
+                        }
+                        `} 
+                    >
+                      ← Forrige
+                    </button>
+                </div>
+
+                {activeStepIsTerminal && terminalLocale && (
+                  <KontaktOssResult
+                    locale={terminalLocale}
+                    articleSlug={article.slug}
+                    choiceIndices={history.map((h) => h.choiceIndex)}
+                  />
+                )}
+      
+       </div>
+   
   );
 }

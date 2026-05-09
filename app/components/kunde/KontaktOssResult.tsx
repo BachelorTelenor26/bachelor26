@@ -27,11 +27,11 @@ export default function KontaktOssResult({
   }
 
   return (
-    <div className="mt-6 rounded-xl border border-gray-200 overflow-hidden">
+    <div className="mt-6 rounded-xl border bg-[#ffffff] border-gray-200 overflow-hidden">
       {/* Header */}
-      <div className="bg-gray-50 px-5 py-4 flex items-center gap-3 border-b border-gray-200">
+      <div className=" bg-blue-100 px-5 py-4 flex items-center gap-3 border-b border-gray-200">
         <PhoneCall className="w-5 h-5 text-gray-500 shrink-0" />
-        <h2 className="font-semibold text-gray-900 text-sm">{locale.title}</h2>
+        <h2 className="font-semibold text-gray-900 text-m">{locale.title}</h2>
       </div>
 
       <div className="px-5 py-5 space-y-4">
@@ -43,9 +43,11 @@ export default function KontaktOssResult({
           <p className="text-xs font-medium text-blue-600 uppercase tracking-wide">
             Din sesjons-ID
           </p>
+          
           <span className="font-mono text-2xl font-bold tracking-widest text-blue-900">
             {sessionCode}
           </span>
+          
           <button
             onClick={handleCopy}
             className="mt-1 flex items-center gap-1.5 px-4 py-1.5 text-sm border border-blue-200 bg-white rounded-lg hover:bg-blue-50 transition-colors text-blue-700 font-medium"
@@ -63,9 +65,33 @@ export default function KontaktOssResult({
             )}
           </button>
         </div>
-
+        <div className="rounded-lg border border-gray-100 bg-yellow-100 px-4 py-3 flex gap-2.5">
+           <Info className="w-4 h-4 text-gray-400 shrink-0 mt-0.5" />
+           <div className="text-s text-gray-500 space-y-0.5">
+              <p className="font-medium text-gray-600 mb-1">
+                Hva er en sesjons-ID
+              </p>
+              <p>
+                Denn ID-en lagrer feilsøkingen du har gjort i denne guiden. 
+                Oppgi ID-en til kundeservice hvis du trenger hjelp senere, så kan vi hjelpe deg raskere! 
+              </p>
+           </div>
+        </div>
+        {/* What the agent sees */}
+          <div className="rounded-lg border border-gray-100 bg-yellow-100 px-4 py-3 flex gap-2.5">
+            <Info className="w-4 h-4 text-gray-400 shrink-0 mt-0.5" />
+            <div className="text-s text-gray-500 space-y-0.5">
+              <p className="font-medium text-gray-600 mb-1">
+                Hva agenten ser når du oppgir ID-en
+              </p>
+              <p>Hvilken guide du fulgte</p>
+              <p>Hvilke steg du gjennomførte</p>
+              <p>Hvor i feilsøkingen du eskalerte</p>
+            </div>
+          </div>
+        </div>
         {/* Phone contact */}
-        <div className="rounded-lg border border-gray-200 px-4 py-3 flex items-start gap-3">
+        <div className="rounded-lg border m-4 border-blue-200 bg-blue-100 px-4 py-3 flex items-start gap-3">
           <PhoneCall className="w-4 h-4 text-gray-400 shrink-0 mt-0.5" />
           <div className="text-sm text-gray-700">
             <a href="tel:91509000"
@@ -73,7 +99,7 @@ export default function KontaktOssResult({
             >
               91 50 90 00
             </a>
-            <div className="text-xs text-gray-500 mt-1 space-y-0.5">
+            <div className="text-s text-gray-500 mt-1 space-y-0.5">
               <p>Hverdager 08–19</p>
               <p>Lørdag 09–16</p>
               <p>Søndag/Helligdag — stengt</p>
@@ -81,19 +107,7 @@ export default function KontaktOssResult({
           </div>
         </div>
 
-        {/* What the agent sees */}
-        <div className="rounded-lg border border-gray-100 bg-gray-50 px-4 py-3 flex gap-2.5">
-          <Info className="w-4 h-4 text-gray-400 shrink-0 mt-0.5" />
-          <div className="text-xs text-gray-500 space-y-0.5">
-            <p className="font-medium text-gray-600 mb-1">
-              Hva agenten ser når du oppgir ID-en
-            </p>
-            <p>Hvilken guide du fulgte</p>
-            <p>Hvilke steg du gjennomførte</p>
-            <p>Hvor i feilsøkingen du eskalerte</p>
-          </div>
-        </div>
-      </div>
+       
     </div>
   );
 }

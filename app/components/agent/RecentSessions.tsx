@@ -48,7 +48,7 @@ export default function RecentSessions({ sessions }: RecentSessionsProps) {
             <Link
               key={session.id}
               href={`/agent/session/${session.id}`}
-              className="flex items-center justify-between px-5 py-4 border-b border-gray-100 last:border-0 hover:bg-gray-50 transition-colors"
+              className="flex items-center justify-between px-5 py-4 border-b border-gray-100 last:border-0 hover:bg-blue-100 transition-colors"
             >
               <div className="flex items-center gap-4 w-full">
                 
@@ -57,19 +57,27 @@ export default function RecentSessions({ sessions }: RecentSessionsProps) {
                   </div>
                   <div className='flex-1 min-w-0'>
                       <div className="flex items-center gap-2 mb-0.5">
-                        <span className="text-xs font-mono text-gray-500">
+                        
+                        <span className="text-s font-mono text-gray-500">
                           {session.sessionCode}
                         </span>
+                        
                         <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${config.className}`}>
                           {config.label}
                         </span>
                       </div>
-                      <p className="text-sm font-medium text-gray-900">
+                      
+                      <p className="text-s font-medium text-gray-900">
                         {session.article.title}
                       </p>
-                      <p className="text-xs text-gray-400 mt-0.5">
-                        {session.article.category.name} · steg {currentStep}/{totalSteps} · {timeAgo(session.createdAt)}
-                      </p>
+                      <div className='flex items-center justify-between mt-1'>
+                        <span className="text-xs text-gray-600 mt-1">
+                        {session.article.category.name} · steg {currentStep}/{totalSteps}
+                      </span>
+                      <span className='flex justify-end text-xs text-gray-500 mt-1'>
+                        {timeAgo(session.createdAt)}
+                      </span>
+                      </div>
                   </div>
                   
                 

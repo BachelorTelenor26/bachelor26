@@ -18,7 +18,7 @@ export default function MostUsedGuides() {
           <Link
             key={guide.slug}
             href={`/feilsoking/${guide.slug}`}
-            className="flex items-center justify-between px-5 py-4 border-b border-gray-100 last:border-0 hover:bg-gray-50 transition-colors"
+            className="flex items-center justify-between px-5 py-4 border-b border-gray-100 last:border-0 hover:bg-blue-100 transition-colors"
           >
             <div className='flex item-start gap-4 w-full'>
 
@@ -33,8 +33,8 @@ export default function MostUsedGuides() {
                     {guide.category}
                   </span>
                 </div>
-                <p className="text-sm font-medium text-gray-900">{guide.title}</p>
-                <p className="text-xs text-gray-400 mt-0.5">{guide.uses} sesjoner siste 30 dager</p>
+                <p className="text-m font-medium text-gray-900">{guide.title}</p>
+                <p className="text-xs text-gray-600 mt-0.5">{guide.uses} sesjoner siste 30 dager</p>
               </div>
             </div>
             <ChevronRight className="w-4 h-4 text-gray-400 shrink-0" />

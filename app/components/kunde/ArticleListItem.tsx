@@ -14,7 +14,7 @@ export default function ArticleListItem({ article }: ArticleListItemProps) {
   return (
     <Link
       href={`/feilsoking/${article.category.slug}`}
-      className="flex items-center justify-between px-4 py-4 border-b border-gray-100 hover:bg-gray-50 transition-colors"
+      className="flex items-center justify-between px-4 py-4 border-b border-gray-100 hover:bg-blue-100 transition-colors"
     >
       <div>
         <p className="text-sm font-medium text-gray-900">{article.title}</p>

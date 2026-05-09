@@ -3,8 +3,7 @@ import CategoryCard from "../components/kunde/CategoryCard";
 import { WifiOff, WifiLow, WifiSync, Router } from "lucide-react";
 import ArticleListItem from "../components/kunde/ArticleListItem";
 import { formatCategoryName } from '../lib/utils'
-import Image from "next/image";
-
+import { BookOpen } from "lucide-react"
 
 // Midlertidig ikon-mapping til vi har ikoner i databasen og også beskrivelse
 const categoryMap: Record<
@@ -98,12 +97,18 @@ export default async function KundePage() {
       </section>
 
       {/* Mest leste */}
-      <section className="font-bold mt-12">
-        <h2 className="font-semibold text-gray-900 mb-4">
-          Mest leste akkurat nå
-        </h2>
+      <section className="mt-12">
+        <div className="flex items-center gap-2 mb-4">
+          <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center">
+            <BookOpen className="w-5 h-5 text-blue-600"/>
+          </div>
+          <h2 className="text-1g font-semibold text-gray-900">
+            Mest leste akkurat nå
+          </h2>
+        </div>
+        
         <div className="border bg-[#ffffff] border-gray-300 rounded-xl overflow-hidden">
-          {articles
+          {articles  
             .slice(0, 6)
             .map(
               (article: {
@@ -114,7 +119,7 @@ export default async function KundePage() {
               }) => (
                 <ArticleListItem key={article.slug} article={article} />
               ),
-            )}
+            )} 
         </div>
       </section>
     </>
