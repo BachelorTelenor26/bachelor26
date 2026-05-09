@@ -65,49 +65,54 @@ export default function KontaktOssResult({
             )}
           </button>
         </div>
-        <div className="rounded-lg border border-gray-100 bg-yellow-100 px-4 py-3 flex gap-2.5">
-           <Info className="w-4 h-4 text-gray-400 shrink-0 mt-0.5" />
-           <div className="text-s text-gray-500 space-y-0.5">
-              <p className="font-medium text-gray-600 mb-1">
-                Hva er en sesjons-ID
-              </p>
-              <p>
-                Denn ID-en lagrer feilsøkingen du har gjort i denne guiden. 
-                Oppgi ID-en til kundeservice hvis du trenger hjelp senere, så kan vi hjelpe deg raskere! 
-              </p>
-           </div>
-        </div>
-        {/* What the agent sees */}
-          <div className="rounded-lg border border-gray-100 bg-yellow-100 px-4 py-3 flex gap-2.5">
-            <Info className="w-4 h-4 text-gray-400 shrink-0 mt-0.5" />
-            <div className="text-s text-gray-500 space-y-0.5">
-              <p className="font-medium text-gray-600 mb-1">
-                Hva agenten ser når du oppgir ID-en
-              </p>
-              <p>Hvilken guide du fulgte</p>
-              <p>Hvilke steg du gjennomførte</p>
-              <p>Hvor i feilsøkingen du eskalerte</p>
-            </div>
+ {/* Info boxes */}
+        <div className="rounded-lg border border-[#f5deb3] bg-[#fffbf0] px-4 py-3.5 flex gap-3">
+          <Info className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+          <div className="text-sm text-gray-700">
+            <p className="font-semibold text-gray-800 mb-1.5">
+              Hva er en sesjons-ID
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              Denne ID-en lagrer feilsøkingen du har gjort i denne guiden. 
+              Oppgi ID-en til kundeservice hvis du trenger hjelp senere, så kan vi hjelpe deg raskere! 
+            </p>
           </div>
         </div>
-        {/* Phone contact */}
-        <div className="rounded-lg border m-4 border-blue-200 bg-blue-100 px-4 py-3 flex items-start gap-3">
-          <PhoneCall className="w-4 h-4 text-gray-400 shrink-0 mt-0.5" />
+ 
+        {/* What the agent sees */}
+        <div className="rounded-lg border border-[#f5deb3] bg-[#fffbf0] px-4 py-3.5 flex gap-3">
+          <Info className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
           <div className="text-sm text-gray-700">
-            <a href="tel:91509000"
-              className="font-semibold text-gray-900 hover:underline"
+            <p className="font-semibold text-gray-800 mb-1.5">
+              Hva agenten ser når du oppgir ID-en
+            </p>
+            <ul className="text-gray-600 leading-relaxed space-y-1">
+              <li>Hvilken guide du fulgte</li>
+              <li>Hvilke steg du gjennomførte</li>
+              <li>Hvor i feilsøkingen du eskalerte</li>
+            </ul>
+          </div>
+        </div>
+ 
+        {/* Phone contact */}
+        <div className="rounded-lg border border-[#b8d4e8] bg-[#e8f4f8] px-4 py-3.5 flex items-start gap-3">
+          <PhoneCall className="w-4 h-4 text-gray-600 shrink-0 mt-0.5" />
+          <div className="text-sm text-gray-700">
+            <a 
+              href="tel:91509000"
+              className="font-semibold text-gray-900 hover:underline text-base"
             >
               91 50 90 00
             </a>
-            <div className="text-s text-gray-500 mt-1 space-y-0.5">
+            <div className="text-sm text-gray-600 mt-1.5 space-y-0.5">
               <p>Hverdager 08–19</p>
               <p>Lørdag 09–16</p>
               <p>Søndag/Helligdag — stengt</p>
             </div>
           </div>
         </div>
-
-       
+      </div>
     </div>
   );
 }
+ 
