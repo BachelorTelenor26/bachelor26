@@ -18,7 +18,6 @@ export default function SearchBar({
   defaultValue = "",
   value,
   autoFocus = false,
-  popularSearches = [],
 }: SearchBarProps) {
   const [internalQuery, setInternalQuery] = useState(defaultValue);
   const query = value ?? internalQuery;

@@ -43,12 +43,12 @@ export default function SokClient() {
             {filtered.length} treff for &quot;{query}&quot;
           </p>
 
-          <div className="border rounded-xl overflow-hidden">
+          <div className="border rounded-xl overflow-hidden bg-white">
             {filtered.map((item) => (
               <Link
                 key={item.slug}
-                href={`/feilsoking/${item.slug}`}
-                className="flex justify-between border-b p-4 hover:bg-gray-100"
+                href={`#`}
+                className="flex justify-between border-b p-4 hover:bg-blue-100"
               >
                 <div>
                   <div className="text-1xl text-blue-600 mb-1">
