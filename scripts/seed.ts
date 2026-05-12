@@ -12,6 +12,7 @@ type Edge = {
 };
 
 type TerminalReason =
+  | "SPEEDTEST"
   | "EXTERNAL_REDIRECT"
   | "FLOW_EXIT_EXPECTED_SPEED"
   | "FLOW_EXIT_NO_NEXT_STEP"
@@ -258,7 +259,11 @@ function inferTerminalReason(args: {
   const label = (args.choiceLabel || "").trim().toLowerCase();
   const titleKey = (args.stepTitleKey || "").toLowerCase();
 
-  if (label === "speedometer" || label === "mine sider" || label.includes("koble til wifi")) {
+  if (label === "speedometer") {
+    return "SPEEDTEST";
+  }
+
+  if (label === "mine sider" || label.includes("koble til wifi")) {
     return "EXTERNAL_REDIRECT";
   }
 

@@ -25,6 +25,7 @@ A `StepChoice` is **terminal** when `isTerminal = true` and `nextStepId = null`.
 
 | TerminalReason | Meaning |
 |---|---|
+| `SPEEDTEST` | Choice opens a speedtest widget in-app |
 | `EXTERNAL_REDIRECT` | User is sent to an external URL |
 | `FLOW_EXIT_EXPECTED_SPEED` | Flow ends because speed is within expected range (For the yes awnsers on the speedtest pages where the question is do you have the expected speed) |
 | `FLOW_EXIT_NO_NEXT_STEP` | Flow ends with no further step available |

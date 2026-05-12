@@ -31,6 +31,7 @@ const options: swaggerJsdoc.Options = {
         TerminalReason: {
           type: 'string',
           enum: [
+            'SPEEDTEST',
             'EXTERNAL_REDIRECT',
             'FLOW_EXIT_EXPECTED_SPEED',
             'FLOW_EXIT_NO_NEXT_STEP',
