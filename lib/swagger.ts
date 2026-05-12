@@ -173,6 +173,7 @@ const options: swaggerJsdoc.Options = {
             completed: { type: 'boolean', example: false },
             outcome: { '$ref': '#/components/schemas/SessionOutcome' },
             escalationReason: { type: 'string', nullable: true },
+            customerServiceNotes: { type: 'string', nullable: true },
             routerModel: {
               type: 'string',
               nullable: true,
@@ -227,6 +228,7 @@ const options: swaggerJsdoc.Options = {
             outcome: { '$ref': '#/components/schemas/SessionOutcome' },
             completed: { type: 'boolean' },
             escalationReason: { type: 'string' },
+            customerServiceNotes: { type: 'string' },
           },
         },
 

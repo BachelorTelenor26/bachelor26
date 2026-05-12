@@ -107,6 +107,7 @@ model TroubleshootingSession {
   completed        Boolean             @default(false)
   outcome          SessionOutcome      @default(IN_PROGRESS)
   escalationReason String?
+  customerServiceNotes String?
   routerModel      String?
   customerId       String?
   createdAt        DateTime            @default(now())
