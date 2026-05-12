@@ -109,7 +109,22 @@ export default function TroubleshootingFlow({
 }: TroubleshootingFlowProps) {
   const router = useRouter();
   const [history, setHistory] = useState<HistoryEntry[]>([]);
+  const [activeStepIndex, setActiveStepIndex] = useState<number | null>(null);
   const [showSpeedtestWidget, setShowSpeedtestWidget] = useState(false);
+
+  const localeMap = article.localeMap as Record<string, LocaleData>;
+  const activePath = buildActivePath(article.steps, history);
+  const hasTerminalTail =
+    activePath.length > 0 &&
+    activePath[activePath.length - 1].choices.length === 0 &&
+    history.length === activePath.length - 1;
+  const stepsToRender = hasTerminalTail ? activePath.slice(0, -1) : activePath;
+  const pointerFallback = history.length;
+  const activeStepPointer = Math.max(
+    0,
+    Math.min(activeStepIndex ?? pointerFallback, stepsToRender.length)
+  );
+  const isReviewingPreviousStep = activeStepPointer < history.length;
 
   const handleChoiceSelect = useCallback(
     (stepIndex: number, choice: StepChoiceData, choiceIndex: number) => {
@@ -120,22 +135,24 @@ export default function TroubleshootingFlow({
 
       setShowSpeedtestWidget(false);
       const entry: HistoryEntry = {
-        stepId: article.steps[stepIndex]?.id ?? "",
+        stepId: activePath[stepIndex]?.id ?? "",
         choiceId: choice.id,
         choiceIndex,
       };
-      setHistory((prev) => [...prev.slice(0, stepIndex), entry]);
+      setHistory((prev) => {
+        const existing = prev[stepIndex];
+        if (existing?.choiceId === choice.id) return prev;
+        return [...prev.slice(0, stepIndex), entry];
+      });
+      setActiveStepIndex(stepIndex + 1);
     },
-    [article]
+    [activePath]
   );
 
   const handleEdit = useCallback((stepIndex: number) => {
     setShowSpeedtestWidget(false);
-    setHistory((prev) => prev.slice(0, stepIndex));
+    setActiveStepIndex(stepIndex);
   }, []);
-
-  const localeMap = article.localeMap as Record<string, LocaleData>;
-  const activePath = buildActivePath(article.steps, history);
   const updatedAt = new Date(article.updatedAt).toLocaleDateString("nb-NO", {
     day: "numeric",
     month: "long",
@@ -146,17 +163,18 @@ export default function TroubleshootingFlow({
   const activeStepIsTerminal =
     activeStep !== undefined &&
     history.length === activePath.length - 1 &&
-    activeStep.choices.length === 0;
-
-  const stepsToRender = activeStepIsTerminal ? activePath.slice(0, -1) : activePath;
+    activeStep.choices.length === 0 &&
+    !isReviewingPreviousStep;
   const terminalLocale = activeStepIsTerminal ? (localeMap[activeStep.id] ?? null) : null;
 
 
-  //  handle forrige knapp
   const handlePrevious = useCallback(() => {
     setShowSpeedtestWidget(false);
-    setHistory((prev) => prev.slice(0, -1));
-  }, []);
+    setActiveStepIndex((prev) => {
+      const current = prev ?? history.length;
+      return Math.max(0, current - 1);
+    });
+  }, [history.length]);
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-10">
@@ -201,7 +219,7 @@ export default function TroubleshootingFlow({
                     if (!locale) return null;
 
                     const isAnswered = idx < history.length;
-                    const isActive = idx === history.length;
+                    const isActive = idx === activeStepPointer;
                     const sortedChoices = [...step.choices].sort((a, b) => a.sortOrder - b.sortOrder);
 
                     return (
@@ -223,11 +241,11 @@ export default function TroubleshootingFlow({
 
                   <button
                       onClick={handlePrevious} 
-                      disabled={history.length === 0}
+                      disabled={activeStepPointer === 0}
                       className={`
                         text-sm font-medium transition cursor-pointer m-5
                         ${
-                          history.length === 0
+                          activeStepPointer === 0
                             ? "text-gray-300 cursor-not-allowed"
                             : "text-blue-600 hover:text-blue-500"
                         }
