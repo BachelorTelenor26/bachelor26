@@ -26,6 +26,7 @@ export type SessionDetailData = {
   sessionCode: string
   outcome: string
   escalationReason: string | null
+  customerServiceNotes?: string | null
   createdAt: string
   routerModel: string | null
   customer: {
@@ -60,6 +61,7 @@ export default function SessionDetailContent({
   const [customerContact, setCustomerContact] = useState(initialSession.customer?.email ?? '')
   const [outcome, setOutcome] = useState(initialSession.outcome)
   const [escalationReason, setEscalationReason] = useState(initialSession.escalationReason ?? '')
+  const [customerServiceNotes, setCustomerServiceNotes] = useState(initialSession.customerServiceNotes ?? '')
   const [isSaving, setIsSaving] = useState(false)
   const [saveError, setSaveError] = useState<string | null>(null)
   const [saveSuccess, setSaveSuccess] = useState<string | null>(null)
@@ -79,6 +81,7 @@ export default function SessionDetailContent({
           customerContact,
           outcome,
           escalationReason: outcome === 'ESCALATED' ? escalationReason : '',
+          customerServiceNotes,
         }),
       })
 
@@ -93,6 +96,7 @@ export default function SessionDetailContent({
         ...prev,
         outcome: updated.outcome,
         escalationReason: updated.escalationReason,
+        customerServiceNotes: updated.customerServiceNotes,
         customer: updated.customer,
       }))
       setSaveSuccess('Sesjonen er oppdatert')
@@ -142,6 +146,19 @@ export default function SessionDetailContent({
                 ))}
               </select>
             </div>
+            <div className="md:col-span-2">
+                <label htmlFor="customerServiceNotes" className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-gray-500">
+                  Notater
+                </label>
+                <textarea
+                  id="customerServiceNotes"
+                  value={customerServiceNotes}
+                  onChange={(e) => setCustomerServiceNotes(e.target.value)}
+                  required
+                  rows={3}
+                  className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 outline-none focus:border-[#0064FA] focus:ring-2 focus:ring-[#0064FA]/10"
+                />
+              </div>
 
             {outcome === 'ESCALATED' && (
               <div className="md:col-span-2">

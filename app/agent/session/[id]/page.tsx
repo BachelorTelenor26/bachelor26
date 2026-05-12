@@ -94,6 +94,7 @@ export default async function SessionDetailPage({
     sessionCode: session.sessionCode,
     outcome: session.outcome,
     escalationReason: session.escalationReason,
+    customerServiceNotes: session.customerServiceNotes,
     createdAt: session.createdAt.toISOString(),
     routerModel: session.routerModel,
     customer,

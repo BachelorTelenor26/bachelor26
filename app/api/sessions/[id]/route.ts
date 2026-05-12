@@ -57,7 +57,7 @@ export async function PATCH(request: Request, { params }: RouteContext) {
   try {
     const { id } = await params;
     const body = await request.json();
-    const { outcome, escalationReason, customerContact, customerEmail } = body;
+    const { outcome, escalationReason, customerContact, customerEmail, customerServiceNotes } = body;
 
     const validOutcomes = ["IN_PROGRESS", "RESOLVED", "ESCALATED", "ABANDONED"];
     if (outcome !== undefined && !validOutcomes.includes(outcome)) {
@@ -88,6 +88,8 @@ export async function PATCH(request: Request, { params }: RouteContext) {
     const isEscalated = outcome === "ESCALATED";
     const normalizedEscalationReason =
       typeof escalationReason === "string" ? escalationReason.trim() : undefined;
+    const normalizedCustomerServiceNotes =
+      typeof customerServiceNotes === "string" ? customerServiceNotes.trim() : undefined;
 
     if (isEscalated && normalizedEscalationReason !== undefined && normalizedEscalationReason.length === 0) {
       return NextResponse.json(
@@ -144,6 +146,12 @@ export async function PATCH(request: Request, { params }: RouteContext) {
         ...(outcome && { outcome }),
         ...(outcome !== undefined && { completed: outcome !== "IN_PROGRESS" }),
         ...(resolvedCustomerId !== undefined && { customerId: resolvedCustomerId }),
+        ...(normalizedCustomerServiceNotes !== undefined && {
+          customerServiceNotes:
+            normalizedCustomerServiceNotes.length > 0
+              ? normalizedCustomerServiceNotes
+              : null,
+        }),
         ...(nextOutcome === "ESCALATED"
           ? { escalationReason: effectiveEscalationReason }
           : { escalationReason: null }),
