@@ -109,9 +109,16 @@ export default function TroubleshootingFlow({
 }: TroubleshootingFlowProps) {
   const router = useRouter();
   const [history, setHistory] = useState<HistoryEntry[]>([]);
+  const [showSpeedtestWidget, setShowSpeedtestWidget] = useState(false);
 
   const handleChoiceSelect = useCallback(
     (stepIndex: number, choice: StepChoiceData, choiceIndex: number) => {
+      if (choice.terminalReason === "SPEEDTEST") {
+        setShowSpeedtestWidget(true);
+        return;
+      }
+
+      setShowSpeedtestWidget(false);
       const entry: HistoryEntry = {
         stepId: article.steps[stepIndex]?.id ?? "",
         choiceId: choice.id,
@@ -123,6 +130,7 @@ export default function TroubleshootingFlow({
   );
 
   const handleEdit = useCallback((stepIndex: number) => {
+    setShowSpeedtestWidget(false);
     setHistory((prev) => prev.slice(0, stepIndex));
   }, []);
 
@@ -146,6 +154,7 @@ export default function TroubleshootingFlow({
 
   //  handle forrige knapp
   const handlePrevious = useCallback(() => {
+    setShowSpeedtestWidget(false);
     setHistory((prev) => prev.slice(0, -1));
   }, []);
 
@@ -234,6 +243,36 @@ export default function TroubleshootingFlow({
                     articleSlug={article.slug}
                     choiceIndices={history.map((h) => h.choiceIndex)}
                   />
+                )}
+
+                {showSpeedtestWidget && (
+                  <div
+                    className="fixed inset-0 z-50 bg-black/50 px-4 py-8"
+                    onClick={() => setShowSpeedtestWidget(false)}
+                  >
+                    <div
+                      className="mx-auto max-w-3xl rounded-xl bg-white p-4 shadow-2xl"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <div className="mb-3 flex items-center justify-between">
+                        <h2 className="text-base font-semibold text-gray-900">Hastighetstest</h2>
+                        <button
+                          onClick={() => setShowSpeedtestWidget(false)}
+                          className="rounded-md border border-gray-300 px-3 py-1 text-sm text-gray-700 hover:bg-gray-50"
+                        >
+                          Lukk
+                        </button>
+                      </div>
+                      <iframe
+                        src="https://speedmeter.dev/widget.html"
+                        title="SpeedMeter"
+                        width="100%"
+                        height="420"
+                        allow="clipboard-write"
+                        className="w-full rounded-lg border border-gray-200"
+                      />
+                    </div>
+                  </div>
                 )}
       
        </div>
