@@ -55,6 +55,7 @@ export default async function SessionDetailPage({
         select: {
           id: true,
           email: true,
+          phoneNumber: true,
           firstName: true,
           lastName: true,
         },
