@@ -160,6 +160,8 @@ function mermaidSafe(text: string): string {
 
 function terminalReasonLabel(reason?: string | null): string {
   switch (reason) {
+    case "SPEEDTEST":
+      return "Speedtest";
     case "EXTERNAL_REDIRECT":
       return "External Redirect";
     case "FLOW_EXIT_EXPECTED_SPEED":

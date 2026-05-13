@@ -1,5 +1,6 @@
 import SearchPageClient from "../../components/agent/SearchPageClient";
 
+{/* eslint-disable-next-line @typescript-eslint/no-unused-vars */ }
 async function search(query: string) {
   const res = await fetch(
     `http://localhost:3000/api/search?type=agent&q=${encodeURIComponent(query)}`,
@@ -14,6 +15,7 @@ export default async function AgentSokPage({
 }: {
   searchParams: { q?: string };
 }) {
+  {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */ }
   const query = searchParams.q?.trim() || "";
 
   return (

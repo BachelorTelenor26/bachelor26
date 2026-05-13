@@ -7,6 +7,7 @@ import Link from "next/link";
 
 export default function SokClient() {
   const [query, setQuery] = useState("");
+  {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */ }
   const [activeCategory, setActiveCategory] = useState("all");
 
   const filtered = articles

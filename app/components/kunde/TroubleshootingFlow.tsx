@@ -109,25 +109,50 @@ export default function TroubleshootingFlow({
 }: TroubleshootingFlowProps) {
   const router = useRouter();
   const [history, setHistory] = useState<HistoryEntry[]>([]);
-
-  const handleChoiceSelect = useCallback(
-    (stepIndex: number, choice: StepChoiceData, choiceIndex: number) => {
-      const entry: HistoryEntry = {
-        stepId: article.steps[stepIndex]?.id ?? "",
-        choiceId: choice.id,
-        choiceIndex,
-      };
-      setHistory((prev) => [...prev.slice(0, stepIndex), entry]);
-    },
-    [article]
-  );
-
-  const handleEdit = useCallback((stepIndex: number) => {
-    setHistory((prev) => prev.slice(0, stepIndex));
-  }, []);
+  const [activeStepIndex, setActiveStepIndex] = useState<number | null>(null);
+  const [showSpeedtestWidget, setShowSpeedtestWidget] = useState(false);
 
   const localeMap = article.localeMap as Record<string, LocaleData>;
   const activePath = buildActivePath(article.steps, history);
+  const hasTerminalTail =
+    activePath.length > 0 &&
+    activePath[activePath.length - 1].choices.length === 0 &&
+    history.length === activePath.length - 1;
+  const stepsToRender = hasTerminalTail ? activePath.slice(0, -1) : activePath;
+  const pointerFallback = history.length;
+  const activeStepPointer = Math.max(
+    0,
+    Math.min(activeStepIndex ?? pointerFallback, stepsToRender.length)
+  );
+  const isReviewingPreviousStep = activeStepPointer < history.length;
+
+  const handleChoiceSelect = useCallback(
+    (stepIndex: number, choice: StepChoiceData, choiceIndex: number) => {
+      if (choice.terminalReason === "SPEEDTEST") {
+        setShowSpeedtestWidget(true);
+        return;
+      }
+
+      setShowSpeedtestWidget(false);
+      const entry: HistoryEntry = {
+        stepId: activePath[stepIndex]?.id ?? "",
+        choiceId: choice.id,
+        choiceIndex,
+      };
+      setHistory((prev) => {
+        const existing = prev[stepIndex];
+        if (existing?.choiceId === choice.id) return prev;
+        return [...prev.slice(0, stepIndex), entry];
+      });
+      setActiveStepIndex(stepIndex + 1);
+    },
+    [activePath]
+  );
+
+  const handleEdit = useCallback((stepIndex: number) => {
+    setShowSpeedtestWidget(false);
+    setActiveStepIndex(stepIndex);
+  }, []);
   const updatedAt = new Date(article.updatedAt).toLocaleDateString("nb-NO", {
     day: "numeric",
     month: "long",
@@ -138,16 +163,18 @@ export default function TroubleshootingFlow({
   const activeStepIsTerminal =
     activeStep !== undefined &&
     history.length === activePath.length - 1 &&
-    activeStep.choices.length === 0;
-
-  const stepsToRender = activeStepIsTerminal ? activePath.slice(0, -1) : activePath;
+    activeStep.choices.length === 0 &&
+    !isReviewingPreviousStep;
   const terminalLocale = activeStepIsTerminal ? (localeMap[activeStep.id] ?? null) : null;
 
 
-  //  handle forrige knapp
   const handlePrevious = useCallback(() => {
-    setHistory((prev) => prev.slice(0, -1));
-  }, []);
+    setShowSpeedtestWidget(false);
+    setActiveStepIndex((prev) => {
+      const current = prev ?? history.length;
+      return Math.max(0, current - 1);
+    });
+  }, [history.length]);
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-10">
@@ -194,7 +221,7 @@ export default function TroubleshootingFlow({
                     if (!locale) return null;
 
                     const isAnswered = idx < history.length;
-                    const isActive = idx === history.length;
+                    const isActive = idx === activeStepPointer;
                     const sortedChoices = [...step.choices].sort((a, b) => a.sortOrder - b.sortOrder);
 
                     return (
@@ -216,11 +243,11 @@ export default function TroubleshootingFlow({
 
                   <button
                       onClick={handlePrevious} 
-                      disabled={history.length === 0}
+                      disabled={activeStepPointer === 0}
                       className={`
                         text-sm font-medium transition cursor-pointer m-5
                         ${
-                          history.length === 0
+                          activeStepPointer === 0
                             ? "text-gray-300 cursor-not-allowed"
                             : "text-blue-600 hover:text-blue-500"
                         }
@@ -236,6 +263,36 @@ export default function TroubleshootingFlow({
                     articleSlug={article.slug}
                     choiceIndices={history.map((h) => h.choiceIndex)}
                   />
+                )}
+
+                {showSpeedtestWidget && (
+                  <div
+                    className="fixed inset-0 z-50 bg-black/50 px-4 py-8"
+                    onClick={() => setShowSpeedtestWidget(false)}
+                  >
+                    <div
+                      className="mx-auto max-w-3xl rounded-xl bg-white p-4 shadow-2xl"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <div className="mb-3 flex items-center justify-between">
+                        <h2 className="text-base font-semibold text-gray-900">Hastighetstest</h2>
+                        <button
+                          onClick={() => setShowSpeedtestWidget(false)}
+                          className="rounded-md border border-gray-300 px-3 py-1 text-sm text-gray-700 hover:bg-gray-50"
+                        >
+                          Lukk
+                        </button>
+                      </div>
+                      <iframe
+                        src="https://speedmeter.dev/widget.html"
+                        title="SpeedMeter"
+                        width="100%"
+                        height="420"
+                        allow="clipboard-write"
+                        className="w-full rounded-lg border border-gray-200"
+                      />
+                    </div>
+                  </div>
                 )}
       
        </div>

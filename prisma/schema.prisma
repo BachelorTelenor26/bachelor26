@@ -107,6 +107,7 @@ model TroubleshootingSession {
   completed        Boolean             @default(false)
   outcome          SessionOutcome      @default(IN_PROGRESS)
   escalationReason String?
+  customerServiceNotes String?
   routerModel      String?
   customerId       String?
   createdAt        DateTime            @default(now())
@@ -206,6 +207,7 @@ enum SessionOutcome {
 }
 
 enum TerminalReason {
+  SPEEDTEST
   EXTERNAL_REDIRECT
   FLOW_EXIT_EXPECTED_SPEED
   FLOW_EXIT_NO_NEXT_STEP
