@@ -46,7 +46,7 @@ export default function DeviceSelector({
                 <p className="text-gray-600 text-sm mb-8">{subtitle}</p>
               )}
             
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {devices.map((device) => {
                   const Icon = device.image ?? Laptop
                   return (
