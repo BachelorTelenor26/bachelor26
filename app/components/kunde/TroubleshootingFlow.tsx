@@ -157,7 +157,9 @@ export default function TroubleshootingFlow({
     day: "numeric",
     month: "long",
     year: "numeric",
+    timeZone: "Europe/Oslo",
   });
+  const previousDisabled = (activeStepIndex ?? history.length) <= 0;
 
   const activeStep = activePath[activePath.length - 1];
   const activeStepIsTerminal =
@@ -241,11 +243,11 @@ export default function TroubleshootingFlow({
 
                   <button
                       onClick={handlePrevious} 
-                      disabled={activeStepPointer === 0}
+                      disabled={previousDisabled}
                       className={`
                         text-sm font-medium transition cursor-pointer m-5
                         ${
-                          activeStepPointer === 0
+                          previousDisabled
                             ? "text-gray-300 cursor-not-allowed"
                             : "text-blue-600 hover:text-blue-500"
                         }
