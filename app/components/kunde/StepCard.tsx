@@ -106,7 +106,7 @@ export default function StepCard({
               </p>
             )}
           </div>
-          <span className="text-xs text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity shrink-0 pt-0.5">
+          <span className="text-xs rounded-md border border-blue-50 bg-blue-50 px-2 py-1 text-blue-700 font-medium shrink-0 pt-0.5">
             Endre
           </span>
         </div>

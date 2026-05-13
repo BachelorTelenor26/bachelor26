@@ -78,7 +78,7 @@ export default function SokClient() {
             </p>
           </div>
 
-          <div className="border rounded-xl p-4">
+          <div className="border rounded-xl p-4 bg-white">
             <h2 className="font-bold mb-2">Ofte søk</h2>
             <ul className="space-y-2 text-sm text-gray-800">
               <li>router lyser rødt</li>

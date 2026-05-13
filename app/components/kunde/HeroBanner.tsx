@@ -5,13 +5,13 @@ export default function HeroBanner(){
 
 
     return( 
-      <div className='w-full h-[420px] overflow-hidden'>
+      <div style={{ position: 'relative', width: '100%', height: '400px', overflow: 'hidden'}}>
         <Image
-          src="/telenorHeroimg.webp"
+          src="/telenorBuilding.jpg"
           alt='Hero banner'
           fill
-          quality={50}
-          sizes="01"
+          quality={75}
+       
           className='w-full h-full object-cover'
           priority
         />
