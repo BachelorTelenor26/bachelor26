@@ -158,22 +158,24 @@ export default function TroubleshootingFlow({
         ← Tilbake til Bytt enhet
       </Link>
 
-      <div className="flex flex-wrap items-center gap-3 mb-4">
-        <span className="inline-block text-xs font-medium bg-blue-50 text-blue-600  py-1 rounded-full">
+      <div className="flex flex-wrap items-center gap-2 mb-4 text-xs">
+        <span className="inline-flex items-center font-medium bg-blue-50 text-blue-700  px-2.5 py-1 rounded-full">
           {categoryName}
         </span>
-        <span className="text-xs text-gray-700">Oppdatert {updatedAt}</span>
-        <div className="ml-auto flex items-center gap-1.5 bg-[#ffffff] text-xs text-gray-700 border border-gray-200 rounded-lg px-2.5 py-1">
-          <span>
-            {DEVICE_DISPLAY[article.deviceType.slug]?.name ?? article.deviceType.name}
-          </span>
-          <button
+        <span className=" text-gray-500">Oppdatert {updatedAt}</span>
+        <button
             onClick={() => router.push(`/feilsoking/${categorySlug}`)}
-            className="text-blue-500 hover:underline"
+            className="text-blue-500 hover:bg-gray-50 inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-2.5 py-1 text-gray-700 hover-bg-gray-50 transition-colors cursor-pointer"
           >
-            Bytt
-          </button>
-        </div>
+            <span className="text-blue-600 font-medium">
+              Bytt
+            </span>
+            <span className="h-3 w-px bg-gray-200" />
+            
+               <span>
+                  {DEVICE_DISPLAY[article.deviceType.slug]?.name ?? article.deviceType.name}
+                </span>
+        </button>
       </div>
 
       <h1 className="text-2xl font-bold text-gray-900 mb-1">{categoryName}</h1>
