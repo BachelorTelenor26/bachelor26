@@ -20,18 +20,17 @@ export default function DashboardPage() {
 
  return (
     <div>
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex items-center justify-between mb-8 flex-col sm:flex-row">
         <DashboardGreeting name={session?.user?.name ?? ''} />
         <DashboardActions />
       </div>
 
-      <div className="grid grid-cols-2 gap-10">
-        <div className="col-span-2">
-          <RecentSessions sessions={sessions} />
+      <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
+        <div>
           <MostUsedGuides />
         </div>
         <div>
-          {/* Sist endret innhold — kommer senere */}
+          <RecentSessions sessions={sessions} />
         </div>
       </div>
     </div>

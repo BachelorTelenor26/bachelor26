@@ -3,10 +3,10 @@ import { Search, LayoutGrid } from 'lucide-react'
 
 export default function DashboardActions() {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-3 flex-col sm:flex-row">
       <Link
         href="/agent/session"
-        className="flex items-center gap-2 px-4 py-2 border border-gray-400 rounded-lg text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+        className="flex items-center gap-2 px-4 py-2 border bg-white border-gray-400 rounded-lg text-sm text-gray-700 hover:bg-gray-50 transition-colors"
       >
         <LayoutGrid className="w-4 h-4" />
         Slå opp sesjons-ID
