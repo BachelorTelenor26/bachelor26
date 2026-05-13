@@ -73,14 +73,25 @@ export async function PATCH(request: Request, { params }: RouteContext) {
         : typeof customerEmail === "string"
           ? customerEmail.trim()
           : undefined;
+    const isPhoneNumber =
+      rawContact !== undefined && /^\d+$/.test(rawContact);
     const normalizedEmail =
-      rawContact !== undefined && rawContact.includes("@")
+      rawContact !== undefined && !isPhoneNumber && rawContact.includes("@")
         ? rawContact.toLowerCase()
         : undefined;
+    const normalizedPhone =
+      isPhoneNumber ? rawContact : undefined;
 
-    if (rawContact !== undefined && rawContact.length > 0 && !rawContact.includes("@")) {
+    if (rawContact !== undefined && rawContact.length > 0 && !rawContact.includes("@") && !isPhoneNumber) {
       return NextResponse.json(
-        { error: "Mobilnummer støttes ikke ennå. Bruk e-post for å knytte bruker til sesjon." },
+        { error: "Ugyldig kontaktinfo. Bruk e-post eller et 8-sifret mobilnummer." },
+        { status: 400 }
+      );
+    }
+
+    if (normalizedPhone !== undefined && normalizedPhone.length > 0 && normalizedPhone.length !== 8) {
+      return NextResponse.json(
+        { error: "Mobilnummer må være 8 siffer" },
         { status: 400 }
       );
     }
@@ -122,21 +133,48 @@ export async function PATCH(request: Request, { params }: RouteContext) {
     }
 
     let resolvedCustomerId: string | null | undefined;
-    if (normalizedEmail !== undefined) {
-      if (normalizedEmail.length === 0) {
+    if (normalizedEmail !== undefined || normalizedPhone !== undefined) {
+      if ((normalizedEmail !== undefined && normalizedEmail.length === 0) ||
+          (normalizedPhone !== undefined && normalizedPhone.length === 0)) {
         resolvedCustomerId = null;
-      } else {
-        const customer = await prisma.user.findUnique({
+      } else if (normalizedEmail !== undefined) {
+        const existingCustomer = await prisma.user.findUnique({
           where: { email: normalizedEmail },
           select: { id: true },
         });
-        if (!customer) {
-          return NextResponse.json(
-            { error: "Fant ingen bruker med denne e-postadressen" },
-            { status: 404 }
-          );
+        if (existingCustomer) {
+          resolvedCustomerId = existingCustomer.id;
+        } else {
+          const newCustomer = await prisma.user.create({
+            data: {
+              email: normalizedEmail,
+              name: normalizedEmail.split("@")[0],
+              firstName: normalizedEmail.split("@")[0],
+              lastName: "",
+            },
+            select: { id: true },
+          });
+          resolvedCustomerId = newCustomer.id;
         }
-        resolvedCustomerId = customer?.id;
+      } else if (normalizedPhone !== undefined) {
+        const existingCustomer = await prisma.user.findUnique({
+          where: { phoneNumber: normalizedPhone },
+          select: { id: true },
+        });
+        if (existingCustomer) {
+          resolvedCustomerId = existingCustomer.id;
+        } else {
+          const newCustomer = await prisma.user.create({
+            data: {
+              phoneNumber: normalizedPhone,
+              name: `Kunde ${normalizedPhone}`,
+              firstName: `Kunde`,
+              lastName: normalizedPhone,
+            },
+            select: { id: true },
+          });
+          resolvedCustomerId = newCustomer.id;
+        }
       }
     }
 

@@ -102,7 +102,7 @@ model SessionStepAnswer {
 
 model TroubleshootingSession {
   id               String              @id @default(cuid())
-  sessionCode      String              @unique
+  sessionCode      String?
   articleId        String
   completed        Boolean             @default(false)
   outcome          SessionOutcome      @default(IN_PROGRESS)
@@ -110,6 +110,7 @@ model TroubleshootingSession {
   customerServiceNotes String?
   routerModel      String?
   customerId       String?
+  origin           SessionOrigin       @default(customer)
   createdAt        DateTime            @default(now())
   updatedAt        DateTime            @updatedAt
   answers          SessionStepAnswer[]
@@ -119,15 +120,17 @@ model TroubleshootingSession {
 
   @@index([articleId])
   @@index([outcome])
+  @@index([sessionCode])
 }
 
 model User {
   id            String    @id @default(cuid())
   name          String   
-  email         String    @unique
+  email         String?   @unique
   emailVerified Boolean   @default(false)
   firstName     String
   lastName      String
+  phoneNumber   String?   @unique
   role          Role      @default(AGENT)
   image         String?
   createdAt     DateTime  @default(now())
@@ -137,7 +140,6 @@ model User {
   accounts       Account[]
   aiInteractions AiAssistInteraction[]
 }
-
 
 model Session {
   id        String   @id @default(cuid())
@@ -197,6 +199,11 @@ model AiAssistInteraction {
 enum Role {
   AGENT
   CUSTOMER
+}
+
+enum SessionOrigin {
+  customer
+  customerService
 }
 
 enum SessionOutcome {

@@ -4,7 +4,7 @@ import { Bell } from "lucide-react";
 
 type Session = {
   id: string
-  sessionCode: string
+  sessionCode: string | null
   outcome: string
   createdAt: string
   routerModel: string | null
@@ -42,7 +42,6 @@ export default function RecentSessions({ sessions }: RecentSessionsProps) {
         {sessions.map((session) => {
           const config = outcomeConfig[session.outcome] ?? outcomeConfig.IN_PROGRESS
           const currentStep = session.answers.length
-          const totalSteps = session.article.steps.length
 
           return (
             <Link
@@ -56,12 +55,7 @@ export default function RecentSessions({ sessions }: RecentSessionsProps) {
                     <Bell/>
                   </div>
                   <div className='flex-1 min-w-0'>
-                      <div className="flex items-center gap-2 mb-0.5">
-                        
-                        <span className="text-s font-mono text-gray-500">
-                          {session.sessionCode}
-                        </span>
-                        
+                      <div className="flex items-center gap-2 mb-0.5">                        
                         <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${config.className}`}>
                           {config.label}
                         </span>
@@ -72,7 +66,7 @@ export default function RecentSessions({ sessions }: RecentSessionsProps) {
                       </p>
                       <div className='flex items-center justify-between mt-1'>
                         <span className="text-xs text-gray-600 mt-1">
-                        {session.article.category.name} · steg {currentStep}/{totalSteps}
+                        {session.article.category.name} · {currentStep} steg 
                       </span>
                       <span className='flex justify-end text-xs text-gray-500 mt-1'>
                         {timeAgo(session.createdAt)}

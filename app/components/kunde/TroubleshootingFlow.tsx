@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import StepCard, { LocaleData, StepChoiceData } from "./StepCard";
 import KontaktOssResult from "./KontaktOssResult";
+import { authClient } from "@/lib/auth-client";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -108,9 +109,12 @@ export default function TroubleshootingFlow({
   categorySlug,
 }: TroubleshootingFlowProps) {
   const router = useRouter();
+  const { data: session } = authClient.useSession();
   const [history, setHistory] = useState<HistoryEntry[]>([]);
   const [activeStepIndex, setActiveStepIndex] = useState<number | null>(null);
   const [showSpeedtestWidget, setShowSpeedtestWidget] = useState(false);
+  const [isCreatingAgentSession, setIsCreatingAgentSession] = useState(false);
+  const [createAgentSessionError, setCreateAgentSessionError] = useState<string | null>(null);
 
   const localeMap = article.localeMap as Record<string, LocaleData>;
   const activePath = buildActivePath(article.steps, history);
@@ -157,7 +161,9 @@ export default function TroubleshootingFlow({
     day: "numeric",
     month: "long",
     year: "numeric",
+    timeZone: "Europe/Oslo",
   });
+  const previousDisabled = (activeStepIndex ?? history.length) <= 0;
 
   const activeStep = activePath[activePath.length - 1];
   const activeStepIsTerminal =
@@ -166,6 +172,8 @@ export default function TroubleshootingFlow({
     activeStep.choices.length === 0 &&
     !isReviewingPreviousStep;
   const terminalLocale = activeStepIsTerminal ? (localeMap[activeStep.id] ?? null) : null;
+  const userRole = (session?.user as { role?: string } | undefined)?.role;
+  const isAgent = Boolean(session?.user) && (userRole ? userRole === "AGENT" : true);
 
 
   const handlePrevious = useCallback(() => {
@@ -175,6 +183,38 @@ export default function TroubleshootingFlow({
       return Math.max(0, current - 1);
     });
   }, [history.length]);
+
+  const handleStartAgentSession = useCallback(async () => {
+    setCreateAgentSessionError(null);
+    setIsCreatingAgentSession(true);
+    try {
+      const res = await fetch("/api/sessions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          articleSlug: article.slug,
+          choiceIndices: history.map((h) => h.choiceIndex),
+        }),
+      });
+
+      if (!res.ok) {
+        setCreateAgentSessionError("Kunne ikke starte sesjonen. Prøv igjen.");
+        return;
+      }
+
+      const data = (await res.json()) as { id?: string };
+      if (!data?.id) {
+        setCreateAgentSessionError("Sesjonen ble opprettet, men kunne ikke åpnes.");
+        return;
+      }
+
+      router.push(`/agent/session/${data.id}`);
+    } catch {
+      setCreateAgentSessionError("Nettverksfeil. Prøv igjen.");
+    } finally {
+      setIsCreatingAgentSession(false);
+    }
+  }, [article.slug, history, router]);
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-10">
@@ -192,7 +232,7 @@ export default function TroubleshootingFlow({
         <span className=" text-gray-500">Oppdatert {updatedAt}</span>
         <button
             onClick={() => router.push(`/feilsoking/${categorySlug}`)}
-            className="text-blue-500 hover:bg-gray-50 inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-2.5 py-1 text-gray-700 hover-bg-gray-50 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-2.5 py-1 text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer"
           >
             <span className="text-blue-600 font-medium">
               Bytt
@@ -243,11 +283,11 @@ export default function TroubleshootingFlow({
 
                   <button
                       onClick={handlePrevious} 
-                      disabled={activeStepPointer === 0}
+                      disabled={previousDisabled}
                       className={`
                         text-sm font-medium transition cursor-pointer m-5
                         ${
-                          activeStepPointer === 0
+                          previousDisabled
                             ? "text-gray-300 cursor-not-allowed"
                             : "text-blue-600 hover:text-blue-500"
                         }
@@ -257,12 +297,31 @@ export default function TroubleshootingFlow({
                     </button>
                 </div>
 
-                {activeStepIsTerminal && terminalLocale && (
+                {activeStepIsTerminal && terminalLocale && !isAgent && (
                   <KontaktOssResult
                     locale={terminalLocale}
                     articleSlug={article.slug}
                     choiceIndices={history.map((h) => h.choiceIndex)}
                   />
+                )}
+
+                {activeStepIsTerminal && terminalLocale && isAgent && (
+                  <div className="mt-5 rounded-xl border border-gray-200 bg-white p-5">
+                    <h2 className="text-lg font-semibold text-gray-900">Start kundesesjon</h2>
+                    <p className="mt-1 text-sm text-gray-600">
+                      Opprett en ny sesjon med stegene som allerede er gjennomført i feilsøkingen.
+                    </p>
+                    {createAgentSessionError && (
+                      <p className="mt-3 text-sm text-red-600">{createAgentSessionError}</p>
+                    )}
+                    <button
+                      onClick={handleStartAgentSession}
+                      disabled={isCreatingAgentSession}
+                      className="mt-4 rounded-lg bg-[#1F74BF] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#0055D4] disabled:cursor-not-allowed disabled:opacity-80"
+                    >
+                      {isCreatingAgentSession ? "Starter..." : "Start TroubleshootingSession"}
+                    </button>
+                  </div>
                 )}
 
                 {showSpeedtestWidget && (
