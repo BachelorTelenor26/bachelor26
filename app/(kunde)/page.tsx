@@ -1,6 +1,6 @@
 import SearchBar from "../components/kunde/SearchBar";
 import CategoryCard from "../components/kunde/CategoryCard";
-import { WifiOff, WifiLow, WifiSync, Router, ArrowRight } from "lucide-react";
+import { WifiOff, WifiLow, WifiSync, Router } from "lucide-react";
 import ArticleListItem from "../components/kunde/ArticleListItem";
 import { formatCategoryName } from "../lib/utils";
 import { BookOpen } from "lucide-react";

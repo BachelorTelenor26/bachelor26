@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { decodeHandoverCode, deriveFlowId } from "@/app/lib/sessionCode";
+import { auth } from "@/lib/auth";
 
 type PrismaChoice = {
   id: string;
@@ -107,36 +108,89 @@ export async function POST(request: Request) {
     const body = await request.json();
     const sessionCode =
       typeof body?.sessionCode === "string" ? (body.sessionCode as string).trim() : null;
+    const articleSlug =
+      typeof body?.articleSlug === "string" ? (body.articleSlug as string).trim() : null;
+    const deviceTypeSlug =
+      typeof body?.deviceTypeSlug === "string" ? (body.deviceTypeSlug as string).trim() : null;
+    const rawChoiceIndices = Array.isArray(body?.choiceIndices) ? body.choiceIndices : null;
+    const choiceIndices = rawChoiceIndices
+      ? rawChoiceIndices
+          .filter((value: unknown) => Number.isInteger(value) && Number(value) >= 0)
+          .map((value: number) => Number(value))
+      : [];
 
-    if (!sessionCode) {
-      return NextResponse.json({ error: "Ugyldig forespørsel" }, { status: 400 });
+    let resolvedArticleId: string | null = null;
+    let resolvedFromCodeChoiceIndices: number[] = [];
+    let origin: "customer" | "customerService" = "customer";
+
+    if (sessionCode) {
+      const payload = decodeHandoverCode(sessionCode);
+      if (!payload) {
+        return NextResponse.json({ error: "Ugyldig sesjonskode" }, { status: 400 });
+      }
+
+      const articles = await prisma.article.findMany({
+        select: { id: true, slug: true },
+      });
+      const article = articles.find((a) => deriveFlowId(a.slug) === payload.flowId);
+
+      if (!article) {
+        return NextResponse.json(
+          { error: "Fant ingen guide for denne koden" },
+          { status: 404 }
+        );
+      }
+
+      resolvedArticleId = article.id;
+      resolvedFromCodeChoiceIndices = payload.choices;
+      origin = "customer";
+    } else {
+      const authSession = await auth.api.getSession({ headers: request.headers });
+      if (!authSession?.user) {
+        return NextResponse.json({ error: "Ikke autentisert" }, { status: 401 });
+      }
+
+      if (articleSlug) {
+        const article = await prisma.article.findUnique({
+          where: { slug: articleSlug },
+          select: { id: true },
+        });
+        if (!article) {
+          return NextResponse.json({ error: "Fant ingen guide" }, { status: 404 });
+        }
+        resolvedArticleId = article.id;
+      } else if (deviceTypeSlug) {
+        const article = await prisma.article.findFirst({
+          where: {
+            deviceType: {
+              slug: deviceTypeSlug,
+            },
+          },
+          orderBy: { updatedAt: "desc" },
+          select: { id: true },
+        });
+        if (!article) {
+          return NextResponse.json({ error: "Fant ingen guide for valgt enhet" }, { status: 404 });
+        }
+        resolvedArticleId = article.id;
+      } else {
+        return NextResponse.json({ error: "Ugyldig forespørsel" }, { status: 400 });
+      }
+
+      origin = "customerService";
     }
 
-    const payload = decodeHandoverCode(sessionCode);
-    if (!payload) {
-      return NextResponse.json({ error: "Ugyldig sesjonskode" }, { status: 400 });
+    if (!resolvedArticleId) {
+      return NextResponse.json({ error: "Kunne ikke finne guide" }, { status: 400 });
     }
 
-    const articles = await prisma.article.findMany({
-      select: { id: true, slug: true },
-    });
-    const article = articles.find((a) => deriveFlowId(a.slug) === payload.flowId);
-
-    if (!article) {
-      return NextResponse.json(
-        { error: "Fant ingen guide for denne koden" },
-        { status: 404 }
-      );
-    }
-
-    const session = await prisma.troubleshootingSession.upsert({
-      where: { sessionCode },
-      create: {
-        sessionCode,
-        articleId: article.id,
+    const session = await prisma.troubleshootingSession.create({
+      data: {
+        ...(sessionCode ? { sessionCode } : {}),
+        articleId: resolvedArticleId,
         outcome: "IN_PROGRESS",
+        origin,
       },
-      update: {},
       include: {
         article: {
           include: {
@@ -156,9 +210,9 @@ export async function POST(request: Request) {
       },
     });
 
-    const resolvedSteps = await resolvePath(session.article.steps, payload.choices);
+    const pathChoiceIndices = sessionCode ? resolvedFromCodeChoiceIndices : choiceIndices;
+    const resolvedSteps = await resolvePath(session.article.steps, pathChoiceIndices);
 
-    // Save the customer's path as answers (idempotent via upsert)
     await Promise.all(
       resolvedSteps.map(({ stepId, choiceId }) =>
         prisma.sessionStepAnswer.upsert({
@@ -169,7 +223,6 @@ export async function POST(request: Request) {
       )
     );
 
-    // Re-fetch to include the freshly saved answers
     const sessionWithAnswers = await prisma.troubleshootingSession.findUnique({
       where: { id: session.id },
       include: {
@@ -189,7 +242,6 @@ export async function POST(request: Request) {
       },
     });
 
-    // Resolve locale text for each answer
     const resolvedAnswers = await Promise.all(
       (sessionWithAnswers?.answers ?? []).map(async (a) => {
         const locale = await readLocale(a.step.localeKey);

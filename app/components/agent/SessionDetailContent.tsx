@@ -23,7 +23,7 @@ type SessionAnswer = {
 
 export type SessionDetailData = {
   id: string
-  sessionCode: string
+  sessionCode: string | null
   outcome: string
   escalationReason: string | null
   customerServiceNotes?: string | null
@@ -31,7 +31,8 @@ export type SessionDetailData = {
   routerModel: string | null
   customer: {
     id: string
-    email: string
+    email: string | null
+    phoneNumber: string | null
     firstName: string
     lastName: string
   } | null
@@ -117,7 +118,7 @@ export default function SessionDetailContent({
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <div>
               <label htmlFor="customerContact" className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-gray-500">
-                Bruker som får hjelp (e-post eller mobil)
+                Kontaktinfo
               </label>
               <input
                 id="customerContact"
@@ -154,7 +155,6 @@ export default function SessionDetailContent({
                   id="customerServiceNotes"
                   value={customerServiceNotes}
                   onChange={(e) => setCustomerServiceNotes(e.target.value)}
-                  required
                   rows={3}
                   className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 outline-none focus:border-[#0064FA] focus:ring-2 focus:ring-[#0064FA]/10"
                 />

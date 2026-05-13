@@ -12,6 +12,44 @@ type HistoryMessage = {
   content: string
 }
 
+function delay(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+async function generateWith503Retry(args: {
+  ai: GoogleGenAI
+  model: string
+  contents: Array<{ role: 'user' | 'model'; parts: { text: string }[] }>
+  retries?: number
+  retryDelayMs?: number
+}) {
+  const { ai, model, contents, retries = 1, retryDelayMs = 750 } = args
+
+  try {
+    return await ai.models.generateContentStream({
+      model,
+      config: { systemInstruction: SYSTEM_INSTRUCTION },
+      contents,
+    })
+  } catch (error: unknown) {
+    const status = (error as { status?: number }).status
+    if (status !== 503 || retries <= 0) {
+      throw error
+    }
+
+    console.warn(`[AI Retry] 503 på ${model}, prøver igjen om ${retryDelayMs}ms...`)
+    await delay(retryDelayMs)
+
+    return generateWith503Retry({
+      ai,
+      model,
+      contents,
+      retries: retries - 1,
+      retryDelayMs,
+    })
+  }
+}
+
 function wrapAgentInput(text: string): string {
   const sanitized = text
     .replace(/<\/?agent_input>/gi, '[agent_input_tag]')
@@ -241,9 +279,9 @@ export async function POST(request: NextRequest) {
           let usedModel = model;
           
           try {
-            response = await ai.models.generateContentStream({
+            response = await generateWith503Retry({
+              ai,
               model: usedModel,
-              config: { systemInstruction: SYSTEM_INSTRUCTION },
               contents,
             });
           } catch (primaryErr: unknown) {
@@ -252,9 +290,9 @@ export async function POST(request: NextRequest) {
             if (status === 503) {
               console.warn(`[AI Fallback] 503 på ${usedModel}, bytter til ${backupModel}...`);
               usedModel = backupModel;
-              response = await ai.models.generateContentStream({
+              response = await generateWith503Retry({
+                ai,
                 model: usedModel,
-                config: { systemInstruction: SYSTEM_INSTRUCTION },
                 contents,
               });
             } else {

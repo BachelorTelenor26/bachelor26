@@ -75,6 +75,7 @@ describe('POST /api/ai-assist fallback', () => {
   it('retries with backup model when primary returns 503 and does not return 503 to client', async () => {
     mockGenerateContentStream
       .mockRejectedValueOnce({ status: 503 })
+      .mockRejectedValueOnce({ status: 503 })
       .mockResolvedValueOnce(
         (async function* () {
           yield { text: '**Direkte løsning**\nStart ruteren.\n**Videre feilsøking**\nSjekk kabler.' }
@@ -94,13 +95,17 @@ describe('POST /api/ai-assist fallback', () => {
     expect(response.status).toBe(200)
     expect(bodyText).toContain('Direkte løsning')
 
-    expect(mockGenerateContentStream).toHaveBeenCalledTimes(2)
+    expect(mockGenerateContentStream).toHaveBeenCalledTimes(3)
     expect(mockGenerateContentStream).toHaveBeenNthCalledWith(
       1,
       expect.objectContaining({ model: 'gemini-3.1-flash-lite-preview' })
     )
     expect(mockGenerateContentStream).toHaveBeenNthCalledWith(
       2,
+      expect.objectContaining({ model: 'gemini-3.1-flash-lite-preview' })
+    )
+    expect(mockGenerateContentStream).toHaveBeenNthCalledWith(
+      3,
       expect.objectContaining({ model: 'gemini-3-flash' })
     )
 
@@ -111,5 +116,49 @@ describe('POST /api/ai-assist fallback', () => {
         }),
       })
     )
+  })
+
+  it('retries once on backup model 503 before returning service unavailable marker', async () => {
+    jest.useFakeTimers()
+
+    mockGenerateContentStream
+      .mockRejectedValueOnce({ status: 503 })
+      .mockRejectedValueOnce({ status: 503 })
+      .mockRejectedValueOnce({ status: 503 })
+      .mockRejectedValueOnce({ status: 503 })
+
+    const request = new Request('http://localhost:3000/api/ai-assist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sessionId: 'session-1', history: [] }),
+    })
+
+    const responsePromise = POST(request as any)
+    await jest.runAllTimersAsync()
+    const response = await responsePromise
+    const bodyText = await response.text()
+
+    expect(response.status).toBe(200)
+    expect(bodyText).toBe('SERVICE_UNAVAILABLE_ERROR')
+    expect(mockGenerateContentStream).toHaveBeenCalledTimes(4)
+    expect(mockGenerateContentStream).toHaveBeenNthCalledWith(
+      1,
+      expect.objectContaining({ model: 'gemini-3.1-flash-lite-preview' })
+    )
+    expect(mockGenerateContentStream).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({ model: 'gemini-3.1-flash-lite-preview' })
+    )
+    expect(mockGenerateContentStream).toHaveBeenNthCalledWith(
+      3,
+      expect.objectContaining({ model: 'gemini-3-flash' })
+    )
+    expect(mockGenerateContentStream).toHaveBeenNthCalledWith(
+      4,
+      expect.objectContaining({ model: 'gemini-3-flash' })
+    )
+    expect(jest.mocked(mockPrisma.aiAssistInteraction.create)).not.toHaveBeenCalled()
+
+    jest.useRealTimers()
   })
 })
