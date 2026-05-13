@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Plus } from "lucide-react";
 import BodyRenderer, { LocaleBodyItem } from "./BodyRenderer";
 
 const TELENOR_IMAGE_PREFIX = "https://www.telenor.no/_ipx/f_webp";
@@ -59,22 +59,22 @@ export default function StepCard({
       onClick={() => setExpandedImageUrl(null)}
     >
       <div
-        className="rounded-xl bg-white p-4 shadow-2xl flex flex-col h-[70vh] w-[50vw] max-w-5xl"
+        className="rounded-xl sm:h-[70vh] sm:w-[50vw] bg-white shadow-2xl flex flex-col h-[50vh]  w-[60vw] max-w-5xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-base font-semibold text-gray-900">Bilde</h2>
           <button
             onClick={() => setExpandedImageUrl(null)}
-            className="rounded-md border border-gray-300 px-3 py-1 text-sm text-gray-700 hover:bg-gray-50"
+            className="rounded-md border border-gray-300 px-3 py-1 text-xs sm:text-sm text-gray-700 hover:bg-gray-50"
           >
             Lukk
           </button>
         </div>
-        <div className="relative flex-1 w-auto h-full">
+        <div className="relative flex-1 w-auto h-full ">
           <Image
             src={expandedImageUrl}
-            alt=""
+            alt="Ruter"
             fill
             sizes="auto"
             className="object-contain"
@@ -132,15 +132,26 @@ export default function StepCard({
           )}
 
           {imageUrl && (
-            <div className="relative mt-3 h-96 w-full rounded-lg border border-gray-100 overflow-hidden cursor-pointer hover:opacity-90 transition-opacity" onClick={() => setExpandedImageUrl(resolveImageUrl(imageUrl))}>
-              <Image
-                src={resolveImageUrl(imageUrl)}
-                alt=""
-                fill
-                sizes="(max-width: 768px) 100vw, 500px"
-                className="object-contain"
-              />
-            </div>
+              <button
+                type="button"
+                onClick={() => setExpandedImageUrl(resolveImageUrl(imageUrl))}
+                className="group relative cursor-pointer mt3 h-96 w-full overflow-hidden rounded-xl border border-gray-200 bg-white"
+              >
+                <Image
+                  src={resolveImageUrl(imageUrl)}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 500px"
+                  className="object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                />  
+                {/* Zoom  */}
+                <div className="absolute flex items-center gap-1 rounded-full group-hover:bg-blue-200 bg-blue-100 px-2.5 py-1.5 shadow-sm border border-gray-200 top-3 right-3">
+                  <Plus className="w-4 h-4 text-gray-700"/>
+                  <span className="text-xs text-gray-500 font-medium">
+                    Forstørr
+                  </span>
+                </div>
+            </button>
           )}
 
           {locale.query && (
