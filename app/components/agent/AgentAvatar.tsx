@@ -16,7 +16,7 @@ export default function AgentAvatar({ name, onSignOut }: AgentAvatarProps) {
   return (
     <button
       onClick={onSignOut}
-      className="w-8 h-8 rounded-full bg-[#F5F3EF] flex items-center justify-center text-black text-xs font-semibold hover:bg-[#1F74BF] transition-colors"
+      className="w-8 h-8 cursor-pointer rounded-full bg-[#F5F3EF] flex items-center justify-center text-black text-xs font-semibold hover:bg-[#1F74BF] transition-colors"
       aria-label="Logg ut"
       title="Logg ut"
     >
