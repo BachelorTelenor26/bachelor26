@@ -192,7 +192,7 @@ export default function AiAssistPanel({ sessionId, initialHistory = [] }: AiAssi
     <div className="bg-white rounded-xl border border-gray-200 p-5 h-[75vh] max-h-[75vh] overflow-hidden flex flex-col">
       <div className="flex items-center gap-2 mb-4">
         <Sparkles className="w-4 h-4 text-[#1F74BF]" />
-        <h2 className="font-semibold text-gray-900">AI-assistent</h2>
+        <h2 className="font-semibold text-gray-900">KI-assistent</h2>
         {isStreaming && (
           <div className="ml-auto flex items-center gap-1.5 text-xs text-gray-400">
             <Loader2 className="w-3 h-3 animate-spin" />
@@ -330,7 +330,7 @@ export default function AiAssistPanel({ sessionId, initialHistory = [] }: AiAssi
           ) : (
             <>
               <Sparkles className="w-4 h-4" />
-              {conversation.length > 0 ? 'Oppfølging' : 'Analyser'}
+              {conversation.length > 0 ? 'Oppfølging' : 'Analyse'}
             </>
           )}
         </button>
