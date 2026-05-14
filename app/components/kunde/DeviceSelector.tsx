@@ -53,7 +53,6 @@ export default function DeviceSelector({
             
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {devices.map((device) => {
-                  const isImagePath = typeof device.image === "string"
                   return (
                     <button
                       key={device.id}
