@@ -43,34 +43,38 @@ export default async function KundePage() {
   const articles = await getArticles();
 
   return (
-     <div className="w-full"> 
-     
+     <div className="w-full -space-y-16"> 
           <HeroBanner />
-       <div className="max-w-5xl mx-auto px-4 mt-[-80px] relative z-10">
+       
+       <div className="max-w-5xl mx-auto z-10 px-4 text-center -translate-y-60">
+          <div className="">
+              <section className="text-center">
+              <div className="text-white">
+                <h1 className="text-4xl font-bold text-white">
+                  Hva trenger du hjelp med?
+                </h1>
+
+                <p className="text-gray-50 mb-10">
+                  Her finner du enkle guider for alt fra
+                  treg Wi-Fi til nett som ikke fungerer. 
+                </p>
+                <SearchBar
+                  popularSearches={[
+                    "Router lyser rødt",
+                    "Treg wifi",
+                    "Mobil mister dekning",
+                    "Bytte passord",
+                  ]}
+                />
+              </div>
+          </section>
+          </div>
           
-          <section className="text-center">
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h1 className="text-4xl font-bold text-black-50 mb-4">
-                Hva trenger du hjelp med?
-              </h1>
+      </div>
 
-              <p className="text-black-50 mb-9">
-                Her finner du enkle guider for alt fra
-                treg Wi-Fi til nett som ikke fungerer. 
-              </p>
-              <SearchBar
-                popularSearches={[
-                  "Router lyser rødt",
-                  "Treg wifi",
-                  "Mobil mister dekning",
-                  "Bytte passord",
-                ]}
-              />
-            </div>
-        </section>
-
+      <div className="max-w-5xl mx-auto px-4">
         {/* Kategoriseksjon */}
-        <section className="mt-16">
+        <section className="grid grid-cols-1 gap-4 ">
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-bold text-gray-900">Bla etter kategori</h2>
             <span className="text-sm text-gray-600">
@@ -99,10 +103,10 @@ export default async function KundePage() {
         </section>
 
         {/* Mest leste */}
-        <section className="mt-12">
+        <section className="mt-12 m-2">
           <div className="flex items-center gap-2 mb-4">
             <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center">
-              <BookOpen className="w-5 h-5 text-blue-600" />
+              <BookOpen aria-hidden="true" className="w-5 h-5 text-blue-600" />
             </div>
             <h2 className="text-1g font-semibold text-gray-900">
               Mest leste akkurat nå
