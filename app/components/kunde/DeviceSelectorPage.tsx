@@ -1,15 +1,15 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Laptop } from "lucide-react";
+import { Router } from "lucide-react";
 import DeviceSelector from "./DeviceSelector";
 
-const DEVICE_DISPLAY: Record<string, { name: string; description: string }> = {
-  wifi_ruter_ii: { name: "WiFi Ruter II", description: "Mesh-system, to enheter" },
-  wifi_ruter: { name: "WiFi Ruter", description: "Enkeltstående ruter" },
-  zyxel_p8702n: { name: "Zyxel P8702N", description: "Flat, mørk fiberboks" },
-  huawei_b818: { name: "Huawei B818", description: "Hvit, høy 4G-ruter" },
-  jeg_har_en_annen_ruter: { name: "Annen ruter", description: "Jeg finner ikke min modell" },
+const DEVICE_DISPLAY: Record<string, { name: string; description: string ; image: string}> = {
+  wifi_ruter_ii: { name: "WiFi Ruter II", description: "Mesh-system, to enheter", image: "/wifiRuter2.png" },
+  wifi_ruter: { name: "WiFi Ruter", description: "Enkeltstående ruter", image: "/wifiRuter.png" },
+  zyxel_p8702n: { name: "Zyxel P8702N", description: "Flat, mørk fiberboks", image: "/ZyXEL20-20ruter.png" },
+  huawei_b818: { name: "Huawei B818", description: "Hvit, høy 4G-ruter", image: "/B818port1.png" },
+  jeg_har_en_annen_ruter: { name: "Annen ruter", description: "Jeg finner ikke min modell", image: "/router.png" },
 };
 
 interface ArticleSummary {
@@ -39,7 +39,7 @@ export default function DeviceSelectorPage({
       id: a.slug,
       name: display.name,
       description: display.description,
-      image: Laptop as React.FC<{ className?: string }>,
+      image: display.image,
     };
   });
 
