@@ -9,10 +9,10 @@ export default function KundeLayout({
 }) {
   return (
     <div className="min-h-screen bg-[#eef6fb] flex flex-col">
-      <header className="bg-[#0669A7] w-full">
+      <header className="bg-[#08598C] w-full">
         <nav className="max-w-5xl mx-auto px-4 h-16 flex items-center">
           <Link href="/" className="flex items-center gap-3">
-            <Image src="/favicon.svg" alt="Logo" width={40} height={40} />
+            <Image src="/favicon.svg" alt="Telenor logo" width={40} height={40} />
 
             <div className="flex flex-col leading-tight">
               <span className="text-lg font-semibold text-amber-50">

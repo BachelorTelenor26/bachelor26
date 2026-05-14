@@ -41,7 +41,7 @@ export default function AgentLoginPage() {
                   width={1200}
                   height={1200}
                   quality={75}
-                  className='w-full h-full object-cover absolute -z-10 brightness-50 scale-105'
+                  className='w-full h-full object-cover absolute -z-10 brightness-25 scale-105'
                   priority
                 />
         
@@ -52,7 +52,7 @@ export default function AgentLoginPage() {
           </div>
           <div className="leading-tight">
             <p className="font-semibold text-white text-sm">Kunnskapsbase</p>
-            <p className="text-xs text-white/60">Agentportal</p>
+            <p className="text-xs text-white/90">Agentportal</p>
           </div>
         </div>
 
@@ -67,7 +67,7 @@ export default function AgentLoginPage() {
           </p>
         </div>
 
-        <p className="text-xs text-white/40 p-2">
+        <p className="text-xs text-white/80 p-2">
           Intern tjeneste · krever ansatt-konto
         </p>
       </aside>
