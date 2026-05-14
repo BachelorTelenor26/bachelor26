@@ -109,7 +109,7 @@ export default function SessionDetailContent({
   }
 
   return (
-    <div className="grid grid-cols-[1fr_460px] gap-8 items-start">
+    <div className="grid grid-rows-[1fr_460px] sm:grid-cols-[1fr_460px] gap-8 items-start">
       <div className="flex flex-col gap-6">
         <form
           onSubmit={handleSessionUpdate}
