@@ -63,10 +63,10 @@ export default function StepCard({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-3">
-          <h2 className="text-base font-semibold text-gray-900">Bilde</h2>
+          <h2 className="text-base font-semibold text-gray-900 p-3">Bilde</h2>
           <button
             onClick={() => setExpandedImageUrl(null)}
-            className="rounded-md border border-gray-300 px-3 py-1 text-xs sm:text-sm text-gray-700 hover:bg-gray-50"
+            className="rounded-md border border-gray-300 px-3 py-1 text-xs sm:text-sm text-gray-700 hover:bg-gray-50 m-3"
           >
             Lukk
           </button>
