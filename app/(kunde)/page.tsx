@@ -55,9 +55,8 @@ export default async function KundePage() {
               </h1>
 
               <p className="text-black-50 mb-9">
-                Løs bredbåndsproblemer selv.. Her finner du enkle guider for alt fra
-                treg Wi-Fi til nett som ikke fungerer. Selvbetjening som gir deg
-                kontroll.
+                Her finner du enkle guider for alt fra
+                treg Wi-Fi til nett som ikke fungerer. 
               </p>
               <SearchBar
                 popularSearches={[
