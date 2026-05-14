@@ -56,23 +56,29 @@ function autoFollowSingle(step: PrismaStep, steps: PrismaStep[]): PrismaStep {
   return cur;
 }
 
-async function resolvePath(
+function resolvePath(
   steps: PrismaStep[],
   choiceIndices: number[]
-): Promise<Array<{ stepId: string; choiceId: string | null }>> {
-  const raw = findRootStep(steps);
-  if (!raw) return [];
-  let current: PrismaStep | undefined = autoFollowSingle(raw, steps);
-  const result: Array<{ stepId: string; choiceId: string | null }> = [];
+): Array<{ stepId: string; choiceId: string | null }> {
+  const root = findRootStep(steps);
+  if (!root) return [];
 
-  for (let i = 0; i < choiceIndices.length && current; i++) {
-    const sorted: PrismaChoice[] = [...current.choices].sort((a, b) => a.sortOrder - b.sortOrder);
-    const chosen: PrismaChoice | undefined = sorted[choiceIndices[i]];
+  const stepsById = new Map(steps.map((s) => [s.id, s]));
+  const result: Array<{ stepId: string; choiceId: string | null }> = [];
+  let current: PrismaStep | undefined = autoFollowSingle(root, steps);
+
+  for (const index of choiceIndices) {
+    if (!current) break;
+
+    const sorted = [...current.choices].sort((a, b) => a.sortOrder - b.sortOrder);
+    const chosen: PrismaChoice | undefined = sorted[index];
 
     result.push({ stepId: current.id, choiceId: chosen?.id ?? null });
+
     if (!chosen || chosen.isTerminal || !chosen.nextStepId) break;
-    const rawNext: PrismaStep | undefined = steps.find((s) => s.id === chosen.nextStepId);
-    current = rawNext ? autoFollowSingle(rawNext, steps) : undefined;
+
+    const next = stepsById.get(chosen.nextStepId);
+    current = next ? autoFollowSingle(next, steps) : undefined;
   }
 
   return result;
@@ -211,17 +217,15 @@ export async function POST(request: Request) {
     });
 
     const pathChoiceIndices = sessionCode ? resolvedFromCodeChoiceIndices : choiceIndices;
-    const resolvedSteps = await resolvePath(session.article.steps, pathChoiceIndices);
+    const resolvedSteps = resolvePath(session.article.steps, pathChoiceIndices);
 
-    await Promise.all(
-      resolvedSteps.map(({ stepId, choiceId }) =>
-        prisma.sessionStepAnswer.upsert({
-          where: { sessionId_stepId: { sessionId: session.id, stepId } },
-          create: { sessionId: session.id, stepId, choiceId },
-          update: { choiceId },
-        })
-      )
-    );
+    for (const { stepId, choiceId } of resolvedSteps) {
+      await prisma.sessionStepAnswer.upsert({
+        where: { sessionId_stepId: { sessionId: session.id, stepId } },
+        create: { sessionId: session.id, stepId, choiceId },
+        update: { choiceId },
+      });
+    }
 
     const sessionWithAnswers = await prisma.troubleshootingSession.findUnique({
       where: { id: session.id },

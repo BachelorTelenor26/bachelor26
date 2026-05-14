@@ -114,7 +114,6 @@ export default function SessionStepList({ answers }: SessionStepListProps) {
                     <div className="mt-3">
                       {answer.step.imageUrl && (
                         <div className="mb-3 rounded-lg overflow-hidden border border-gray-100">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <Image
                             src={resolveImageUrl(answer.step.imageUrl)}
                             alt={answer.step.title}
