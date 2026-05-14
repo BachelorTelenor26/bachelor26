@@ -113,7 +113,7 @@ export default async function SessionDetailPage({
       </Link>
 
       <h1 className="text-2xl font-bold text-gray-900 mb-6">
-        Slå opp kundesesjon
+        Kundesesjon
       </h1>
 
       <p>Skriv inn en sesjons-ID for å hente kundens aktive økt og feilsøke problemer.</p>
