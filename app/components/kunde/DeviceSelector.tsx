@@ -55,15 +55,15 @@ export default function DeviceSelector({
                       onClick={() => onSelect(device.id)}
                       className="group cursor-pointer flex items-center gap-4 p-5 border border-gray-200 bg-white hover:border-blue-300 rounded-xl text-left hover:shadow-sm transition-all duration-200"
                     >
-                      <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-200 group-hover:bg-blue-300 transition">
+                      <div className="w-18 h-18 flex items-center justify-center rounded-xl bg-blue-200 group-hover:bg-blue-300 transition">
                         {device.image ? (
                           <img 
                             src={device.image as string}
                             alt={device.name} 
-                            className='w-12 h-12 object-contain'
+                            className='w-15 h-15 object-contain'
                           />
                         ) : (
-                            <Laptop className="w-12 h-12 text-gray-500 group-hover:text-blue-600 transition" />
+                            <Laptop className="w-15 h-12 text-gray-500 group-hover:text-blue-600 transition" />
                         )}
                       </div>
                         
