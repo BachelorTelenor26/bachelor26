@@ -1,4 +1,4 @@
-import { jest, describe, it, beforeEach, afterEach, expect } from '@jest/globals'
+import { jest, describe, it, beforeEach, afterEach, expect, beforeAll, afterAll } from '@jest/globals'
 
 type GenAiChunk = { text?: string }
 type GenAiStream = AsyncIterable<GenAiChunk>
@@ -41,6 +41,16 @@ const mockPrisma = prisma as jest.Mocked<typeof prisma>
 
 describe('POST /api/ai-assist fallback', () => {
   const originalEnv = process.env
+
+  beforeAll(() => {
+    jest.spyOn(console, 'log').mockImplementation(() => {})
+    jest.spyOn(console, 'error').mockImplementation(() => {})
+    jest.spyOn(console, 'warn').mockImplementation(() => {})
+  })
+
+  afterAll(() => {
+    jest.restoreAllMocks()
+  })
 
   beforeEach(() => {
     jest.clearAllMocks()
