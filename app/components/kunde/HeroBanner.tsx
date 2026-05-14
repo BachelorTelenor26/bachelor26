@@ -7,12 +7,11 @@ export default function HeroBanner(){
     return( 
       <div style={{ position: 'relative', width: '100%', height: '400px', overflow: 'hidden'}}>
         <Image
-          src="/telenorBuilding.jpg"
+          src="/heroBannerImg.png"
           alt='Hero banner'
           fill
           quality={75}
-       
-          className='w-full h-full object-cover'
+          className='w-full h-full object-cover brightness-30 '
           priority
         />
       </div>
