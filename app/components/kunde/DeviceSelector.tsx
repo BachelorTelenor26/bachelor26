@@ -29,7 +29,7 @@ export default function DeviceSelector({
   const userRole = (session?.user as { role?: string } | undefined)?.role;
   const isAgent = Boolean(session?.user) && (userRole ? userRole === "AGENT" : true);
   return (
-      <div className="w-full flex justify-center pt-24 mt-2 px-6">
+      <div className="w-full flex justify-center pt-4 mt-2 px-6">
         <div className='w-full max-w-5xl'>
             <div className='bg-white rounded-3xl shadow-sm border border-gray-200 overflow-hidden'>
             <div className='px-8 py-8 border-b border-gray-100'>
@@ -41,7 +41,7 @@ export default function DeviceSelector({
               </Link>
 
               {category && (
-                <span className="inline-block text-sm font-medium text-blue-600  py-1 rounded-full mb-4">
+                <span className="inline-block text-sm font-medium text-blue-600 rounded-full mb-4">
                   {category}
                 </span>
               )}
@@ -58,21 +58,22 @@ export default function DeviceSelector({
                     <button
                       key={device.id}
                       onClick={() => onSelect(device.id)}
-                      className="group cursor-pointer flex items-center gap-4 p-5 border border-gray-200 bg-white hover:border-blue-300 rounded-xl text-left hover:shadow-sm transition-all duration-200"
+                      className="group cursor-pointer flex items-center gap-4 p-2 border border-gray-200 bg-white hover:border-blue-300 rounded-2xl text-left hover:shadow-sm transition-all duration-200 active:scale-[0.98]"
                     >
-                      <div className="w-18 h-18 flex items-center justify-center rounded-xl bg-blue-200 group-hover:bg-blue-300 transition">
                         {device.image ? (
-                          <Image 
-                            src={device.image as string}
-                            alt={device.name}
-                            width={60}
-                            height={60}
-                            className='object-contain'
-                          />
+                          <div className="relative h-16 w-16 flex items-center justify-between">
+                            <Image 
+                              src={device.image as string}
+                              alt={device.name}
+                              width="90"
+                              height="84"
+                              className='object-contain group-hover:scale-105'
+                            /> 
+                          </div>
                         ) : (
                             <Laptop className="w-15 h-12 text-gray-500 group-hover:text-blue-600 transition" />
                         )}
-                      </div>
+                     
                         
                         
 
