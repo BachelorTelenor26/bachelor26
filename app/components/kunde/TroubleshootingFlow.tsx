@@ -225,10 +225,8 @@ export default function TroubleshootingFlow({
         ← Tilbake til Bytt enhet
       </Link>
 
-      <div className="flex flex-wrap items-center gap-2 mb-4 text-xs">
-        <span className="inline-flex items-center font-medium bg-blue-50 text-blue-700  px-2.5 py-1 rounded-full">
-          {categoryName}
-        </span>
+      <div className="flex justify-between gap-2 mb-4 text-xs">
+         
         <span className=" text-gray-500">Oppdatert {updatedAt}</span>
         <button
             onClick={() => router.push(`/feilsoking/${categorySlug}`)}
