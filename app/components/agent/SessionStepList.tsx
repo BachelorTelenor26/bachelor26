@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Check, ChevronDown, ChevronUp } from 'lucide-react'
-
+import Image from 'next/image'
 const TELENOR_IMAGE_PREFIX = 'https://www.telenor.no/_ipx/f_webp'
 
 function resolveImageUrl(url: string): string {
@@ -115,7 +115,7 @@ export default function SessionStepList({ answers }: SessionStepListProps) {
                       {answer.step.imageUrl && (
                         <div className="mb-3 rounded-lg overflow-hidden border border-gray-100">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
+                          <Image
                             src={resolveImageUrl(answer.step.imageUrl)}
                             alt={answer.step.title}
                             className="w-full object-contain max-h-64"

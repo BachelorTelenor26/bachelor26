@@ -1,5 +1,6 @@
 import { Laptop, ChevronRight, Info } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface Device {
   id: string
@@ -57,7 +58,7 @@ export default function DeviceSelector({
                     >
                       <div className="w-18 h-18 flex items-center justify-center rounded-xl bg-blue-200 group-hover:bg-blue-300 transition">
                         {device.image ? (
-                          <img 
+                          <Image 
                             src={device.image as string}
                             alt={device.name} 
                             className='w-15 h-15 object-contain'
