@@ -1,6 +1,7 @@
 import { Laptop, ChevronRight, Info } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { authClient } from "@/lib/auth-client";
 
 interface Device {
   id: string
@@ -24,13 +25,16 @@ export default function DeviceSelector({
   devices,
   onSelect,
 }: DeviceSelectorProps) {
+  const { data: session } = authClient.useSession();
+  const userRole = (session?.user as { role?: string } | undefined)?.role;
+  const isAgent = Boolean(session?.user) && (userRole ? userRole === "AGENT" : true);
   return (
       <div className="w-full flex justify-center pt-24 mt-2 px-6">
         <div className='w-full max-w-5xl'>
             <div className='bg-white rounded-3xl shadow-sm border border-gray-200 overflow-hidden'>
             <div className='px-8 py-8 border-b border-gray-100'>
               <Link
-                href="/"
+                href={isAgent ? "/agent/dashboard" : "/"}
                 className="text-sm text-gray-500 hover:text-gray-700 flex items-center gap-1 mb-8"
               >
                 ← Tilbake
@@ -60,8 +64,10 @@ export default function DeviceSelector({
                         {device.image ? (
                           <Image 
                             src={device.image as string}
-                            alt={device.name} 
-                            className='w-15 h-15 object-contain'
+                            alt={device.name}
+                            width={60}
+                            height={60}
+                            className='object-contain'
                           />
                         ) : (
                             <Laptop className="w-15 h-12 text-gray-500 group-hover:text-blue-600 transition" />
