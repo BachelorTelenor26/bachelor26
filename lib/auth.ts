@@ -3,7 +3,11 @@ import { betterAuth } from 'better-auth'
 import { prisma } from './prisma'
 import { prismaAdapter } from 'better-auth/adapters/prisma'
 
+const authBaseUrl = process.env.BETTER_AUTH_URL
+const useSecureCookies = authBaseUrl?.startsWith('https://') ?? false
+
 export const auth = betterAuth({
+  baseURL: authBaseUrl,
   database: prismaAdapter(prisma, {
     provider: 'postgresql'
   }),
@@ -21,6 +25,8 @@ export const auth = betterAuth({
     }
   },
   advanced: {
+    useSecureCookies,
+    trustedProxyHeaders: true,
     database: {
       generateId: false
     }
